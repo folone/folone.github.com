@@ -1,0 +1,390 @@
+
+<!DOCTYPE html> 
+ 
+<!--
+  Google HTML5 slide template
+ 
+  Authors: Luke Mahé (code)
+           Marcin Wichary (code and design)
+           
+           Dominic Mazzoni (browser compatibility)
+           Charles Chen (ChromeVox support)
+ 
+  URL: http://code.google.com/p/html5slides/
+--> 
+ 
+<html> 
+  <head> 
+    <title>Scala</title> 
+ 
+    <meta charset='utf-8'> 
+    <script
+      src='http://html5slides.googlecode.com/svn/trunk/slides.js'></script> 
+  </head> 
+  
+  <style>
+	.slides.template-scala > article:not(.nobackground):not(.biglogo) {
+	  background: url(images/scala-logo-small.png) 710px 625px no-repeat;  
+
+	  background-color: white;  
+	}
+    /* Your individual styles here, or just use inline styles if that’s
+       what you want. */
+    
+    
+  </style> 
+ 
+  <body style='display: none'> 
+ 
+    <section class='slides layout-regular template-scala'> 
+      
+      <!-- Your slides (<article>s) go here. Delete or comment out the
+           slides below. --> 
+        
+        
+      
+      <!-- <article class='biglogo'> 
+      </article> --> 
+ 
+      <article> 
+        <h1> 
+          <span class='red'>Scala</span>,
+          <br> 
+          введение
+        </h1> 
+        <p> 
+          Леонтьев Георгий (<a href="http://juick.com/folone">@folone</a>)
+          <br> 
+          18.06.2011
+        </p> 
+      </article> 
+      
+      <article> 
+         <h3> 
+          Java
+        </h3> 
+        <ul class="build"> 
+          <li> 
+            Конкарренси
+          </li> 
+          <li> 
+            Куча предварительных танцев с бубном
+          </li> 
+          <li> 
+            Всё плохо.
+          </li> 
+        </ul>
+		<p class="red">TODO make it make sense</p>
+      </article>
+	 
+      <article> 
+         <h1> 
+          Почему Scala
+        </h1>
+ 	</article>
+
+    <article> 
+		<h3>Ничего лишнего в синтаксисе:</h3>
+				<section>
+					Java:
+		        <pre>
+					class Person {
+						private String name;
+						private int age;
+						
+						public Person(String name, int age){
+							this.name = name;
+							this.age = age;
+						}
+						// Аксессоры, мутаторы.
+					}
+				</pre>
+			Scala:
+			<pre>
+				class Person(val name: String, val age: Int)
+			</pre>
+		</section>
+	</article>
+	
+	<article>
+		<h1><b>Sca</b>lable <b>la</b>nguage</h1>
+		<h2>OO + FP</h2>
+	</article>
+	
+	<article> 
+        <h3> 
+          Скала очень выразительная
+        </h3> 
+        <section> 
+          <pre>
+val phones = Map(
+				"Mom" -> "095 111 22 33",
+				"Dad" -> "097 222 33 44"
+			)
+println(phones("Mom"))
+          </pre>
+        </section>
+      </article>
+
+	<article> 
+        <h3> 
+          И высокоуровневая
+        </h3> 
+        <section>
+	 		Java
+          <pre>
+boolean hasUpperCase = false;
+for (int i = 0; i &lt; name.length(); i++) {
+				if(Character.isUpperCase(name.charAt(i))) {
+				            hasUpperCase = true;
+				            break;
+				}
+}
+          </pre>
+			Scala
+			<pre>
+				val hasUpperCase = name exists (_ isUpperCase)
+			</pre>
+        </section>
+      </article>
+	<article class='smaller'>
+		<h3>А также</h3>
+		<ul class="build"> 
+		<li>Чистая объектная ориентированность (любой тип -- объект)</li>
+		<li>Traits</li>
+		<li>Immutability</li>
+		<li>ФВП и замыкания</li>
+		<li>Сопоставление с образцом и case classes</li>
+		<li>Частичные функции (partial functions)</li>
+		<li>xml-литералы</li>
+		<li>Акторы</li>
+		<li>Имплиситы</li>
+		<li>Ленивые вычисления, парсер-комбинаторы и многое другое</li>
+		</ul>
+	</article>
+ 
+      <article> 
+        <h3> 
+          Скала построена на множестве интересных и сложных концепций
+        </h3> 
+        <p>
+		  Тем не менее, новости хорошие:
+          вовсе не обязательно всё это знать либо понимать чтобы начать с ней работать и быть продуктивным.
+        </p>
+		<p>
+			Абсолютно валидный код на скале (из предыдущего примера):
+			<pre>
+				var hasUpperCase = false
+				for (i &lt;- 0 to name.length) {
+				    if(Character.isUpperCase(name.charAt(i))) {
+					        hasUpperCase = true
+					        break
+				    }
+				}
+			</pre>
+		</p>
+      </article>
+
+	<article> 
+        <h3> 
+          Скала не сопротивляется, но навязывает
+        </h3> 
+        <p> 
+          Компилятор молча скомпилирует императивный код. Тем не менее, скала навязывает более функциональный подход.
+        </p>
+		<ul class="build">
+			<li>Немутабельные коллекции.</li>
+			<li>Использование неявной рекурсии.</li>
+		</ul>
+      </article>
+ 
+      <article> 
+        <h3> 
+          История.
+        </h3>
+ 		<ul class="build">
+			<li>EPFL (École Polytechnique Fédérale de Lausanne)</li>
+ 			<li>Martin Odersky</li>
+			<li>2003</li>
+ 		</ul>
+      </article> 
+
+	<article> 
+        <q> 
+          If I were to pick a language to use today other than Java, it would be Scala.
+        </q> 
+        <div class='author'> 
+          James Gosling
+        </div> 
+      </article>
+
+	<article class="smaller"> 
+        <q> 
+          I can honestly say if someone had shown me the Programming in Scala book by by Martin Odersky, Lex Spoon and Bill Venners back in 2003 I'd probably have never created Groovy.
+        </q> 
+        <div class='author'> 
+          <a href="http://macstrac.blogspot.com/2009/04/scala-as-long-term-replacement-for.html">James Strachan</a>
+        </div> 
+      </article>
+
+	<article>
+		<h1>Примеры</h1>
+	</article>
+	
+	<article>
+		<h3>Чистое ООП</h3>
+		<ul class="build">
+		<li>Каждый тип является объектом.
+		<pre>1.toString
+1 + 2 // то же самое что 1.+(2)</pre></li>
+		<li>Нету статиков (полей, методов, классов).
+			<pre>class A {
+		def method = // some implementation
+}
+object A {
+		def staticMethod = // some implementation
+}
+				val a = new A
+				a.method
+				A.staticMethod</pre></li>
+	</article>
+	
+	<article class="smaller">
+		<h3>Traits</h3>
+		<p>Наследование -- не всегда то, что требуется.</p>
+		<pre>
+			class A {
+				def methodA = // implementation
+			}
+			trait B {
+				def methodB = // implementation
+			}
+			trait C {
+				def methodB = {
+					// some implementation
+					super.methodB
+				}
+				def methodC = // implementation
+			}
+			class D extends B with C {
+				def methodD = // implementation
+			}
+			...
+			val a = new A with B
+			a.mathodB
+			val d = new D
+			d.methodB // вызван methodB из C, после через super
+			//вызван methodB из B
+		</pre>
+	</article>
+	
+	<article>
+		<h2>Immutability</h2>
+		<ul class="build">
+			<li><code>val</code> vs <code>var</code></li>
+			<li>Немутабельные коллекции</li>
+		</ul>
+	</article>
+	
+	<article>
+		<h3>ФВП и замыкания</h3>
+		<pre>
+			def with(a:AnyRef)(code:Unit) = // implementation
+			with (person) {
+				// some code
+			}
+		</pre>
+		<p class="red">TODO Special syntax for closures</p>
+	</article>
+	
+	<article>
+		<h3>Сопоставление с образцом и case classes</h3>
+		<p class="red">TODO</p>
+	</article>
+	
+	<article>
+		<h3>Частичные функции (partial functions)</h3>
+		<p class="red">TODO</p>
+	</article>
+	
+	<article>
+		<h3>xml-литералы</h3>
+		 <pre>
+			val person =
+				&lt;person&gt;
+					&lt;name&gt;{ person.name }&lt;/name&gt;
+					&lt;age&gt;{ person.age }&lt;/age&gt;
+				&lt;/person&gt;
+		</pre>
+		<p class="red">TODO</p>
+	</article>
+	
+	<article>
+		<h3>Акторы</h3>
+		<p class="red">TODO</p>
+	</article>
+	
+	<article>
+		<h3>Имплиситы</h3>
+		<p class="red">TODO</p>
+	</article>
+	
+	<article>
+		<h3>И очень много другого</h3>
+		<p class="red">TODO</p>
+	</article>
+	
+	<article>
+		<h3>Инструменты и фреймворки</h3>
+		<ul class="build">
+			<li>IDE modules: Scala IDE (Eclipse), IntelliJ IDEA scala plugin, netbeans scala plugin, Emacs + ensime.el</li>
+			<li>SBT (simple build tool)</li>
+			<li>Akka</li>
+			<li>Web (путь в энтерпрайз лежит через веб): Lift, play framework, circumflex, etc.</li>
+			<li>etc: scalaz, spark, dispatch, ... (mode at <a href="http://implicit.ly/">implicit.ly</a>)</li>
+		</ul>
+	</article>
+	
+	<article>
+		<h3>Мультиплатфрменность</h3>
+		<ul>
+			<li>JVM</li>
+			<li>CLR</li>
+			<li>LLVM</li>
+		</ul>
+	</article>
+	
+	<article>
+		<h3>Production ready</h3>
+		<ul>
+			<li>Twitter</li>
+			<li>Foursquare</li>
+			<li>Linkedin</li>
+			<li>Novell pulse</li>
+			<li>Guardian</li>
+			<li>Remember The Milk</li>
+			<li>The New Motion</li>
+		</ul>
+		<h2>typesafe.com</h2>
+		<p class="red">TODO add logos</p>
+	</article>
+	
+	<article>
+		<h3>Литература</h3>
+		<ul>
+			<li>Programming in Scala</li>
+		</ul>
+	</article>
+      
+      <article> 
+        <h1> 
+          Спасибо!
+        </h1> 
+        <p>Вопросы?</p>
+		<p>Эта презентация доступна по адресу: <a href="http://juick.folone.info/scala-presentation.html">http://juick.folone.info/scala-presentation.html</a></p>
+      </article> 
+ 
+    </section> 
+ 
+  </body> 
+</html>
