@@ -57,24 +57,6 @@
           <br> 
           18.06.2011
         </p> 
-      </article> 
-      
-      <article> 
-         <h3> 
-          Java
-        </h3> 
-        <ul class="build"> 
-          <li> 
-            Конкарренси
-          </li> 
-          <li> 
-            Куча предварительных танцев с бубном
-          </li> 
-          <li> 
-            Всё плохо.
-          </li> 
-        </ul>
-		<p class="red">TODO make it make sense</p>
       </article>
 	 
       <article> 
@@ -88,39 +70,38 @@
 				<section>
 					Java:
 		        <pre>
-					class Person {
-						private String name;
-						private int age;
+class Person {
+    private String name;
+    private int age;
 						
-						public Person(String name, int age){
-							this.name = name;
-							this.age = age;
-						}
-						// Аксессоры, мутаторы.
-					}
+    public Person(String name, int age){
+        this.name = name;
+        this.age = age;
+    }
+    // Аксессоры, мутаторы.
+}
 				</pre>
 			Scala:
 			<pre>
-				class Person(val name: String, val age: Int)
+class Person(val name: String, val age: Int)
 			</pre>
 		</section>
 	</article>
 	
 	<article>
-		<h1><b>Sca</b>lable <b>la</b>nguage</h1>
+		<h1><span class="red">Sca</span>lable <span class="red">la</span>nguage</h1>
 		<h2>OO + FP</h2>
 	</article>
 	
 	<article> 
-        <h3> 
+        <h1> 
           Скала очень выразительная
-        </h3> 
+        </h1> 
         <section> 
           <pre>
 val phones = Map(
 				"Mom" -> "095 111 22 33",
-				"Dad" -> "097 222 33 44"
-			)
+				"Dad" -> "097 222 33 44")
 println(phones("Mom"))
           </pre>
         </section>
@@ -199,9 +180,9 @@ for (int i = 0; i &lt; name.length(); i++) {
       </article>
  
       <article> 
-        <h3> 
+        <h1> 
           История.
-        </h3>
+        </h1>
  		<ul class="build">
 			<li>EPFL (École Polytechnique Fédérale de Lausanne)</li>
  			<li>Martin Odersky</li>
@@ -220,7 +201,7 @@ for (int i = 0; i &lt; name.length(); i++) {
 
 	<article class="smaller"> 
         <q> 
-          I can honestly say if someone had shown me the Programming in Scala book by by Martin Odersky, Lex Spoon and Bill Venners back in 2003 I'd probably have never created Groovy.
+          I can honestly say if someone had shown me the Programming in Scala book by Martin Odersky, Lex Spoon and Bill Venners back in 2003 I'd probably have never created Groovy.
         </q> 
         <div class='author'> 
           <a href="http://macstrac.blogspot.com/2009/04/scala-as-long-term-replacement-for.html">James Strachan</a>
@@ -239,43 +220,135 @@ for (int i = 0; i &lt; name.length(); i++) {
 1 + 2 // то же самое что 1.+(2)</pre></li>
 		<li>Нету статиков (полей, методов, классов).
 			<pre>class A {
-		def method = // some implementation
+    def method = // some implementation
 }
-object A {
-		def staticMethod = // some implementation
+object A { // singleton, companion object
+    def staticMethod = // some implementation
 }
-				val a = new A
-				a.method
-				A.staticMethod</pre></li>
+val a = new A
+a.method
+A.staticMethod</pre></li>
 	</article>
 	
-	<article class="smaller">
+	<article>
 		<h3>Traits</h3>
 		<p>Наследование -- не всегда то, что требуется.</p>
 		<pre>
-			class A {
-				def methodA = // implementation
-			}
-			trait B {
-				def methodB = // implementation
-			}
-			trait C {
-				def methodB = {
-					// some implementation
-					super.methodB
-				}
-				def methodC = // implementation
-			}
-			class D extends B with C {
-				def methodD = // implementation
-			}
-			...
-			val a = new A with B
-			a.mathodB
-			val d = new D
-			d.methodB // вызван methodB из C, после через super
-			//вызван methodB из B
+trait Dad {
+    private var children: List[Child] = Nil
+    def addChild(child: Child) = children = child :: children
+    def getChildren = children.clone
+}
+			
+class Man(val name: String) extends Human
 		</pre>
+	</article>
+	
+	<article>
+		<h3>Mixin</h3>
+		Static:
+		<pre>
+class Man(val name: String) extends Human with Dad
+val me = new Man("MyName")
+me.addChild(Child("MyChild"))
+		</pre>
+		Dynamic:
+		<pre>
+val me = new Man("MyName") with Dad
+me.addChild(Child("MyChild"))
+		</pre>
+	</article>
+	
+	<article>
+		<h1>Два варианта использования трейтов</h1>
+	</article>
+	
+	<article class="smaller">
+		<h3>Обогащение интерфейса</h3>
+		<pre>
+trait RichIterable[A] {
+    def iterator: Iterator[A]			
+    
+    def foreach(f: A => Unit) = {
+        val iter = iterator
+        while(iter hasNext)
+            f(iter next)
+    }
+				
+    def foldLeft[B](seed: B)(f: (B, A) => B) = {
+        var result = seed
+        foreach { e => result = f(result, e) }
+        result
+    }
+}
+		</pre>
+		<pre>
+val richSet = new java.util.HashSet[Int]
+              with RichIterable[Int]
+richSet.add(1)
+richSet add 2
+			
+richSet.foldLeft(0) { (x,y) => x + y }
+		</pre>
+	</article>
+	
+	<article>
+		<h3>Наслаиваемые модификации</h3>
+		<pre>
+trait IgnoreCaseSet extends java.util.Set[String]{
+    abstract override def add(e: String) =
+    	super.add(e.toLowerCase)
+				
+    abstract override def contains(e: String) =
+    	super contains (e toLowerCase)
+				
+    abstract override def remove(e: String) =
+    	super.remove(e.toLowerCase)
+}
+		</pre>
+		<pre>
+val set = new java.util.HashSet[String]
+    	  with IgnoreCaseSet
+set add "UPPERCASE"
+set.contains("uppercase") // => true
+		</pre>
+	</article>
+	
+	<article>
+		<h3>Ещё один трейт</h3>
+		<pre>
+trait LoggableSet extends java.util.Set[String] {
+    abstract override def add(e: String) = {
+    	println("Adding " + e)
+    	super.add(e)
+    }
+			    
+    abstract override def remove(e: String) = {
+        println("Removing " + e)
+        super remove e
+    }
+}
+		</pre>
+	</article>
+	
+	<article>
+		<h3>Разные комбинации</h3>
+		<pre>
+val set = new java.util.HashSet[String]
+          with IgnoreCaseSet
+          with LoggableSet
+set.add("UPPERCASE") // Adding UPPERCASE
+		</pre>
+		<pre>
+val set = new java.util.HashSet[String]
+          with LoggableSet
+          with IgnoreCaseSet
+set add "UPPERCASE" // Adding uppercase
+		</pre>
+	</article>
+	
+	<article>
+		<h1>С помощью разных модификаций получаем разные цепочки вызовов</h1>
 	</article>
 	
 	<article>
@@ -287,14 +360,107 @@ object A {
 	</article>
 	
 	<article>
-		<h3>ФВП и замыкания</h3>
+		<h1>Создаём список</h1>
 		<pre>
-			def with(a:AnyRef)(code:Unit) = // implementation
-			with (person) {
-				// some code
-			}
+List(1,2,3) // List.apply(1,2,3)
+1 :: 2 :: 3 :: Nil // ((Nil.::(3)).::(2)).::(1),
+                   // обратный порядок
 		</pre>
-		<p class="red">TODO Special syntax for closures</p>
+		<pre>
+val list = 1 :: 2 :: 3 :: Nil
+list.head // 1
+list.tail // List(2,3)
+list.isEmpty // false
+		</pre>
+	</article>
+	
+	<article class="smaller">
+		<h3>ФВП и замыкания</h3>
+		<div class="build">
+			Функция как значение
+			<pre>
+val inc = (x: Int) => x + 1
+inc(1) // 2
+			</pre>
+			Функция как параметр
+			<pre>
+List(1,2,3).map { _ + 1} // List(2,3,4)
+			</pre>
+			<pre>
+List(1,2,3).map(x => x + 1)
+List(1,2,3).map((x: Int) => x + 1)
+			</pre>
+			<pre>
+def with(a:AnyRef)(code:Unit) = // implementation
+with (person) {
+    // some code
+}
+			</pre>
+		</div>
+	</article>
+	
+	<article>
+		<h3>Замыкания</h3>
+		<pre>
+val addMore = (x: Int) => x + more
+		</pre>
+		Что такое <code>more</code>?<br/>
+		Переменная вне скоупа функции:
+		<pre>
+var more = 7
+addMore(3) // 10
+more = 8
+addMore(3) // 11
+		</pre>
+		<p class="green">Compile time</p>
+	</article>
+	
+	<article>
+		<h3>Вернёмся к спискам: высокоуровневые операции</h3>
+		<div class="build">
+			<pre>
+val list = 1 :: 2 :: 3 :: Nil
+			</pre>
+			<pre>
+list.map( _ + 1) // List(2,3,4)
+list.filter { _ &lt; 2 } // List(1)
+list.exists(_ == 3) // true
+list.drop(2) // List(3)
+list.reverse // List(3,2,1)
+list.sort { _ > _ } // List(3,2,1)
+list.slice(2,3) // List(3)
+			</pre>
+			<p>У List'а определено <strong>115</strong> методов</p>
+		</div>
+	</article>
+	
+	<article>
+		<h2>Кортежи</h2>
+		<pre>
+def getSumAndMul(x: Int, y: Int) = (x+y, x*y)
+val (sum, mul) = getSumAndMul(3,4)
+// sum: Int = 7
+// mul: Int = 12
+val result = getSumAndMul(3,4)
+result._1 // 7
+result._2 // 12
+		</pre>
+	</article>
+	
+	<article>
+		<h3>И прочие</h3>
+		Среди прочих, скала имеет имплементации других функциональных структур данных:
+		<ul>
+			<li>Maps</li>
+			<li>Sets</li>
+			<li>Trees</li>
+			<li>Stacks</li>
+		</ul>
+	</article>
+	
+	<article>
+		<h1>Мало?</h1>
+		Если вам хочется больше хаскелля в скале, либо чего-то не хватает, обратите внимание на <a href="http://code.google.com/p/scalaz/">scalaz</a> (<a href="http://scalaz.github.com/scalaz/scalaz-2.9.0-1-6.0.1/doc/index.html#package">документация</a>). Скорей всего оно там есть.
 	</article>
 	
 	<article>
@@ -310,13 +476,22 @@ object A {
 	<article>
 		<h3>xml-литералы</h3>
 		 <pre>
-			val person =
-				&lt;person&gt;
-					&lt;name&gt;{ person.name }&lt;/name&gt;
-					&lt;age&gt;{ person.age }&lt;/age&gt;
-				&lt;/person&gt;
+val persons =
+    &lt;persons&gt;
+        &lt;person&gt;
+            &lt;name&gt;{ person.name }&lt;/name&gt;
+            &lt;age&gt;{ person.age }&lt;/age&gt;
+        &lt;/person&gt;
+        ...
+    &lt;/persons&gt;
 		</pre>
-		<p class="red">TODO</p>
+		<pre>
+persons match {
+    case &lt;persons&gt;{persons @ _*}&lt;/persons&gt; =>
+        for(person &lt;- persons)
+            println("Person " + (person \ "name").text)
+}
+		</pre>
 	</article>
 	
 	<article>
@@ -330,8 +505,68 @@ object A {
 	</article>
 	
 	<article>
-		<h3>И очень много другого</h3>
-		<p class="red">TODO</p>
+		<h3>Парсер-комбинаторы</h3>
+		Очень удобный инструмент для описания заданной грамматики. Допустим, дана контекстно-свободная грамматика, описывающая алгебраическое выражение:
+		<pre>
+expr	 ::=	term  {"+"  term  |  "-"  term}.
+term	 ::=	factor  {"*"  factor  |  "/"  factor}.
+factor	 ::=	floatingPointNumber  |  "("  expr  ")".
+		</pre>
+		На скале описание этой грамматики выглядело бы следующим образом:
+		<pre>
+import scala.util.parsing.combinator._
+ object Arith extends JavaTokenParsers {   
+    def expr: Parser[Any] = term~rep("+"~term | "-"~term)
+    def term: Parser[Any] = factor~rep("*"~factor | "/"~factor)
+    def factor: Parser[Any] = floatingPointNumber | "("~expr~")"
+  }
+		</pre>
+	</article>
+	
+	<article>
+		<h3>Проверим</h3>
+		<pre>Arith.parseAll(Arith.expr, "1 + 2 * (3 + 2/3)")</pre>
+		<pre>res0: Arith.ParseResult[Any] = [1.18] parsed:
+			 ((1~List())~List((+~(2~List((*~(((~((3~List())~List((+~
+			 (2~List((/~3)))))))~))))))))</pre>
+		<pre>Arith.parseAll(Arith.expr, "1 + 2 * (3 + 2/3))")</pre>
+		<pre>res1: Arith.ParseResult[Any] = 
+		[1.18] failure: string matching regex `\z' expected but `)' 
+		found
+
+		1 + 2 * (3 + 2/3))
+                 		        ^</pre>
+	</article>
+	
+	<article>
+		<h3>Brainfuck</h3>
+		<pre>
+import scala.util.parsing.combinator._
+
+object BfParser extends JavaTokenParsers with Application {
+
+    def symbol : Parser[String] = "+" | "-" | "&lt;" | ">" | "." | ","
+    def cycle : Parser[List[Any]] = "[" ~> expr &lt;~ "]"
+    def expr : Parser[List[Any]] = rep(symbol | cycle)
+		</pre>
+		<pre>BfParser.parseAll(BfParser.expr, "++++++++++[>+++++++&gt;++++++++++&gt;+++&gt;
++&lt;&lt;&lt;&lt;-]&gt;++.&gt;+.+++++++..+++.&gt;++.&lt;&lt;+++++++++++++++.&gt;.+++.------.------
+--.&gt;+.&gt;.")
+res3: BfParser.ParseResult[List[Any]] = [1.112] parsed: List(+, +, +,
++, +, +, +, +, +, +, List(&gt;, +, +, +, +, +, +, +, &gt;, +, +, +, +, +, +, +,
++, +, +, &gt;, +, +, +, &gt;, +, &lt;, &lt;, &lt;, &lt;, -), &gt;, +, +, ., &gt;, +, ., +, +,
++, +, +, +, +, ., ., +, +, +, ., &gt;, +, +, ., &lt;, &lt;, +, +, +, +, +, +,
++, +, +, +, +, +, +, +, +, ., &gt;, ., +, +, +, ., -, -, -, -, -, -, .,
+-, -, -, -, -, -, -, -, ., &gt;, +, ., &gt;, .)</pre>
+	</article>
+	
+	<article>
+		<h1>И прочие интересные штуки</h1>
+		Заинтересованным -- <a href="https://github.com/ymasory/ToyLisp">Toy Lisp</a> by Yuvi Masory (<a href="http://vimeo.com/21207325">video</a>)
+	</article>
+	
+	<article>
+		<h1>И многое другое</h1>
 	</article>
 	
 	<article>
@@ -341,7 +576,7 @@ object A {
 			<li>SBT (simple build tool)</li>
 			<li>Akka</li>
 			<li>Web (путь в энтерпрайз лежит через веб): Lift, play framework, circumflex, etc.</li>
-			<li>etc: scalaz, spark, dispatch, ... (mode at <a href="http://implicit.ly/">implicit.ly</a>)</li>
+			<li>etc: scalaz, spark, dispatch, ... (больше на <a href="http://implicit.ly/">implicit.ly</a>)</li>
 		</ul>
 	</article>
 	
@@ -357,22 +592,28 @@ object A {
 	<article>
 		<h3>Production ready</h3>
 		<ul>
-			<li>Twitter</li>
-			<li>Foursquare</li>
-			<li>Linkedin</li>
-			<li>Novell pulse</li>
-			<li>Guardian</li>
-			<li>Remember The Milk</li>
-			<li>The New Motion</li>
+			<li><img src="http://twitter.com/favicon.ico"/> Twitter <a href="http://twitter.com/">→</a></li>
+			<li><img src="http://db.tt/h7Zfuih"/> Foursquare <a href="http://foursquare.com">→</a></li>
+			<li><img src="http://www.linkedin.com/favicon.ico"/> Linkedin <a href="http://linkedin.com">→</a></li>
+			<li><img src="http://favicon.yandex.ru/favicon/www.novell.com"/> Novell pulse <a href="http://www.novell.com/products/vibe-cloud/">→</a></li>
+			<li><img src="http://www.guardian.co.uk/favicon.ico"/> Guardian <a href="http://guardian.co.uk">→</a></li>
+			<li><img src="http://rememberthemilk.com/favicon.ico"/> Remember The Milk <a href="http://rememberthemilk.com">→</a></li>
+			<li><img src="http://thenewmotion.com/favicon.ico"/> The New Motion <a href="http://thenewmotion.com">→</a></li>
+			<li><img src="http://db.tt/qOi96Qu"/> TypeSafe <a href="http://typesafe.com">→</a></li>
 		</ul>
-		<h2>typesafe.com</h2>
-		<p class="red">TODO add logos</p>
 	</article>
 	
 	<article>
 		<h3>Литература</h3>
-		<ul>
-			<li>Programming in Scala</li>
+		<ul class="build">
+			<li>Programming in Scala <a href="http://www.artima.com/shop/programming_in_scala">→</a><br />
+				Первое издание распространяется <a href="http://www.artima.com/pins1ed/">бесплатно</a></li>
+			<li>Actors in Scala <a href="http://www.artima.com/shop/actors_in_scala">→</a></li>
+			<li>Scala in depth (meap) <a href="http://www.manning.com/suereth/">→</a></li>
+			<li>Simply Lift <a href="http://simply.liftweb.net/">→</a><br />
+				Годный справочник</li>
+			<li>Lift in Action (meap) <a href="http://www.manning.com/perrett/">→</a></li>
+			<li>Real World Haskell <a href="http://book.realworldhaskell.org/">→</a></li>
 		</ul>
 	</article>
       
