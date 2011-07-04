@@ -488,10 +488,34 @@ persons match {
 		<p class="red">TODO</p>
 	</article>
 
-        <article>
+        <article class="smaller">
           <h3>Continuations</h3>
-          <p class="red">TODO</p>
-        </article>
+          <pre>
+reset {
+  // 1. начало
+  shift { cf: (Int=>Int) =>
+    // 2.
+    val eleven = cf(10)
+    // 5.
+    println(eleven)
+    val oneHundredOne = cf(100)
+    // 8.
+    println(oneHundredOne)
+    oneHundredOne
+  }
+  // 3. выполнение продолжается с контекстом 10
+  // 6. выполнение продолжается с контекстом 100
+  + 1
+  // 4. выполнилось 10.+(1), 11 вернулось из cf
+  // 7. выполнилось 100.+(1),  101 вернулось (и присвоилось oneHundredOne)
+}
+// 9. конец
+          </pre>
+Напечатает
+          <pre>
+11
+101
+          </pre>
 	
 	<article>
 		<h3>Парсер-комбинаторы</h3>
