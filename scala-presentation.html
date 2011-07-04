@@ -60,9 +60,7 @@
       </article>
 	 
       <article> 
-         <h1>
-          Почему Scala
-        </h1>
+         <h1>Почему Scala</h1>
  	</article>
 
     <article> 
@@ -132,10 +130,10 @@ for (int i = 0; i &lt; name.length(); i++) {
 		<li>Immutability</li>
 		<li>ФВП и замыкания</li>
 		<li>Сопоставление с образцом и case classes</li>
-		<li>Частичные функции (partial functions)</li>
 		<li>xml-литералы</li>
 		<li>Акторы</li>
 		<li>Имплиситы</li>
+                <li>Continuations</li>
 		<li>Ленивые вычисления, парсер-комбинаторы и многое другое</li>
 		</ul>
 	</article>
@@ -460,11 +458,6 @@ result._2 // 12
 	</article>
 	
 	<article>
-		<h3>Частичные функции (partial functions)</h3>
-		<p class="red">TODO</p>
-	</article>
-	
-	<article>
 		<h3>xml-литералы</h3>
 		 <pre>
 val persons =
@@ -494,6 +487,11 @@ persons match {
 		<h3>Имплиситы</h3>
 		<p class="red">TODO</p>
 	</article>
+
+        <article>
+          <h3>Continuations</h3>
+          <p class="red">TODO</p>
+        </article>
 	
 	<article>
 		<h3>Парсер-комбинаторы</h3>
@@ -563,10 +561,18 @@ res3: BfParser.ParseResult[List[Any]] = [1.112] parsed: List(+, +, +,
 	<article>
 		<h3>Инструменты и фреймворки</h3>
 		<ul class="build">
-			<li>IDE modules: Scala IDE (Eclipse), IntelliJ IDEA scala plugin, netbeans scala plugin, Emacs + ensime.el</li>
-			<li>SBT (simple build tool)</li>
-			<li>Akka</li>
-			<li>Web (путь в энтерпрайз лежит через веб): Lift, play framework, circumflex, etc.</li>
+			<li>IDE
+			modules: <a href="http://www.scala-ide.org/">Scala
+			IDE</a>
+			(Eclipse), <a href="http://confluence.jetbrains.net/display/SCA/Scala+Plugin+for+IntelliJ+IDEA">IntelliJ
+			IDEA scala
+			plugin</a>, <a href="http://wiki.netbeans.org/Scala">netbeans
+			scala plugin</a>, Emacs + <a href="http://aemon.com/file_dump/ensime_manual.html">ensime.el</a></li>
+			<li><a href="http://eed3si9n.com/sbt-010-guide">SBT</a> (simple build tool)</li>
+			<li><a href="http://www.scalatest.org/">Scala test</a>, <a href="http://code.google.com/p/specs/">specs</a></li>
+			<li>Web (путь в энтерпрайз лежит через
+			веб): <a href="http://liftweb.net/">Lift</a>, <a href="http://scala.playframework.org/">play
+			framework</a>, <a href="http://circumflex.ru/">circumflex</a>, etc.</li>
 			<li>etc: scalaz, spark, dispatch, ... (больше на <a href="http://implicit.ly/">implicit.ly</a>)</li>
 		</ul>
 	</article>
