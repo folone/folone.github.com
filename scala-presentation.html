@@ -85,6 +85,49 @@ class Person(val name: String, val age: Int)
 			</pre>
 		</section>
 	</article>
+
+    <article class="smaller">
+      <h3>Использование</h3>
+      <section>
+        Java:
+        <pre>
+import java.util.ArrayList;
+...
+Person[] people;
+Person[] minors;
+Person[] adults;
+ArrayList<Person> minorList = new ArrayList<Person>();
+ArrayList<Person> adultList = new ArrayList<Person>();
+for(int i = 0; i < people.length; i++)
+    (people[i].age < 18 ? minorsList : adultsList)
+        .add(people[i]);
+minors = minorsList.toArray(people);
+adults = adults.toArray(people);
+        </pre>
+      </section>
+      <section>
+        Scala:
+        <pre>
+val people: Array[Person]
+val (minors, adults) = people partition (_.age < 18)
+        </pre>
+      </section>
+    </article>
+
+    <article>
+      <h3>Параллелизация</h3>
+      <section>
+        Java
+        <pre>//?</pre>
+      </section>
+      <section>
+        Scala
+        <pre>
+val people: Array[Person]
+val (minors, adults) = people.par partition (_.age < 18)
+        </pre>
+      </section>
+    </article>
 	
 	<article>
 		<h1><span class="red">Sca</span>lable <span class="red">la</span>nguage</h1>
