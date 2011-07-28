@@ -422,9 +422,9 @@ List(1,2,3).map(x => x + 1)
 List(1,2,3).map((x: Int) => x + 1)
 			</pre>
 			<pre>
-def with(a:AnyRef)(code:Unit) = // implementation
-with (person) {
-    // some code
+def withRes[T >: AnyRef](a: T)(code: T => Unit) = code(a)
+withRes (person) {
+    // some code, accepting person as param
 }
 			</pre>
 		</div>
