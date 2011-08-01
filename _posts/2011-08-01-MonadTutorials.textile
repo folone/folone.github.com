@@ -15,7 +15,7 @@ comments: true
 
 <h3>Вырабатывающие интуицию</h3>
 
-Такие туториалы обычно рассказывают по очереди об известных монадах "Maybe":http://hackage.haskell.org/packages/archive/base/latest/doc/html/Prelude.html#t:Maybe, "Either":http://hackage.haskell.org/packages/archive/base/latest/doc/html/Prelude.html#t:Either, "State":http://hackage.haskell.org/packages/archive/mtl/latest/doc/html/Control-Monad-State.html, "List":http://hackage.haskell.org/packages/archive/base/latest/doc/html/Data-List.html. Из известных мне отличных туториалов:
+Такие туториалы обычно рассказывают по очереди об известных монадах "Maybe":http://hackage.haskell.org/packages/archive/base/latest/doc/html/Prelude.html#t:Maybe, "Either":http://hackage.haskell.org/packages/archive/base/latest/doc/html/Prelude.html#t:Either, "State":http://www.haskell.org/haskellwiki/State_Monad, "List":http://hackage.haskell.org/packages/archive/base/latest/doc/html/Data-List.html. Из известных мне отличных туториалов:
 
 * Евгений Кирпичёв "Монады":http://www.rsdn.ru/article/funcprog/monad.xml -- помимо разбора стандартных инстансов монад, также описывается интуиция к постоению своих монад.
 * John Millikin "Monad is not difficult":https://john-millikin.com/articles/monad-is-not-difficult/
