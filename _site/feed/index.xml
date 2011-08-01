@@ -4,7 +4,7 @@
  <title>folone</title>
  <link href="http://www.folone.info/feed/" rel="self"/>
  <link href="http://www.folone.info/"/>
- <updated>2011-08-01T17:53:26+03:00</updated>
+ <updated>2011-08-01T17:55:12+03:00</updated>
  <id>http://www.folone.info.com/</id>
  <author>
    <name>folone</name>
@@ -23,7 +23,7 @@
 &lt;p&gt;Я не буду проходить обряд инициации и писать о них, без меня достаточно написано, что важно, гораздо более умными людьми. Я черкну о самих туториалах.&lt;/p&gt;
 &lt;p&gt;Так вот, как по мне, существующие туториалы по монадам делятся на три группы:&lt;/p&gt;
 &lt;h3&gt;Вырабатывающие интуицию&lt;/h3&gt;
-&lt;p&gt;Такие туториалы обычно рассказывают по очереди об известных монадах Maybe, Either, State, List. Из известных мне отличных туториалов:&lt;/p&gt;
+&lt;p&gt;Такие туториалы обычно рассказывают по очереди об известных монадах &lt;a href=&quot;http://hackage.haskell.org/packages/archive/base/latest/doc/html/Prelude.html#t:Maybe&quot;&gt;Maybe&lt;/a&gt;, &lt;a href=&quot;http://hackage.haskell.org/packages/archive/base/latest/doc/html/Prelude.html#t:Either&quot;&gt;Either&lt;/a&gt;, &lt;a href=&quot;http://hackage.haskell.org/packages/archive/mtl/latest/doc/html/Control-Monad-State.html&quot;&gt;State&lt;/a&gt;, &lt;a href=&quot;http://hackage.haskell.org/packages/archive/base/latest/doc/html/Data-List.html&quot;&gt;List&lt;/a&gt;. Из известных мне отличных туториалов:&lt;/p&gt;
 &lt;ul&gt;
 	&lt;li&gt;Евгений Кирпичёв &lt;a href=&quot;http://www.rsdn.ru/article/funcprog/monad.xml&quot;&gt;Монады&lt;/a&gt; &amp;#8212; помимо разбора стандартных инстансов монад, также описывается интуиция к постоению своих монад.&lt;/li&gt;
 	&lt;li&gt;John Millikin &lt;a href=&quot;https://john-millikin.com/articles/monad-is-not-difficult/&quot;&gt;Monad is not difficult&lt;/a&gt;&lt;/li&gt;
