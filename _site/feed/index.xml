@@ -4,13 +4,55 @@
  <title>folone</title>
  <link href="http://www.folone.info/feed/" rel="self"/>
  <link href="http://www.folone.info/"/>
- <updated>2011-07-28T15:05:23+03:00</updated>
+ <updated>2011-08-01T17:48:39+03:00</updated>
  <id>http://www.folone.info.com/</id>
  <author>
    <name>folone</name>
    <email>folone@gmail.com.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Monad Tutorials</title>
+   <link href="http://www.folone.info00/2011/08/01/MonadTutorials"/>
+   <updated>2011-08-01T00:00:00+03:00</updated>
+   <id>http://recursive-design.com/2011/08/01/MonadTutorials</id>
+   <content type="html">&lt;p align=&quot;right&quot;&gt;&amp;#8220;A monad in X is just a monoid in the category of endofunctors of X&amp;#8221;&lt;br /&gt;
+&amp;#169; &lt;a href=&quot;http://books.google.com/books?id=MXboNPdTv7QC&amp;amp;pg=PA138&amp;amp;dq=%22monoid+in+the+category+of+endofunctors%22+mac+lane&amp;amp;hl=en&amp;amp;ei=RlYcTqyFBpOs8QO2qY2MCA&amp;amp;sa=X&amp;amp;oi=book_result&amp;amp;ct=result&amp;amp;resnum=1&amp;amp;ved=0CCwQ6AEwAA#v=onepage&amp;amp;q=%22a%20monad%20in%20X%20is%20just%20a%20monoid%20in%20the%20category%20of%20endofunctors%20of%20X%22&amp;amp;f=false&quot;&gt;Categories for the working mathematician&lt;/a&gt; By Saunders Mac Lane&lt;/p&gt;
+&lt;p&gt;Одна из самых загадочных и, в то же время, интересных штукенций в мире этого вашего хаскелля для новичка &amp;#8212; это, конечно же, монады. Тут сказывается и замысловатое название, и тот факт, что штука эта взята из очень теоретического раздела математики.&lt;/p&gt;
+&lt;p&gt;Я не буду проходить обряд инициации и писать о них, без меня достаточно написано, что важно, гораздо более умными людьми. Я черкну о самих туториалах.&lt;/p&gt;
+&lt;p&gt;Так вот, как по мне, существующие туториалы по монадам делятся на три группы:&lt;/p&gt;
+&lt;h3&gt;Вырабатывающие интуицию&lt;/h3&gt;
+&lt;p&gt;Такие туториалы обычно рассказывают по очереди об известных монадах Option, Either, State, List. Из известных мне отличных туториалов:&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;Евгений Кирпичёв &lt;a href=&quot;http://www.rsdn.ru/article/funcprog/monad.xml&quot;&gt;Монады&lt;/a&gt; &amp;#8212; помимо разбора стандартных инстансов монад, также описывается интуиция к постоению своих монад.&lt;/li&gt;
+	&lt;li&gt;John Millikin &lt;a href=&quot;https://john-millikin.com/articles/monad-is-not-difficult/&quot;&gt;Monad is not difficult&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;Dan Piponi &lt;a href=&quot;http://blog.sigfpe.com/2006/08/you-could-have-invented-monads-and.html&quot;&gt;You could have invented monads&lt;/a&gt; &amp;#8212; привычные монады не описываются, тем не менее, даётся интуиция для создания &amp;#8220;чего-то вроде&amp;#8221;.&lt;/li&gt;
+	&lt;li&gt;Burak Emir &lt;a href=&quot;http://lamp.epfl.ch/~emir/bqbase/2005/01/20/monad.html&quot;&gt;Monads in Scala&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Впрочем, последняя статья скорей проводит параллели между монадными функциями и do-нотацией хаскелля и соответствующими функциями и for-нотацией в скале.&lt;/p&gt;
+&lt;h3&gt;Построенные на ассоциациях&lt;/h3&gt;
+&lt;p&gt;Такие туториалы обычно сравнивают монады с разными более простыми (?) концепциями. Например, с:&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;&lt;a href=&quot;http://codetojoy.blogspot.com/2009/03/monads-are-burritos.html&quot;&gt;Буритос&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;Слонами (&lt;a href=&quot;http://james-iry.blogspot.com/2007/09/monads-are-elephants-part-1.html&quot;&gt;1&lt;/a&gt;, &lt;a href=&quot;http://james-iry.blogspot.com/2007/10/monads-are-elephants-part-2.html&quot;&gt;2&lt;/a&gt;, &lt;a href=&quot;http://james-iry.blogspot.com/2007/10/monads-are-elephants-part-3.html&quot;&gt;3&lt;/a&gt;, &lt;a href=&quot;http://james-iry.blogspot.com/2007/11/monads-are-elephants-part-4.html&quot;&gt;4&lt;/a&gt;) &amp;#8212; очень годный туториал, имхо.&lt;/li&gt;
+	&lt;li&gt;&lt;a href=&quot;http://telofy.soup.io/post/23797479/Think-of-a-monad-as-a-spacesuit&quot;&gt;Космическим костюмом, заполненным радиацией в океане рядом с яблоками&lt;/a&gt; (омфг).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;В начале такие туториалы действительно воспринимаются лучше, так как глядя на все эти коммутативные диаграммы, становится страшно.&lt;/p&gt;
+&lt;h3&gt;Объясняющие концепции из теорката&lt;/h3&gt;
+&lt;p&gt;Самые годные, но требующие наибольшей концентрации туториалы.&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;&lt;a href=&quot;http://raichoo.blogspot.com/2011/07/from-functions-to-monads-in-scala.html&quot;&gt;From Functions to Monads in Scala&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href=&quot;http://en.wikibooks.org/wiki/Haskell/Category_theory&quot;&gt;Haskell/Category theory&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;Catsters, серии про монады (&lt;a href=&quot;http://www.youtube.com/watch?v=9fohXBj2UEI&quot;&gt;1&lt;/a&gt;, &lt;a href=&quot;http://www.youtube.com/watch?v=Si6_oG7ZdK4&quot;&gt;2&lt;/a&gt;, &lt;a href=&quot;http://www.youtube.com/watch?v=eBQnysX7oLI&quot;&gt;3&lt;/a&gt;, &lt;a href=&quot;http://www.youtube.com/watch?v=uYY5c1kkoIo&quot;&gt;3A&lt;/a&gt;, &lt;a href=&quot;http://www.youtube.com/watch?v=Cm-O_ZWEIGY&quot;&gt;4&lt;/a&gt;)&lt;/li&gt;
+	&lt;li&gt;Dominic Verity &lt;a href=&quot;http://vimeo.com/17207564&quot;&gt;Gentle Introduction to Category Theory&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;Сюда ещё относится &lt;a href=&quot;http://kodt-rsdn.livejournal.com/94016.html?thread=287552#t287552&quot;&gt;объяснение от Паши&lt;/a&gt;, которое ни разу не туториал в привычном виде, но которое мне в каком-то смысле помогло понять цитату в начале поста.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;К слову, есть ещё нестандартные туториалы. Например, &lt;a href=&quot;http://www.haskell.org/haskellwiki/What_a_Monad_is_not&quot;&gt;What a Monad is not&lt;/a&gt;. Ну и чтобы по сто раз не писать, есть ещё и &lt;a href=&quot;http://www.haskell.org/haskellwiki/Monad_tutorials_timeline&quot;&gt;таймлайн&lt;/a&gt; особо хороших монадных туториалов. Enjoy.&lt;/p&gt;
+&lt;p&gt;Прочитав пару дюжин статей про монады, и переписав половину кода своего проекта (скала) в монадическом стиле, я всё ещё не могу с уверенностью сказать, что я понимаю монады.&lt;/p&gt;
+&lt;p&gt;Такие дела.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://spl.smugmug.com/Humor/Lambdacats/13227630_eKt46#960526421_MnNqB&quot;&gt;&lt;img src=&quot;http://spl.smugmug.com/Humor/Lambdacats/trapd-in-IO-monad-plz-help/960526421_MnNqB-O-1.jpg&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/p&gt;</content>
+ </entry>
  
  <entry>
    <title>Первопсто</title>

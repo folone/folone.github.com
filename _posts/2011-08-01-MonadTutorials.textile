@@ -1,0 +1,50 @@
+---
+layout: post
+title: Monad Tutorials
+comments: true
+---
+
+<p align="right">"A monad in X is just a monoid in the category of endofunctors of X"
+(c) "Categories for the working mathematician":http://books.google.com/books?id=MXboNPdTv7QC&pg=PA138&dq=%22monoid+in+the+category+of+endofunctors%22+mac+lane&hl=en&ei=RlYcTqyFBpOs8QO2qY2MCA&sa=X&oi=book_result&ct=result&resnum=1&ved=0CCwQ6AEwAA#v=onepage&q=%22a%20monad%20in%20X%20is%20just%20a%20monoid%20in%20the%20category%20of%20endofunctors%20of%20X%22&f=false By Saunders Mac Lane</p>
+
+Одна из самых загадочных и, в то же время, интересных штукенций в мире этого вашего хаскелля для новичка -- это, конечно же, монады. Тут сказывается и замысловатое название, и тот факт, что штука эта взята из очень теоретического раздела математики.
+
+Я не буду проходить обряд инициации и писать о них, без меня достаточно написано, что важно, гораздо более умными людьми. Я черкну о самих туториалах.
+
+Так вот, как по мне, существующие туториалы по монадам делятся на три группы:
+
+<h3>Вырабатывающие интуицию</h3>
+
+Такие туториалы обычно рассказывают по очереди об известных монадах Option, Either, State, List. Из известных мне отличных туториалов:
+
+* Евгений Кирпичёв "Монады":http://www.rsdn.ru/article/funcprog/monad.xml -- помимо разбора стандартных инстансов монад, также описывается интуиция к постоению своих монад.
+* John Millikin "Monad is not difficult":https://john-millikin.com/articles/monad-is-not-difficult/
+* Dan Piponi "You could have invented monads":http://blog.sigfpe.com/2006/08/you-could-have-invented-monads-and.html -- привычные монады не описываются, тем не менее, даётся интуиция для создания "чего-то вроде".
+* Burak Emir "Monads in Scala":http://lamp.epfl.ch/~emir/bqbase/2005/01/20/monad.html
+
+Впрочем, последняя статья скорей проводит параллели между монадными функциями и do-нотацией хаскелля и соответствующими функциями и for-нотацией в скале.
+
+<h3>Построенные на ассоциациях</h3>
+
+Такие туториалы обычно сравнивают монады с разными более простыми (?) концепциями. Например, с:
+* "Буритос":http://codetojoy.blogspot.com/2009/03/monads-are-burritos.html
+* Слонами ("1":http://james-iry.blogspot.com/2007/09/monads-are-elephants-part-1.html, "2":http://james-iry.blogspot.com/2007/10/monads-are-elephants-part-2.html, "3":http://james-iry.blogspot.com/2007/10/monads-are-elephants-part-3.html, "4":http://james-iry.blogspot.com/2007/11/monads-are-elephants-part-4.html) -- очень годный туториал, имхо.
+* "Космическим костюмом, заполненным радиацией в океане рядом с яблоками":http://telofy.soup.io/post/23797479/Think-of-a-monad-as-a-spacesuit (омфг).
+
+В начале такие туториалы действительно воспринимаются лучше, так как глядя на все эти коммутативные диаграммы, становится страшно.
+
+<h3>Объясняющие концепции из теорката</h3>
+Самые годные, но требующие наибольшей концентрации туториалы.
+* "From Functions to Monads in Scala":http://raichoo.blogspot.com/2011/07/from-functions-to-monads-in-scala.html
+* "Haskell/Category theory":http://en.wikibooks.org/wiki/Haskell/Category_theory
+* Catsters, серии про монады ("1":http://www.youtube.com/watch?v=9fohXBj2UEI, "2":http://www.youtube.com/watch?v=Si6_oG7ZdK4, "3":http://www.youtube.com/watch?v=eBQnysX7oLI, "3A":http://www.youtube.com/watch?v=uYY5c1kkoIo, "4":http://www.youtube.com/watch?v=Cm-O_ZWEIGY)
+* Dominic Verity "Gentle Introduction to Category Theory":http://vimeo.com/17207564
+* Сюда ещё относится "объяснение от Паши":http://kodt-rsdn.livejournal.com/94016.html?thread=287552#t287552, которое ни разу не туториал в привычном виде, но которое мне в каком-то смысле помогло понять цитату в начале поста.
+
+К слову, есть ещё нестандартные туториалы. Например, "What a Monad is not":http://www.haskell.org/haskellwiki/What_a_Monad_is_not. Ну и чтобы по сто раз не писать, есть ещё и "таймлайн":http://www.haskell.org/haskellwiki/Monad_tutorials_timeline особо хороших монадных туториалов. Enjoy.
+
+Прочитав пару дюжин статей про монады, и переписав половину кода своего проекта (скала) в монадическом стиле, я всё ещё не могу с уверенностью сказать, что я понимаю монады.
+
+Такие дела.
+
+!http://spl.smugmug.com/Humor/Lambdacats/trapd-in-IO-monad-plz-help/960526421_MnNqB-O-1.jpg!:http://spl.smugmug.com/Humor/Lambdacats/13227630_eKt46#960526421_MnNqB
