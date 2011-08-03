@@ -2,6 +2,10 @@
 layout: post
 title: Первопсто
 comments: true
+categories: 
+- жж
+- juick
+- first-post
 ---
 
 !http://spl.smugmug.com/Humor/Lambdacats/i-5KLHJ3V/0/O/monadtutorial.jpg!:http://spl.smugmug.com/Humor/Lambdacats/13227630_eKt46#1288212148_5KLHJ3V

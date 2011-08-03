@@ -2,6 +2,10 @@
 layout: post
 title: Monad Tutorials
 comments: true
+categories: 
+- monads
+- tutorials
+- links
 ---
 
 <p align="right">"A monad in X is just a monoid in the category of endofunctors of X"
