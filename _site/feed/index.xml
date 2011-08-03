@@ -4,7 +4,7 @@
  <title>folone</title>
  <link href="http://www.folone.info/feed/" rel="self"/>
  <link href="http://www.folone.info/"/>
- <updated>2011-08-03T16:18:14+03:00</updated>
+ <updated>2011-08-03T16:19:22+03:00</updated>
  <id>http://www.folone.info.com/</id>
  <author>
    <name>folone</name>
@@ -17,7 +17,7 @@
    <link href="http://www.folone.info00/2011/08/03/Emacs-setup-for-scala"/>
    <updated>2011-08-03T00:00:00+03:00</updated>
    <id>http://recursive-design.com/2011/08/03/Emacs-setup-for-scala</id>
-   <content type="html">&lt;p style=&quot;float:right;&quot;&gt;&lt;img src=&quot;http://1.bp.blogspot.com/_A7vd1oW85hU/Rod-V4fAaxI/AAAAAAAABHw/jIiZMPqiw7U/s320/IMG_2415.JPG&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+   <content type="html">&lt;p&gt;&lt;img src=&quot;http://1.bp.blogspot.com/_A7vd1oW85hU/Rod-V4fAaxI/AAAAAAAABHw/jIiZMPqiw7U/s320/IMG_2415.JPG&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;Многие, кто начинает пробовать работать на скале, после того как дойдут до создания чего-то большего, чем джейсон парсер, начинают задаваться вопросом выбора среды разработки. Обычно эти поиски заканчиваются разочарованием: эклипс глючный, идея не умеет выводить типы для всего, сложнее вышеупомянутого джейсон парсера и перекрашивает кучу валидного кода красным, нетбинз тоже оставляет желать лучшего. Я некоторое время тому открыл для себя емакс. Последний год я использовал его исключительно как органайзер и джаббер-клиент. Но когда сменил работу на имеющую отношение к скале и настало время выбрать среду разработки, вспомнил о своём &amp;#8220;джаббер-клиенте&amp;#8221;.&lt;/p&gt;
 &lt;p&gt;Быстрый гуглёж показал, что существует некий &lt;a href=&quot;http://aemon.com/file_dump/ensime_manual.html&quot;&gt;ensime-mode&lt;/a&gt;. Вопреки устоявшемуся мнению насчёт емакса вообще и его конфигов в частности, установить и начать играться с этой штукой проще простого.&lt;/p&gt;
 &lt;p&gt;Я пользуюсь emacs starter kit&amp;#8217;ом. Правда, уже не помню, каким именно: на каждом новом компьютере я просто делаю &lt;code&gt;sudo apt-get install emacs&lt;/code&gt;, после чего копирую свою забекапленную директорию &lt;code&gt;.emacs.d&lt;/code&gt; в &lt;code&gt;~&lt;/code&gt;. Если вы ещё не выбрали себе стартер-кит, советую обратить внимание на &lt;a href=&quot;https://github.com/zahardzhan/emacs-starter-kit&quot;&gt;вот этот&lt;/a&gt; (немного о нём &lt;a href=&quot;http://zahardzhan.github.com/2010/emacs-starter-kit-the-program.html&quot;&gt;там&lt;/a&gt;).&lt;/p&gt;
