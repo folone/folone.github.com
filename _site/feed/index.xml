@@ -4,13 +4,71 @@
  <title>folone</title>
  <link href="http://www.folone.info/feed/" rel="self"/>
  <link href="http://www.folone.info/"/>
- <updated>2011-08-03T14:04:46+03:00</updated>
+ <updated>2011-08-03T15:30:11+03:00</updated>
  <id>http://www.folone.info.com/</id>
  <author>
    <name>folone</name>
    <email>folone@gmail.com.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Emacs setup for scala</title>
+   <link href="http://www.folone.info00/2011/08/03/Emacs-setup-for-scala"/>
+   <updated>2011-08-03T00:00:00+03:00</updated>
+   <id>http://recursive-design.com/2011/08/03/Emacs-setup-for-scala</id>
+   <content type="html">&lt;p&gt;Многие, кто начинает пробовать работать на скале, после того как дойдут до создания чего-то большего, чем джейсон парсер, начинают задаваться вопросом выбора среды разработки. Обычно эти поиски заканчиваются разочарованием: эклипс глючный, идея не умеет выводить типы для всего, сложнее вышеупомянутого джейсон парсера и перекрашивает кучу валидного кода красным, нетбинз тоже оставляет желать лучшего. Я некоторое время тому открыл для себя емакс. Последний год я использовал его исключительно как органайзер и джаббер-клиент. Но когда я сменил работу на имеющую отношение к скале, и настало время выбрать среду разработки, я вспомнил о своём джаббер-клиенте.&lt;/p&gt;
+&lt;p&gt;Быстрый гуглёж показал, что существует некий &lt;a href=&quot;http://aemon.com/file_dump/ensime_manual.html&quot;&gt;ensime-mode&lt;/a&gt;. Вопреки устоявшемуся мнению насчёт емакса вообще и его конфигов в частности, установить и начать играться с этой штукой проще простого.&lt;/p&gt;
+&lt;p&gt;Я пользуюсь emacs starter kit&amp;#8217;ом. Правда, уже не помню, каким именно: на каждом новом компьютере я просто делаю &lt;code&gt;sudo apt-get install emacs&lt;/code&gt;, после чего копирую свою забекапленную директорию &lt;code&gt;.emacs.d&lt;/code&gt; в &lt;code&gt;~&lt;/code&gt;. Если вы ещё не выбрали себе стартер-кит, советую обратить внимание на &lt;a href=&quot;https://github.com/zahardzhan/emacs-starter-kit&quot;&gt;вот этот&lt;/a&gt; (немного о нём &lt;a href=&quot;http://zahardzhan.github.com/2010/emacs-starter-kit-the-program.html&quot;&gt;там&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;Итак, после установки емакса, &lt;a href=&quot;http://www.scala-lang.org/node/201&quot;&gt;ставим скалу&lt;/a&gt;. В директории &lt;code&gt;$SCALA_HOME/misc/scala-tool-support&lt;/code&gt; есть директория &lt;code&gt;emacs&lt;/code&gt;. Копируем её содержимое в &lt;code&gt;~/.emacs.d/scala-mode&lt;/code&gt;. Качаем новенькую версию &lt;a href=&quot;https://github.com/aemoncannon/ensime/downloads&quot;&gt;ensime-mode&lt;/a&gt; и распаковываем её в &lt;code&gt;~/.emacs.d/ensime&lt;/code&gt;. Дальше открываем свой &lt;code&gt;custom.el&lt;/code&gt; (&lt;code&gt;init.el&lt;/code&gt; для тех, кто не пользуется starter-kit&amp;#8217;ами), и добавляем туда следующее:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;scheme&quot;&gt;&lt;span class=&quot;c1&quot;&gt;;; Load scala mode&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;add-to-list&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;&amp;#39;load-path&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;concat&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;dotfiles-dir&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;/scala-mode&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;&amp;#39;scala-mode-auto&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; Load ensime mode&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;add-to-list&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;&amp;#39;load-path&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;concat&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;dotfiles-dir&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;/ensime/elisp&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;&amp;#39;ensime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; This step causes the ensime-mode to be started whenever&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; scala-mode is started for a buffer.&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;add-hook&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;&amp;#39;scala-mode-hook&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;&amp;#39;ensime-scala-mode-hook&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;setq&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;exec-path&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;append &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;exec-path&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;list &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;/path-to-scala/scala-2.9.0.1/bin&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;Далее импортируем (или создаём новый) проект, выполняем &lt;code&gt;M-x ensime&lt;/code&gt;, и следуем инструкциям. После того как ензим создал файл описания проекта &lt;code&gt;.ensime&lt;/code&gt;, выполняем &lt;code&gt;M-x ensime&lt;/code&gt; ещё раз, указав расположение нашего нового файла, ждём, когда всё подгрузится и стартанёт. Ензим встретит нас чем-то вроде &lt;code&gt;Hacks and glory await!&lt;/code&gt;. Теперь можно смело начинать кодить.&lt;/p&gt;
+&lt;p&gt;К слову, список фраз-приветствий энзима можно посмотреть (и дополнить) в файле &lt;code&gt;ensime.el&lt;/code&gt;. Стандартное содержание выглядит следующим образом:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;scheme&quot;&gt;&lt;span class=&quot;c1&quot;&gt;;;; Words of encouragement&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;defun&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;ensime-user-first-name&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;let &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;if &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;string=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;user-full-name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+		  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;user-login-name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+		&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;user-full-name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))))&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;string-match&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;^[^ ]*&amp;quot;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;capitalize&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;match-string&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))))&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;defvar&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;ensime-words-of-encouragement&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Let the hacking commence!&amp;quot;&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;&amp;quot;Hacks and glory await!&amp;quot;&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;&amp;quot;Hack and be merry!&amp;quot;&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;&amp;quot;May the source be with you!&amp;quot;&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;&amp;quot;Death to null!&amp;quot;&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;&amp;quot;Find closure!&amp;quot;&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;&amp;quot;May the _ be with you.&amp;quot;&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;&amp;quot;M-x be_cool&amp;quot;&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;&amp;quot;CanBuildFrom[List[Dream], Reality, List[Reality]]&amp;quot;&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;format&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;%s, this could be the start of a beautiful program.&amp;quot;&lt;/span&gt;
+	     &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;ensime-user-first-name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;&amp;quot;Scientifically-proven optimal words of hackerish encouragement.&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;defun&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;ensime-random-words-of-encouragement&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;&amp;quot;Return a string of hackerish encouragement.&amp;quot;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;eval &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;nth&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;random&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;length &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;ensime-words-of-encouragement&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+	     &lt;span class=&quot;nv&quot;&gt;ensime-words-of-encouragement&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;Удачи.&lt;/p&gt;</content>
+ </entry>
  
  <entry>
    <title>Monad Tutorials</title>
