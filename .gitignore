@@ -1,8 +1,6 @@
 # mac stuff
 .DS_Store
 
-_plugins/
-
 # emacs stuff
 *~
 \#*
