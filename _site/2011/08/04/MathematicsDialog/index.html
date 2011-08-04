@@ -42,6 +42,20 @@
   <h1>Ещё одно решение задачки про математиков</h1>
 <div id="post">
 <p>Задачу уже несколько раз <a href="http://users.livejournal.com/_darkus_/592464.html">пережевали</a>. Тем не менее, я всё же тоже выложу свой вариант, на скале, &#8220;в лоб&#8221;.</p>
+<h3>Условие:</h3>
+<blockquote>Встречаются два математика, не видевшиеся много лет. Расспрашивают друг друга о житии-бытии, и в ходе разговора происходит следующий разговор:<br />
+<br />
+- Дети-то есть?<br />
+- Да, трое сыновей.<br />
+- И сколько же им лет?<br />
+- Ну ты же математик, попробуй сам рассчитать. Если перемножить их возрасты, то получится 36.<br />
+- Недостаточно информации.<br />
+- Сумма их возрастов равна номеру вон того троллейбуса.<br />
+- Опять недостаточно информации.<br />
+- Младший — рыжий.<br />
+- Теперь всё понятно!<br />
+<br />
+Назовите возраст детей.</blockquote>
 <p>Сначала сгенерим список нужных кортежей:</p>
 <div class="highlight"><pre><code class="scala"><span class="n">scala</span><span class="o">&gt;</span> <span class="k">val</span> <span class="n">range</span> <span class="k">=</span> <span class="o">(</span><span class="mi">1</span> <span class="n">to</span> <span class="mi">36</span><span class="o">)</span> <span class="n">toList</span>
 
@@ -77,7 +91,7 @@
 <span class="o">(</span><span class="mi">6</span><span class="o">,</span><span class="mi">18</span><span class="o">,</span><span class="mi">23</span><span class="o">),</span> <span class="o">(</span><span class="mi">3</span><span class="o">,</span><span class="mi">26</span><span class="o">,</span><span class="mi">27</span><span class="o">),</span> <span class="o">(</span><span class="mi">9</span><span class="o">,</span><span class="mi">13</span><span class="o">,</span><span class="mi">28</span><span class="o">),</span> <span class="o">(</span><span class="mi">2</span><span class="o">,</span><span class="mi">17</span><span class="o">,</span><span class="mi">30</span><span class="o">),</span> <span class="o">...</span>
 </code></pre>
 </div>
-<p>Второе условие &#8212; произведение:</p>
+<p>Первое условие &#8212; произведение:</p>
 <div class="highlight"><pre><code class="scala"><span class="n">scala</span><span class="o">&gt;</span> <span class="n">res9</span><span class="o">.</span><span class="n">filter</span> <span class="o">{</span> <span class="n">x</span> <span class="k">=&gt;</span>
      <span class="o">|</span>   <span class="n">x</span><span class="o">.</span><span class="n">_1</span><span class="o">*</span><span class="n">x</span><span class="o">.</span><span class="n">_2</span><span class="o">*</span><span class="n">x</span><span class="o">.</span><span class="n">_3</span> <span class="o">==</span> <span class="mi">36</span>
      <span class="o">|</span> <span class="o">}</span>
@@ -86,7 +100,7 @@
 <span class="o">(</span><span class="mi">3</span><span class="o">,</span><span class="mi">3</span><span class="o">,</span><span class="mi">4</span><span class="o">),</span> <span class="o">(</span><span class="mi">1</span><span class="o">,</span><span class="mi">4</span><span class="o">,</span><span class="mi">9</span><span class="o">),</span> <span class="o">(</span><span class="mi">1</span><span class="o">,</span><span class="mi">3</span><span class="o">,</span><span class="mi">12</span><span class="o">),</span> <span class="o">(</span><span class="mi">2</span><span class="o">,</span><span class="mi">3</span><span class="o">,</span><span class="mi">6</span><span class="o">),</span> <span class="o">(</span><span class="mi">1</span><span class="o">,</span><span class="mi">2</span><span class="o">,</span><span class="mi">18</span><span class="o">),</span> <span class="o">(</span><span class="mi">1</span><span class="o">,</span><span class="mi">1</span><span class="o">,</span><span class="mi">36</span><span class="o">),</span> <span class="o">(</span><span class="mi">1</span><span class="o">,</span><span class="mi">6</span><span class="o">,</span><span class="mi">6</span><span class="o">))</span>
 </code></pre>
 </div>
-<p>Группируем по суммам.</p>
+<p>Группируем по суммам:</p>
 <div class="highlight"><pre><code class="scala"><span class="n">scala</span><span class="o">&gt;</span> <span class="n">res12</span><span class="o">.</span><span class="n">groupBy</span> <span class="o">{</span> <span class="n">x</span> <span class="k">=&gt;</span>
      <span class="o">|</span>   <span class="n">x</span><span class="o">.</span><span class="n">_1</span><span class="o">+</span><span class="n">x</span><span class="o">.</span><span class="n">_2</span><span class="o">+</span><span class="n">x</span><span class="o">.</span><span class="n">_3</span>
      <span class="o">|</span> <span class="o">}</span>
@@ -97,8 +111,14 @@
 <span class="mi">016</span> <span class="o">-&gt;</span> <span class="nc">Set</span><span class="o">((</span><span class="mi">1</span><span class="o">,</span><span class="mi">3</span><span class="o">,</span><span class="mi">12</span><span class="o">)),</span> <span class="mi">11</span> <span class="o">-&gt;</span> <span class="nc">Set</span><span class="o">((</span><span class="mi">2</span><span class="o">,</span><span class="mi">3</span><span class="o">,</span><span class="mi">6</span><span class="o">)))</span>
 </code></pre>
 </div>
-<p>Условие суммы оказалось недостаточным, значит номер троллейбуса &#8212; 13, правильный ответ &#8212; <code>(1,6,6)</code>. Впрочем, если придираться, по чисто человеческим причинам второй ответ тоже проходит.</p>
-<p>Как-то так. Вопрос о более православном способе сортировки кортежа остаётся открытым.</p>
+<p>Условие суммы оказалось недостаточным, значит номер троллейбуса &#8212; 13:</p>
+<div class="highlight"><pre><code class="scala"><span class="n">scala</span><span class="o">&gt;</span> <span class="n">res13</span><span class="o">.</span><span class="n">filter</span> <span class="o">{</span> <span class="n">_</span><span class="o">.</span><span class="n">_2</span><span class="o">.</span><span class="n">size</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="o">}</span>
+<span class="n">res21</span><span class="k">:</span> <span class="kt">scala.collection.immutable.Map</span><span class="o">[</span><span class="kt">Int</span>,<span class="kt">scala.collection.immutable.Set</span>
+<span class="o">[(</span><span class="kt">Int</span>, <span class="kt">Int</span>, <span class="kt">Int</span><span class="o">)]]</span> <span class="k">=</span> <span class="nc">Map</span><span class="o">(</span><span class="mi">13</span> <span class="o">-&gt;</span> <span class="nc">Set</span><span class="o">((</span><span class="mi">2</span><span class="o">,</span><span class="mi">2</span><span class="o">,</span><span class="mi">9</span><span class="o">),</span> <span class="o">(</span><span class="mi">1</span><span class="o">,</span><span class="mi">6</span><span class="o">,</span><span class="mi">6</span><span class="o">)))</span>
+</code></pre>
+</div>
+<p>Правильный ответ &#8212; <code>(1,6,6)</code>. Впрочем, если придираться, по чисто человеческим причинам второй ответ тоже проходит.</p>
+<p>Как-то так. Вопрос о более православном способе сортировки кортежа в скале остаётся открытым.</p>
 </div>
 <hr />
 <div style="float:right">
