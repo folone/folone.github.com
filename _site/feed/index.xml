@@ -4,7 +4,7 @@
  <title>folone</title>
  <link href="http://www.folone.info/feed/" rel="self"/>
  <link href="http://www.folone.info/"/>
- <updated>2011-08-04T23:06:52+03:00</updated>
+ <updated>2011-08-04T23:14:06+03:00</updated>
  <id>http://www.folone.info.com/</id>
  <author>
    <name>folone</name>
@@ -193,7 +193,7 @@
 	&lt;li&gt;Сюда ещё относится &lt;a href=&quot;http://kodt-rsdn.livejournal.com/94016.html?thread=287552#t287552&quot;&gt;объяснение от Паши&lt;/a&gt;, которое ни разу не туториал в привычном виде, но которое мне в каком-то смысле помогло понять цитату в начале поста.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;К слову, есть ещё нестандартные туториалы. Например, &lt;a href=&quot;http://www.haskell.org/haskellwiki/What_a_Monad_is_not&quot;&gt;What a Monad is not&lt;/a&gt;. Ну и чтобы по сто раз не писать, есть ещё и &lt;a href=&quot;http://www.haskell.org/haskellwiki/Monad_tutorials_timeline&quot;&gt;таймлайн&lt;/a&gt; особо хороших монадных туториалов. Enjoy.&lt;/p&gt;
-&lt;p&gt;Прочитав пару дюжин статей про монады, и переписав половину кода своего проекта (скала) в монадическом стиле, я всё ещё не могу с уверенностью сказать, что я понимаю монады.&lt;/p&gt;
+&lt;p&gt;Прочитав пару дюжин статей про монады, и переписав где возможно код своего проекта (скала) в монадическом стиле, я всё ещё не могу с уверенностью сказать, что я понимаю монады.&lt;/p&gt;
 &lt;p&gt;Такие дела.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;http://spl.smugmug.com/Humor/Lambdacats/13227630_eKt46#960526421_MnNqB&quot;&gt;&lt;img src=&quot;http://spl.smugmug.com/Humor/Lambdacats/trapd-in-IO-monad-plz-help/960526421_MnNqB-O-1.jpg&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/p&gt;</content>
  </entry>
