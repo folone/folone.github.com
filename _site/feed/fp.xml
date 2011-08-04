@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
  
  <title>folone</title>
- <link href="http://www.folone.info/feed/" rel="self"/>
+ <link href="http://www.folone.info/feed/fp.xml" rel="self"/>
  <link href="http://www.folone.info/"/>
  <updated>2011-08-05T00:29:48+03:00</updated>
  <id>http://www.folone.info.com/</id>
@@ -11,6 +11,12 @@
    <email>folone@gmail.com.com</email>
  </author>
 
+ 
+ 
+ 
+ 
+ 
+ 
  
  <entry>
    <title>Ещё одно решение задачки про математиков</title>
@@ -97,6 +103,16 @@
 &lt;p&gt;Как-то так. Вопрос о более православном способе сортировки кортежа в скале остаётся открытым.&lt;/p&gt;</content>
  </entry>
  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  <entry>
    <title>Emacs setup for scala</title>
    <link href="http://www.folone.info/2011/08/03/Emacs-setup-for-scala"/>
@@ -156,6 +172,16 @@
 &lt;p&gt;Удачи.&lt;/p&gt;</content>
  </entry>
  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  <entry>
    <title>Monad Tutorials</title>
    <link href="http://www.folone.info/2011/08/01/MonadTutorials"/>
@@ -198,16 +224,15 @@
 &lt;p&gt;&lt;a href=&quot;http://spl.smugmug.com/Humor/Lambdacats/13227630_eKt46#960526421_MnNqB&quot;&gt;&lt;img src=&quot;http://spl.smugmug.com/Humor/Lambdacats/trapd-in-IO-monad-plz-help/960526421_MnNqB-O-1.jpg&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/p&gt;</content>
  </entry>
  
- <entry>
-   <title>Первопсто</title>
-   <link href="http://www.folone.info/2011/07/27/FirstPsto"/>
-   <updated>2011-07-27T00:00:00+03:00</updated>
-   <id>http://www.folone.info/2011/07/27/FirstPsto</id>
-   <content type="html">&lt;p&gt;&lt;a href=&quot;http://spl.smugmug.com/Humor/Lambdacats/13227630_eKt46#1288212148_5KLHJ3V&quot;&gt;&lt;img src=&quot;http://spl.smugmug.com/Humor/Lambdacats/i-5KLHJ3V/0/O/monadtutorial.jpg&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Все начали мигрировать (из жажы, из жуйка). Вот и я решил. Первопсто, тащемта.&lt;br /&gt;
-Алсо, сюда буду изливать мысли, которые не поместятся в жуйк, например.&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;P.S.&lt;/em&gt; Если что, это &lt;a href=&quot;https://github.com/mojombo/jekyll&quot;&gt;jekyll&lt;/a&gt;, конфиги можно посмотреть у меня на &lt;a href=&quot;http://github.com/folone&quot;&gt;гитхабе&lt;/a&gt;.&lt;/p&gt;</content>
- </entry>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  
  
 </feed>

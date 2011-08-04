@@ -6,6 +6,7 @@ categories:
 - scala
 - emacs
 - ensime
+- fp
 ---
 
 !http://1.bp.blogspot.com/_A7vd1oW85hU/Rod-V4fAaxI/AAAAAAAABHw/jIiZMPqiw7U/s320/IMG_2415.JPG!

@@ -5,6 +5,7 @@ comments: true
 categories: 
 - scala
 - жж
+- fp
 ---
 
 Задачу уже несколько раз "пережевали":http://users.livejournal.com/_darkus_/592464.html. Тем не менее, я всё же тоже выложу свой вариант, на скале, "в лоб".
