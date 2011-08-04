@@ -4,7 +4,7 @@
  <title>folone</title>
  <link href="http://www.folone.info/feed/" rel="self"/>
  <link href="http://www.folone.info/"/>
- <updated>2011-08-04T23:14:06+03:00</updated>
+ <updated>2011-08-05T00:03:10+03:00</updated>
  <id>http://www.folone.info.com/</id>
  <author>
    <name>folone</name>
@@ -16,7 +16,7 @@
    <title>Ещё одно решение задачки про математиков</title>
    <link href="http://www.folone.info00/2011/08/04/MathematicsDialog"/>
    <updated>2011-08-04T00:00:00+03:00</updated>
-   <id>http://recursive-design.com/2011/08/04/MathematicsDialog</id>
+   <id>http://folone.info/2011/08/04/MathematicsDialog</id>
    <content type="html">&lt;p&gt;Задачу уже несколько раз &lt;a href=&quot;http://users.livejournal.com/_darkus_/592464.html&quot;&gt;пережевали&lt;/a&gt;. Тем не менее, я всё же тоже выложу свой вариант, на скале, &amp;#8220;в лоб&amp;#8221;.&lt;/p&gt;
 &lt;h3&gt;Условие:&lt;/h3&gt;
 &lt;blockquote&gt;Встречаются два математика, не видевшиеся много лет. Расспрашивают друг друга о житии-бытии, и в ходе разговора происходит следующий разговор:&lt;br /&gt;
@@ -101,7 +101,7 @@
    <title>Emacs setup for scala</title>
    <link href="http://www.folone.info00/2011/08/03/Emacs-setup-for-scala"/>
    <updated>2011-08-03T00:00:00+03:00</updated>
-   <id>http://recursive-design.com/2011/08/03/Emacs-setup-for-scala</id>
+   <id>http://folone.info/2011/08/03/Emacs-setup-for-scala</id>
    <content type="html">&lt;p&gt;&lt;img src=&quot;http://1.bp.blogspot.com/_A7vd1oW85hU/Rod-V4fAaxI/AAAAAAAABHw/jIiZMPqiw7U/s320/IMG_2415.JPG&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;Многие, кто начинает пробовать работать на скале, после того как дойдут до создания чего-то большего, чем джейсон парсер, начинают задаваться вопросом выбора среды разработки. Обычно эти поиски заканчиваются разочарованием: эклипс глючный, идея не умеет выводить типы для всего, сложнее вышеупомянутого джейсон парсера и перекрашивает кучу валидного кода красным, нетбинз тоже оставляет желать лучшего. Я некоторое время тому открыл для себя емакс. Последний год я использовал его исключительно как органайзер и джаббер-клиент. Но когда сменил работу на имеющую отношение к скале и настало время выбрать среду разработки, вспомнил о своём &amp;#8220;джаббер-клиенте&amp;#8221;.&lt;/p&gt;
 &lt;p&gt;Быстрый гуглёж показал, что существует некий &lt;a href=&quot;http://aemon.com/file_dump/ensime_manual.html&quot;&gt;ensime-mode&lt;/a&gt;. Вопреки устоявшемуся мнению насчёт емакса вообще и его конфигов в частности, установить и начать играться с этой штукой проще простого.&lt;/p&gt;
@@ -160,7 +160,7 @@
    <title>Monad Tutorials</title>
    <link href="http://www.folone.info00/2011/08/01/MonadTutorials"/>
    <updated>2011-08-01T00:00:00+03:00</updated>
-   <id>http://recursive-design.com/2011/08/01/MonadTutorials</id>
+   <id>http://folone.info/2011/08/01/MonadTutorials</id>
    <content type="html">&lt;p align=&quot;right&quot;&gt;&amp;#8220;A monad in X is just a monoid in the category of endofunctors of X&amp;#8221;&lt;br /&gt;
 &amp;#169; &lt;a href=&quot;http://books.google.com/books?id=MXboNPdTv7QC&amp;amp;pg=PA138&amp;amp;dq=%22monoid+in+the+category+of+endofunctors%22+mac+lane&amp;amp;hl=en&amp;amp;ei=RlYcTqyFBpOs8QO2qY2MCA&amp;amp;sa=X&amp;amp;oi=book_result&amp;amp;ct=result&amp;amp;resnum=1&amp;amp;ved=0CCwQ6AEwAA#v=onepage&amp;amp;q=%22a%20monad%20in%20X%20is%20just%20a%20monoid%20in%20the%20category%20of%20endofunctors%20of%20X%22&amp;amp;f=false&quot;&gt;Categories for the working mathematician&lt;/a&gt; By Saunders Mac Lane&lt;/p&gt;
 &lt;p&gt;Одна из самых загадочных и, в то же время, интересных штукенций в мире этого вашего хаскелля для новичка &amp;#8212; это, конечно же, монады. Тут сказывается и замысловатое название, и тот факт, что штука эта взята из очень теоретического раздела математики.&lt;/p&gt;
@@ -202,7 +202,7 @@
    <title>Первопсто</title>
    <link href="http://www.folone.info00/2011/07/27/FirstPsto"/>
    <updated>2011-07-27T00:00:00+03:00</updated>
-   <id>http://recursive-design.com/2011/07/27/FirstPsto</id>
+   <id>http://folone.info/2011/07/27/FirstPsto</id>
    <content type="html">&lt;p&gt;&lt;a href=&quot;http://spl.smugmug.com/Humor/Lambdacats/13227630_eKt46#1288212148_5KLHJ3V&quot;&gt;&lt;img src=&quot;http://spl.smugmug.com/Humor/Lambdacats/i-5KLHJ3V/0/O/monadtutorial.jpg&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Все начали мигрировать (из жажы, из жуйка). Вот и я решил. Первопсто, тащемта.&lt;br /&gt;
 Алсо, сюда буду изливать мысли, которые не поместятся в жуйк, например.&lt;/p&gt;
