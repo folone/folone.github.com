@@ -4,7 +4,7 @@
  <title>folone</title>
  <link href="http://www.folone.info/feed/" rel="self"/>
  <link href="http://www.folone.info/"/>
- <updated>2011-08-05T00:09:09+03:00</updated>
+ <updated>2011-08-05T00:10:11+03:00</updated>
  <id>http://www.folone.info.com/</id>
  <author>
    <name>folone</name>
@@ -14,7 +14,7 @@
  
  <entry>
    <title>Ещё одно решение задачки про математиков</title>
-   <link href="http://www.folone.info00/2011/08/04/MathematicsDialog"/>
+   <link href="http://www.folone.info/2011/08/04/MathematicsDialog"/>
    <updated>2011-08-04T00:00:00+03:00</updated>
    <id>http://www.folone.info/2011/08/04/MathematicsDialog</id>
    <content type="html">&lt;p&gt;Задачу уже несколько раз &lt;a href=&quot;http://users.livejournal.com/_darkus_/592464.html&quot;&gt;пережевали&lt;/a&gt;. Тем не менее, я всё же тоже выложу свой вариант, на скале, &amp;#8220;в лоб&amp;#8221;.&lt;/p&gt;
@@ -99,7 +99,7 @@
  
  <entry>
    <title>Emacs setup for scala</title>
-   <link href="http://www.folone.info00/2011/08/03/Emacs-setup-for-scala"/>
+   <link href="http://www.folone.info/2011/08/03/Emacs-setup-for-scala"/>
    <updated>2011-08-03T00:00:00+03:00</updated>
    <id>http://www.folone.info/2011/08/03/Emacs-setup-for-scala</id>
    <content type="html">&lt;p&gt;&lt;img src=&quot;http://1.bp.blogspot.com/_A7vd1oW85hU/Rod-V4fAaxI/AAAAAAAABHw/jIiZMPqiw7U/s320/IMG_2415.JPG&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
@@ -158,7 +158,7 @@
  
  <entry>
    <title>Monad Tutorials</title>
-   <link href="http://www.folone.info00/2011/08/01/MonadTutorials"/>
+   <link href="http://www.folone.info/2011/08/01/MonadTutorials"/>
    <updated>2011-08-01T00:00:00+03:00</updated>
    <id>http://www.folone.info/2011/08/01/MonadTutorials</id>
    <content type="html">&lt;p align=&quot;right&quot;&gt;&amp;#8220;A monad in X is just a monoid in the category of endofunctors of X&amp;#8221;&lt;br /&gt;
@@ -200,7 +200,7 @@
  
  <entry>
    <title>Первопсто</title>
-   <link href="http://www.folone.info00/2011/07/27/FirstPsto"/>
+   <link href="http://www.folone.info/2011/07/27/FirstPsto"/>
    <updated>2011-07-27T00:00:00+03:00</updated>
    <id>http://www.folone.info/2011/07/27/FirstPsto</id>
    <content type="html">&lt;p&gt;&lt;a href=&quot;http://spl.smugmug.com/Humor/Lambdacats/13227630_eKt46#1288212148_5KLHJ3V&quot;&gt;&lt;img src=&quot;http://spl.smugmug.com/Humor/Lambdacats/i-5KLHJ3V/0/O/monadtutorial.jpg&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
