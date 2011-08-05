@@ -44,10 +44,8 @@ scala> import scala.math._
 scala> res5.map { x =>
      |   val mn = min(x._1, min(x._2,x._3))
      |   val mx = max(x._1, max(x._2,x._3))
-     |   if(mn != x._1) (mn, x._1, mx)
-     |   if(mn != x._2) (mn, x._2, mx)
-     |   else (mn, x._3, mx)
-     | }  // Есть какой-то более православный метод отсортировать кортеж?
+     |   (mn, x._1 + x._2 + x._3 - mn - mx, mx)
+     | }
 
 res9: scala.collection.immutable.Set[(Int, Int, Int)] = Set((1,19,34),
 (5,15,34), (12,16,18), (15,16,28), (7,35,35), (16,21,31), (7,21,33),
