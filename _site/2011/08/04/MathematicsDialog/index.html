@@ -60,12 +60,12 @@
 <div class="highlight"><pre><code class="scala"><span class="n">scala</span><span class="o">&gt;</span> <span class="k">val</span> <span class="n">range</span> <span class="k">=</span> <span class="o">(</span><span class="mi">1</span> <span class="n">to</span> <span class="mi">36</span><span class="o">)</span> <span class="n">toList</span>
 
 <span class="n">scala</span><span class="o">&gt;</span> <span class="n">range</span><span class="o">.</span><span class="n">flatMap</span> <span class="o">{</span> <span class="n">x</span> <span class="k">=&gt;</span>
-     <span class="o">|</span>   <span class="n">range</span><span class="o">.</span><span class="n">flatMap</span> <span class="o">{</span> <span class="n">y</span> <span class="k">=&gt;</span>
-     <span class="o">|</span>     <span class="n">range</span><span class="o">.</span><span class="n">flatMap</span> <span class="o">{</span> <span class="n">z</span> <span class="k">=&gt;</span>
+     <span class="o">|</span>   <span class="o">(</span><span class="n">x</span> <span class="n">to</span> <span class="mi">36</span><span class="o">).</span><span class="n">toList</span><span class="o">.</span><span class="n">map</span> <span class="o">{</span> <span class="n">y</span> <span class="k">=&gt;</span>
+     <span class="o">|</span>     <span class="o">(</span><span class="n">y</span> <span class="n">to</span> <span class="mi">36</span><span class="o">).</span><span class="n">toList</span><span class="o">.</span><span class="n">map</span> <span class="o">{</span> <span class="n">z</span> <span class="k">=&gt;</span>
      <span class="o">|</span>       <span class="o">(</span><span class="n">x</span><span class="o">,</span><span class="n">y</span><span class="o">,</span><span class="n">z</span><span class="o">)</span>
      <span class="o">|</span>     <span class="o">}</span>
      <span class="o">|</span>   <span class="o">}</span>
-     <span class="o">|</span> <span class="o">}</span> <span class="n">toSet</span>
+     <span class="o">|</span> <span class="o">}</span> <span class="n">flatten</span>
 
 <span class="n">scala</span><span class="o">&gt;</span> <span class="k">import</span> <span class="nn">scala.math._</span>
 

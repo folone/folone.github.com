@@ -32,12 +32,12 @@ categories:
 scala> val range = (1 to 36) toList
 
 scala> range.flatMap { x =>
-     |   range.flatMap { y =>
-     |     range.flatMap { z =>
+     |   (x to 36).toList.map { y =>
+     |     (y to 36).toList.map { z =>
      |       (x,y,z)
      |     }
      |   }
-     | } toSet
+     | } flatten
 
 scala> import scala.math._
 
