@@ -38,6 +38,9 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   margin-bottom: 1em;
 }
+td, th {
+  padding: 5px;
+}
 
 p {
   margin: 1em 0;
@@ -90,7 +93,6 @@ ul.posts {
 .site {
   font-size: 110%;
   text-align: justify;
-  width: 40em;
   margin: 3em auto 2em auto;
   line-height: 1.5em;
 }
