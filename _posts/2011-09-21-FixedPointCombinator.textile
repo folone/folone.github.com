@@ -1,0 +1,46 @@
+---
+layout: post
+title: Небольшая заметка о комбинаторе неподвижной точки на Scala
+comments: true
+categories: 
+- fix
+- code
+- note
+- fp
+---
+
+Недавно меня натолкнули на интересную тему "рекурсивных схем":http://comonad.com/reader/2009/recursion-schemes/. В процессе поглощения информации набросал yet another fixed point combinator на скале.
+
+{% highlight scala %}
+// По определению, в лоб:
+def Y[T](func: (T => T) => (T => T)): (T => T) = func(Y(func))(_:T)
+{% endhighlight %}
+
+Ну и чтобы проверить, классический хелловорлд:
+
+{% highlight scala %}
+def fact = Y {
+  f: (Int  => Int) =>
+    n: Int =>
+      if(n <= 0) 1
+      else n * f(n - 1)
+}
+{% endhighlight %}
+
+{% highlight scala %}
+scala> fact(5)
+res0: Int = 120
+{% endhighlight %}
+
+К сожалению, популярный
+
+{% highlight haskell %}
+Yk = (L L L L L L L L L L L L L L L L L L L L L L L L L L)
+L = λabcdefghijklmnopqstuvwxyzr. (r (t h i s i s a f i x e d p o i n t c o m b i n a t o r))
+{% endhighlight %}
+
+на скале описать не получится: максимальное количество параметров у функции -- 22.
+
+*Бонус* -- "SKI-calculus на скале":http://apocalisp.wordpress.com/2011/01/13/simple-ski-combinator-calculus-in-scalas-type-system/
+
+!http://spl.smugmug.com/Humor/Lambdacats/i-can-has-catamorfizm/960824968_hNkLy-O-1.jpg!:http://spl.smugmug.com/Humor/Lambdacats/13227630_eKt46#960824968_hNkLy
