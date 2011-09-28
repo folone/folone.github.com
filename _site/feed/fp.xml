@@ -4,7 +4,7 @@
  <title>folone</title>
  <link href="http://www.folone.info/feed/fp.xml" rel="self"/>
  <link href="http://www.folone.info/"/>
- <updated>2011-09-21T14:49:33+03:00</updated>
+ <updated>2011-09-28T11:16:42+03:00</updated>
  <id>http://www.folone.info.com/</id>
  <author>
    <name>folone</name>
@@ -51,6 +51,160 @@
 &lt;p&gt;на скале описать не получится: максимальное количество параметров у функции &amp;#8212; 22.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Бонус&lt;/strong&gt; &amp;#8212; &lt;a href=&quot;http://apocalisp.wordpress.com/2011/01/13/simple-ski-combinator-calculus-in-scalas-type-system/&quot;&gt;&lt;span class=&quot;caps&quot;&gt;SKI&lt;/span&gt;-calculus на скале&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;http://spl.smugmug.com/Humor/Lambdacats/13227630_eKt46#960824968_hNkLy&quot;&gt;&lt;img src=&quot;http://spl.smugmug.com/Humor/Lambdacats/i-can-has-catamorfizm/960824968_hNkLy-O-1.jpg&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/p&gt;</content>
+ </entry>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <entry>
+   <title>Recursion Schemes</title>
+   <link href="http://www.folone.info/2011/09/09/RecursionSchemes"/>
+   <updated>2011-09-09T00:00:00+03:00</updated>
+   <id>http://www.folone.info/2011/09/09/RecursionSchemes</id>
+   <content type="html">&lt;p align=&quot;right&quot;&gt;Морфизм (стрелка) — в общем смысле преобразование любого рода из одного объекта категории в другой.&lt;/p&gt;
+&lt;p&gt;С целью получить и углубить понимание темы, составил такую вот табличку (референсом служила &lt;a href=&quot;http://comonad.com/reader/2009/recursion-schemes/&quot;&gt;вот эта таблица&lt;/a&gt;):&lt;/p&gt;
+&lt;table style=&quot;border:1px solid black;&quot;&gt;
+	&lt;tr style=&quot;background:#ddd;&quot;&gt;
+		&lt;td style=&quot;text-align:center;&quot; colspan=&quot;4&quot;&gt;Folds&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;th&gt;Схема&lt;/th&gt;
+		&lt;th&gt;Код&lt;/th&gt;
+		&lt;th&gt;Описание&lt;/th&gt;
+		&lt;th&gt;Краткий пример&lt;/th&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/Catamorphism&quot;&gt;катаморфизм&lt;/a&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;a href=&quot;http://comonad.com/haskell/category-extras/src/Control/Morphism/Cata.hs&quot;&gt;Cata&lt;/a&gt;&lt;/td&gt;
+		&lt;td&gt;обобщение свёртки списков на произвольные алгебраические типы данных&lt;/td&gt;
+		&lt;td&gt;foldr&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/Paramorphism&quot;&gt;параморфизм&lt;/a&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;a href=&quot;http://comonad.com/haskell/category-extras/src/Control/Morphism/Para.hs&quot;&gt;Para&lt;/a&gt;&lt;/td&gt;
+		&lt;td&gt;свёртка списка при помощи примитивной рекурсии (?)&lt;/td&gt;
+		&lt;td&gt;dropWhile&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;зигоморфизм&lt;/td&gt;
+		&lt;td&gt;&lt;a href=&quot;http://comonad.com/haskell/category-extras/src/Control/Morphism/Zygo.hs&quot;&gt;Zygo&lt;/a&gt;&lt;/td&gt;
+		&lt;td&gt;свёртка списка при помощи вспомогательной функции (?)&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;хистоморфизм&lt;/td&gt;
+		&lt;td&gt;&lt;a href=&quot;http://comonad.com/haskell/category-extras/src/Control/Morphism/Histo.hs&quot;&gt;Histo&lt;/a&gt;&lt;/td&gt;
+		&lt;td&gt;свёрка списка на основе предыдущих вызовов (?)&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;препроморфизм&lt;/td&gt;
+		&lt;td&gt;&lt;a href=&quot;http://comonad.com/haskell/category-extras/src/Control/Morphism/Prepro.hs&quot;&gt;Prepro&lt;/a&gt;&lt;/td&gt;
+		&lt;td&gt; свёртка списка после последовательного применения натурального преобразования (?)&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr style=&quot;background:#ddd;&quot;&gt;
+		&lt;td style=&quot;text-align:center;&quot; colspan=&quot;4&quot;&gt;Unfolds&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;th&gt;Схема&lt;/th&gt;
+		&lt;th&gt;Код&lt;/th&gt;
+		&lt;th&gt;Описание&lt;/th&gt;
+		&lt;th&gt;Краткий пример&lt;/th&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/Anamorphism&quot;&gt;анаморфизм&lt;/a&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;a href=&quot;http://comonad.com/haskell/category-extras/src/Control/Morphism/Ana.hs&quot;&gt;Ana&lt;/a&gt;&lt;/td&gt;
+		&lt;td&gt;обобщение разворачивания списков на произвольные алгебраические типы данных&lt;/td&gt;
+		&lt;td&gt;unfold&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/Apomorphism&quot;&gt;апоморфизм&lt;/a&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;a href=&quot;http://comonad.com/haskell/category-extras/src/Control/Morphism/Apo.hs&quot;&gt;Apo&lt;/a&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;a href=&quot;http://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D1%80%D0%B5%D0%BA%D1%83%D1%80%D1%81%D0%B8%D1%8F&quot;&gt;корекурсия&lt;/a&gt; . собирается список по одному уровню за итерацию.&lt;/td&gt;
+		&lt;td&gt;zip, iterate&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;футуморфизм&lt;/td&gt;
+		&lt;td&gt;&lt;a href=&quot;http://comonad.com/haskell/category-extras/src/Control/Morphism/Futu.hs&quot;&gt;Futu&lt;/a&gt;&lt;/td&gt;
+		&lt;td&gt;собирается несколько уровней за одну итерацию (?)&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;постпроморфизм&lt;/td&gt;
+		&lt;td&gt;&lt;a href=&quot;http://comonad.com/haskell/category-extras/src/Control/Morphism/Postpro.hs&quot;&gt;Postpro&lt;/a&gt;&lt;/td&gt;
+		&lt;td&gt;разворачивается список и последовательно применяется натуральное преобразование (?)&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr style=&quot;background:#ddd;&quot;&gt;
+		&lt;td style=&quot;text-align:center;&quot; colspan=&quot;4&quot;&gt;Refolds&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;th&gt;Схема&lt;/th&gt;
+		&lt;th&gt;Код&lt;/th&gt;
+		&lt;th&gt;Описание&lt;/th&gt;
+		&lt;th&gt;Краткий пример&lt;/th&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/Hylomorphism_(computer_science)&quot;&gt;хиломорфизм&lt;/a&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;a href=&quot;http://comonad.com/haskell/category-extras/src/Control/Morphism/Hylo.hs&quot;&gt;Hylo&lt;/a&gt;&lt;/td&gt;
+		&lt;td&gt;анаморфизм + катаморфизм&lt;/td&gt;
+		&lt;td&gt;fact n = product [1..n]&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;хрономорфизм&lt;/td&gt;
+		&lt;td&gt;&lt;a href=&quot;http://comonad.com/haskell/category-extras/src/Control/Morphism/Chrono.hs&quot;&gt;Chrono&lt;/a&gt;&lt;/td&gt;
+		&lt;td&gt;футуморфизм + хистоморфизм (?)&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;синхрономорфизм&lt;/td&gt;
+		&lt;td&gt;&lt;a href=&quot;http://comonad.com/haskell/category-extras/src/Control/Morphism/Synchro.hs&quot;&gt;Synchro&lt;/a&gt;&lt;/td&gt;
+		&lt;td&gt;высокоуровневое преобразование между двумя структурами, которое использует третью структуру для получения промежуточных данных (?)&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;экзоморфизм&lt;/td&gt;
+		&lt;td&gt;&lt;a href=&quot;http://comonad.com/haskell/category-extras/src/Control/Morphism/Exo.hs&quot;&gt;Exo&lt;/a&gt;&lt;/td&gt;
+		&lt;td&gt;высокоуровневое преобразование между структурами из триалгебры в биалгебру (?)&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;метаморфизм&lt;/td&gt;
+		&lt;td&gt;&lt;a href=&quot;http://comonad.com/haskell/category-extras/src/Control/Morphism/Meta/Erwig.hs&quot;&gt;Erwig&lt;/a&gt;&lt;/td&gt;
+		&lt;td&gt;хиломорфизм, выраженный в терминах биалгебры (?)&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;метаморфизм&lt;/td&gt;
+		&lt;td&gt;&lt;a href=&quot;http://comonad.com/haskell/category-extras/src/Control/Morphism/Meta/Gibbons.hs&quot;&gt;Gibbons&lt;/a&gt;&lt;/td&gt;
+		&lt;td&gt;fold . unfold; изменение репрезентации (?)&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;динаморфизм&lt;/td&gt;
+		&lt;td&gt;&lt;a href=&quot;http://comonad.com/haskell/category-extras/src/Control/Morphism/Dyna.hs&quot;&gt;Dyna&lt;/a&gt;&lt;/td&gt;
+		&lt;td&gt;анаморфизм + хистоморфизм (?)&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;Elgot алгебра&lt;/td&gt;
+		&lt;td&gt;&lt;a href=&quot;http://comonad.com/haskell/category-extras/src/Control/Functor/Algebra/Elgot.hs&quot;&gt;Elgot&lt;/a&gt;&lt;/td&gt;
+		&lt;td&gt;во время fold&amp;#8217;а может остановиться (?)&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;Elgot коалгебра&lt;/td&gt;
+		&lt;td&gt;&lt;a href=&quot;http://comonad.com/haskell/category-extras/src/Control/Functor/Algebra/Elgot.hs&quot;&gt;Elgot&lt;/a&gt;&lt;/td&gt;
+		&lt;td&gt;во время unfold&amp;#8217;а может остановиться (?)&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;</content>
  </entry>
  
  
