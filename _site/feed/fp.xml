@@ -4,13 +4,35 @@
  <title>folone</title>
  <link href="http://www.folone.info/feed/fp.xml" rel="self"/>
  <link href="http://www.folone.info/"/>
- <updated>2011-11-15T19:50:17+02:00</updated>
+ <updated>2011-11-16T12:07:35+02:00</updated>
  <id>http://www.folone.info.com/</id>
  <author>
    <name>folone</name>
    <email>folone@gmail.com.com</email>
  </author>
 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <entry>
+   <title>Диаграмма Классов Типов</title>
+   <link href="http://www.folone.info/2011/11/16/TypeClasses"/>
+   <updated>2011-11-16T00:00:00+02:00</updated>
+   <id>http://www.folone.info/2011/11/16/TypeClasses</id>
+   <content type="html">&lt;p&gt;Почитав на досуге &lt;a href=&quot;http://www.haskell.org/haskellwiki/Typeclassopedia&quot;&gt;Типоклассопедию&lt;/a&gt;, соорудил диаграммку по мотивам &lt;a href=&quot;http://www.haskell.org/wikiupload/d/df/Typeclassopedia-diagram.png&quot;&gt;представленной в ней&lt;/a&gt;, для собственного  удобства.&lt;br /&gt;
+Вдруг кому пригодится, вот &lt;a href=&quot;http://dl.dropbox.com/u/4274210/typeclasses.png&quot;&gt;ссылка&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;iframe width=&quot;585&quot; height=&quot;500&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; marginheight=&quot;0&quot; marginwidth=&quot;0&quot; src=&quot;http://www.piritiles.com/map/6796834?embed=1&quot;&gt;&lt;/iframe&gt;&lt;/p&gt;</content>
+ </entry>
+ 
+ 
  
  
  
