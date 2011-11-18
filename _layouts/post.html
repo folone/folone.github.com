@@ -20,6 +20,14 @@ layout: default
 	</script>
 </div>
 
+<div id="categories">
+  <ul style="display: inline;">
+    {% for tag in page.categories %}
+      <li><a href="/tags.html#{{ tag }}">{{ tag }}</a></li>
+    {% endfor %}
+  </ul>
+</div>
+
 <div id="related">
   <h2>Recent</h2>
   <ul class="posts">
