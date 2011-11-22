@@ -1,0 +1,13 @@
+---
+layout: post
+title: Haskell Mascot
+comments: true
+categories: 
+- haskell
+- pic
+- fp
+---
+
+Похоже, у Хаскелля таки "будет маскот":https://groups.google.com/forum/#!topic/haskell-cafe/TbwUHtfqs6I (не "коала":http://www.haskell.org/pipermail/haskell/2009-April/021173.html):
+
+<iframe class="imgur-album" width="100%" height="550" frameborder="0" src="http://imgur.com/a/9x83t/embed"></iframe>
