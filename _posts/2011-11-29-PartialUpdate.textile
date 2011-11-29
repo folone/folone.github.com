@@ -1,0 +1,25 @@
+---
+layout: post
+title: Частичный апдейт немутабельных данных
+comments: true
+categories: 
+- scala
+- scalaz
+- fp
+- state
+---
+
+<p align="right">"Lenses are the coalgebras for the costate comonad"
+(c) "Patterns in Functional Programming":http://patternsinfp.wordpress.com/2011/01/31/lenses-are-the-coalgebras-for-the-costate-comonad/</p>
+
+Недавно подкинули ссылку на презентацию "Кметта":http://comonad.com/ по Lenses:
+<iframe width="640" height="360" src="http://www.youtube.com/embed/videoseries?list=PLEDE5BE0C69AF6CCE&amp;hl=en_US" frameborder="0" allowfullscreen></iframe>
+
+Весьма интересно. Разбираясь на досуге со scalaz, полез искать, что там для этого есть. Нашёл "имплементацию":http://scalaz.github.com/scalaz/scalaz-2.9.0-1-6.0/doc.sxr/scalaz/Lens.scala.html и ещё одну интересную штуку из той же оперы, "Zippers":http://en.wikipedia.org/wiki/Zipper_%28data_structure%29. В scalaz есть Zipper "для Stream":http://scalaz.github.com/scalaz/scalaz-2.9.0-1-6.0/doc.sxr/scalaz/Zipper.scala.html и "для Tree":http://scalaz.github.com/scalaz/scalaz-2.9.0-1-6.0/doc.sxr/scalaz/TreeLoc.scala.html.
+
+<h4>Show me the code!</h4>
+Работа с Lenses выглядит как-то так:
+<script src="https://gist.github.com/1404336.js?file=lens.scala"></script>
+
+С Zipper -- так:
+<script src="https://gist.github.com/1404336.js?file=zipper.scala"></script>

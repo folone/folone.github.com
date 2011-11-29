@@ -1,6 +1,9 @@
 # mac stuff
 .DS_Store
 
+#jekyll stuff
+_site
+
 # emacs stuff
 *~
 \#*
