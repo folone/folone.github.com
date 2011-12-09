@@ -3,5 +3,5 @@ pygments: true
 markdown: rdiscount
 permalink: /:year/:month/:day/:title
 paginate: 10
-rdiscount
+rdiscount:
   extensions: [smart]
