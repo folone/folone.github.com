@@ -2,6 +2,7 @@
 layout: post
 title: Roy, статически типизированный джаваскрипт.
 comments: true
+is: post
 categories: 
 - javascript
 - emacs

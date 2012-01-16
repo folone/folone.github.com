@@ -2,6 +2,7 @@
 layout: post
 title: Emacs setup for scala
 comments: true
+is: post
 categories: 
 - scala
 - emacs

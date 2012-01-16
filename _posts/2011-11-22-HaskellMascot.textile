@@ -2,6 +2,7 @@
 layout: post
 title: Haskell Mascot
 comments: true
+is: post
 categories: 
 - haskell
 - pic
