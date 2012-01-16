@@ -51,7 +51,7 @@ function juickParseMessages(json) {
     if(json[i].video)
       ihtml+='<b>Attachment:</b> <a href="'+json[i].video.mp4+'">Video</a><br/>';
     if(json[i].location)
-      ihtml+='<b>Location:</b> <a href="/places/'+json[i].location.place_id+'">'+json[i].location.name+'</a><br/>';
+      ihtml+='<b>Location:</b> <a href="places/'+json[i].location.place_id+'">'+json[i].location.name+'</a><br/>';
     ihtml+=juickFormatText(json[i].body);
     ihtml+='</div>';
     
