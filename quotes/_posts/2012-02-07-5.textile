@@ -1,0 +1,8 @@
+---
+layout: quote
+author: folone
+source: http://contemplatecode.blogspot.com/2012/01/haskell-weekly-news-issue-211.html
+is: quote
+---
+
+monochrom: at a crossroad you meet an angel (always tells the truth) or demon (always lies). the crossroad gives you two choices of roads, one to heaven, one to hell, and only the angel or demon knows which is which. if you ask "how would you answer if I asked 'what is a monad?'", what will happen?
