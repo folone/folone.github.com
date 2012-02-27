@@ -1,0 +1,183 @@
+
+<!DOCTYPE html> 
+ 
+<!--
+  Google HTML5 slide template
+ 
+  Authors: Luke Mahé (code)
+           Marcin Wichary (code and design)
+           
+           Dominic Mazzoni (browser compatibility)
+           Charles Chen (ChromeVox support)
+ 
+  URL: http://code.google.com/p/html5slides/
+--> 
+ 
+<html> 
+  <head> 
+    <title>Scala</title> 
+ 
+    <meta charset='utf-8'> 
+    <script
+      src='http://html5slides.googlecode.com/svn/trunk/slides.js'></script> 
+  </head> 
+  
+  </style> 
+ 
+  <body style='display: none'> 
+ 
+    <section class='slides layout-regular'> 
+      <article> 
+        <h1> 
+          <span class='red'>Scalaz</span>,
+          <br> 
+          введение
+        </h1> 
+        <p> 
+          Леонтьев Георгий (<a href="http://juick.com/folone">@folone</a>)
+          <br> 
+          04.03.2012
+        </p> 
+      </article>
+
+      <article>
+        <ul>
+          <li>Scalaz utilities</li>
+          <li>Kinds</li>
+          <li>Typeclasses</li>
+          <li>Datastructures (purely functional)</li>
+          <li>Monoids</li>
+          <li>Functors</li>
+          <li>Monads</li>
+          <li>Validation (demo)</li>
+          <li>How to find stuff</li>
+        </ul>
+      </article>
+
+      <article>
+        <h5>Typesafe equals</h5>
+        <pre>scala> "" == "ok"
+res69: Boolean = false</pre>
+
+          <pre>scala> "" === "ok"
+res70: Boolean = false</pre>
+
+          <pre>scala> "" == 5
+res71: Boolean = false</pre>
+
+<pre>scala> "" === 5
+&lt;console&gt;:14: error: type mismatch;
+ found   : Int(5)
+ required: java.lang.String
+              "" === 5
+                     ^</pre>
+      </article>
+
+      <article class="smaller">
+        <h3>Other stuff</h3>
+        <div class="build">
+          <pre>scala> some(5) getOrElse 0
+res77: Int = 5
+
+scala> some(5) | 0
+res78: Int = 5</pre>
+
+          <pre>scala> true ? println("true") | println("false")
+true</pre>
+
+          <pre>scala> ~some(5) // Zeros
+res74: Int = 5
+
+scala> ~none[Int]
+res76: Int = 0
+
+scala> true ?? 5
+res83: Int = 5
+scala> false ?? 5
+res84: Int = 0
+
+scala> true !? 5
+res85: Int = 0
+scala> false !? 5
+res86: Int = 5</pre>
+        </div>
+      </article>
+
+      <article>
+        <h1>Kinds</h1>
+        <ul class="build">
+          <li><pre>A ~> Identity[A]</pre></li>
+          <li><pre>M[A] ~> MA[M, A]</pre></li>
+          <li><pre>M[A, B] ~> MAB[M, A, B]</pre></li>
+      </article>
+
+      <article class="smaller">
+        <h5>Typeclasses (full list available at <a href="http://goo.gl/LcRWO">http://goo.gl/LcRWO</a>)</h5>
+        <ul>
+          <li>Semigroup</li>
+          <li>Monoid extends Semigroup</li>
+          <li>Group extends Monoid</li>
+          <li>Equal</li>
+          <li>Show</li>
+          <li>Order extends Equal</li>
+          <li>Functor</li>
+          <li>Pointed extends Functor</li>
+          <li>Apply extends Functor</li>
+          <li>Applicative extends Apply with Pointed</li>
+          <li>Bind extends Apply</li>
+          <li>Monad extends Applicative with Bind</li>
+          <li>ArrId</li>
+          <li>Compose</li>
+          <li>Category extends ArrId with Compose</li>
+          <li>Arrow extends Category</li>        
+      </article>
+
+      <article>
+        <h1>Typeclassopedia!</h1>
+        <a href="http://www.haskell.org/haskellwiki/Typeclassopedia">http://www.haskell.org/haskellwiki/Typeclassopedia</a>
+      </article>
+
+      <article class="smaller">
+        <h5>Datastructures</h5>
+        <ul>
+          <li>Validation <small>Represent computations that may success or fail, accumulating multiple errors.</small></li>
+          <li>NonEmptyList <small>A list containing at least one element.</small></li>
+          <li>DList <small>A difference list, supporting efficient append and prepend.</small></li>
+          <li>EphemeralStream <small>A stream that holds weak references to its elements, and recomputes them if needed if reclaimed by the garbage collector.</small></li>
+          <li>Heap <small>A priority queue, implemented with bootstrapped skew binomial heaps.</small></li>
+          <li>Endo <small>Represents functions from A => A.</small></li>
+          <li>FingerTree <small>A tree containing elements at it's leaves, and measures at the nodes. Can be adapted to various purposes by choosing a different measure, for example IndSeq and OrdSeq.</small></li>
+          <li>Lens <small>Composable, functional alternative to getters and setters</small></li>
+          <li>Tree <small>A multiway tree. Each node contains a single element, and a Stream of sub-trees.</small></li>
+          <li>TreeLoc <small>A cursor over a Tree.</small></li>
+          <li>Zipper <small>A functional cursor over a List.</small></li>
+          <li>Kleisli <small>Represents a function A => M[B], allowing chaining. Also known, and aliased, as scalaz.ReaderT.</small></li>
+          <li>Transformers: StateT, WriterT, OptionT, EitherT</li>
+        </ul>
+      </article>
+
+      <article class="smaller">
+        <h2>Monoids</h2>
+        <div class="build">
+          <pre>scala> 1 |+| 5
+res64: Int = 6</pre>
+          <pre>scala> some(1) |+| some(5)
+res65: Option[Int] = Some(6)</pre>
+          <pre>scala> some(1) |+| none
+res66: Option[Int] = Some(1)</pre>
+          <pre>scala> some(some((1, "ok", 1 + (_:Int)))) |+| some(some((4, "ko", 2 * (_:Int))))
+res67: Option[Option[(Int, java.lang.String, Int => Int)]] = Some(Some((5,okko,<function1>)))
+          </pre>
+        </div>
+      </article>
+
+      <article> 
+        <h1>Спасибо!</h1> 
+        <p>Вопросы?</p>
+		<p>Эта презентация доступна по адресу: <a href="http://www.folone.info/docs/scalaz-presentation.html">http://www.folone.info/docs/scalaz-presentation.html</a></p>
+      </article> 
+ 
+    </section> 
+ 
+  </body> 
+</html>
