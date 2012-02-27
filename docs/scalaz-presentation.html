@@ -104,6 +104,21 @@ res86: Int = 5</pre>
       </article>
 
       <article>
+        <h5>Shows</h5>
+        <pre>scala> List(1,2,3) text
+res5: scala.xml.Text = [1,2,3]
+
+scala> List(1,2,3) show
+res6: List[Char] = List([, 1, ,, 2, ,, 3, ])
+
+scala> List(1,2,3) shows
+res7: String = [1,2,3]
+
+scala> List(1,2,3).show ≟ List(1,2,3).shows.toList
+res10: Boolean = true</pre>
+      </article>
+
+      <article>
         <h1>Kinds</h1>
         <ul class="build">
           <li><pre>A ~> Identity[A]</pre></li>
@@ -169,6 +184,35 @@ res66: Option[Int] = Some(1)</pre>
 res67: Option[Option[(Int, java.lang.String, Int => Int)]] = Some(Some((5,okko,<function1>)))
           </pre>
         </div>
+      </article>
+
+      <article>
+        <h1>Functor</h1>
+      </article>
+
+      <article>
+        <h1>Monad</h1>
+      </article>
+
+      <article>
+        <h1>Validation (demo)</h1>
+      </article>
+
+      <article>
+        <h1>How to search for stuff</h1>
+        <ul>
+          <li><a href="https://github.com/scalaz/scalaz/tree/scalaz-seven/example/src/main/scala/scalaz/example">package scalaz.example</a></li>
+          <li><a href="https://github.com/scalaz/scalaz/tree/scalaz-seven/tests/src/test/scala/scalaz">scalaz tests</a></li>
+          <li><a href="http://scalex.org/">scalex</a></li>
+        </ul>
+      </article>
+
+      <article>
+        Links:
+        <ul>
+          <li><a href="http://hacking-scala.posterous.com/scalaz-resources-for-beginners">http://hacking-scala.posterous.com/scalaz-resources-for-beginners</a></li>
+          <li><a href="http://www.haskell.org/haskellwiki/Typeclassopedia">Typeclassopedia</a></li>
+        </ul>
       </article>
 
       <article> 
