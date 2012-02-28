@@ -1,6 +1,6 @@
 ---
 layout: fullwidth
-title: Recursion Schemes, a Field Guid Guide to Recursion Schemes, a Field Guide to ...
+title: Recursion Schemes, a Field Guide to Recursion Schemes, a Field Guide to ...
 comments: true
 is: post
 categories: 
