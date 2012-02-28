@@ -1,4 +1,3 @@
-
 <!DOCTYPE html> 
  
 <!--
@@ -15,7 +14,7 @@
  
 <html> 
   <head> 
-    <title>Scala</title> 
+    <title>Scalaz</title> 
  
     <meta charset='utf-8'> 
     <script
@@ -55,7 +54,7 @@
       </article>
 
       <article>
-        <h5>Typesafe equals</h5>
+        <h5>Типобезопасное сравнение</h5>
         <pre>scala> "" == "ok"
 res69: Boolean = false</pre>
 
@@ -74,7 +73,7 @@ res71: Boolean = false</pre>
       </article>
 
       <article class="smaller">
-        <h3>Other stuff</h3>
+        <h5>Прочие штуки</h5>
         <div class="build">
           <pre>scala> some(5) getOrElse 0
 res77: Int = 5
@@ -127,7 +126,7 @@ res10: Boolean = true</pre>
       </article>
 
       <article class="smaller">
-        <h5>Typeclasses (full list available at <a href="http://goo.gl/LcRWO">http://goo.gl/LcRWO</a>)</h5>
+        <h5>Typeclasses (Полный список там -> <a href="http://goo.gl/LcRWO">http://goo.gl/LcRWO</a>)</h5>
         <ul>
           <li>Semigroup</li>
           <li>Monoid extends Semigroup</li>
@@ -148,12 +147,12 @@ res10: Boolean = true</pre>
       </article>
 
       <article>
-        <h1>Typeclassopedia!</h1>
+        <h1>Типоклассопедия!</h1>
         <a href="http://www.haskell.org/haskellwiki/Typeclassopedia">http://www.haskell.org/haskellwiki/Typeclassopedia</a>
       </article>
 
       <article class="smaller">
-        <h5>Datastructures</h5>
+        <h5>Структуры данных</h5>
         <ul>
           <li>Validation <small>Represent computations that may success or fail, accumulating multiple errors.</small></li>
           <li>NonEmptyList <small>A list containing at least one element.</small></li>
@@ -172,7 +171,7 @@ res10: Boolean = true</pre>
       </article>
 
       <article class="smaller">
-        <h2>Monoids</h2>
+        <h2>Моноиды</h2>
         <div class="build">
           <pre>scala> 1 |+| 5
 res64: Int = 6</pre>
@@ -186,20 +185,30 @@ res67: Option[Option[(Int, java.lang.String, Int => Int)]] = Some(Some((5,okko,<
         </div>
       </article>
 
-      <article>
-        <h1>Functor</h1>
+      <article class="smaller">
+        <h5>Функторы → Монады</h5>
+        <div class="build">
+             <pre>trait Functor[F[_]] {
+  def fmap[A, B](f: A => B): F[A] => F[B]
+}</pre>
+             <pre>trait Pointed[P[_]] extends Functor[P] {
+  def pure[A](a:A):P[A]
+}</pre>
+             <pre>trait Applicative[T[_]] extends Pointed[T]{
+  def <*>[A,B](tf:T[A=>B])(ta:T[A]):T[B]
+}</pre>
+             <pre>trait Monad[M[_]] extends Applicative[M]{
+  def >>=[A,B](ma:M[A])(f:A=>M[B]):M[B]
+}</pre>
+        </div>
       </article>
 
       <article>
-        <h1>Monad</h1>
+        <h1>Валидаторы (demo)</h1>
       </article>
 
       <article>
-        <h1>Validation (demo)</h1>
-      </article>
-
-      <article>
-        <h1>How to search for stuff</h1>
+        <h1>Как искать</h1>
         <ul>
           <li><a href="https://github.com/scalaz/scalaz/tree/scalaz-seven/example/src/main/scala/scalaz/example">package scalaz.example</a></li>
           <li><a href="https://github.com/scalaz/scalaz/tree/scalaz-seven/tests/src/test/scala/scalaz">scalaz tests</a></li>
@@ -208,10 +217,11 @@ res67: Option[Option[(Int, java.lang.String, Int => Int)]] = Some(Some((5,okko,<
       </article>
 
       <article>
-        Links:
+        Ссылки:
         <ul>
           <li><a href="http://hacking-scala.posterous.com/scalaz-resources-for-beginners">http://hacking-scala.posterous.com/scalaz-resources-for-beginners</a></li>
-          <li><a href="http://www.haskell.org/haskellwiki/Typeclassopedia">Typeclassopedia</a></li>
+          <li><a href="http://www.haskell.org/haskellwiki/Typeclassopedia">Типоклассопедия</a></li>
+          <li><a href="http://www.infoq.com/presentations/Scalaz-Functional-Programming-in-Scala">Презентация одного из коммитеров scalaz (Rúnar Bjarnason) на конференции Strange loop.</a></li>
         </ul>
       </article>
 
