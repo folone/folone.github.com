@@ -29,6 +29,7 @@ table{border:1px solid black}.
 |∀|2200|"all":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/MA.scala#L347|
 |↦|21A6|"traverse":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/MA.scala#L338|
 |↣|21A3|traversemonoid|
+|ʐ|0290|"zip":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/StreamW.scala#L6|
 |⋙|22D9|"&gt;&gt;&gt;":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/MAB.scala#L15|
 |⋘|22D8|"&lt;&lt;&lt;":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/MAB.scala#L19|
 |⊥|22A5|"undefined":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/Scalaz.scala#L70|
