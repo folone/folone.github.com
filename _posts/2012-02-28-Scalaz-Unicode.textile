@@ -28,14 +28,28 @@ table{border:1px solid black}.
 |∃|2203|"any":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/MA.scala#L344|
 |∀|2200|"all":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/MA.scala#L347|
 |↦|21A6|"traverse":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/MA.scala#L338|
+|↣|21A3|traversemonoid|
+|⋙|22D9|"&gt;&gt;&gt;":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/MAB.scala#L15|
+|⋘|22D8|"&lt;&lt;&lt;":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/MAB.scala#L19|
 |⊥|22A5|"undefined":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/Scalaz.scala#L70|
 |∗|2217|"flatMap":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/MA.scala#L329|
 |"π":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/Scalaz.scala#L80|03C0||
 |"π2":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/Scalaz.scala#L82|||
 |"×":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/Scalaz.scala#L88|00D7||
 |⊹|8889|"‌&#124;+‌&#124;":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/Identity.scala#L192|
+|∏|220f|"multiplication":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/IntW.scala#L6|
 |≟|8799|"===":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/Identity.scala#L195|
 |≠|8800|"/==":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/Identity.scala#L198|
+|∋|220B|"contains":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/MA.scala#L353|
+|∈|2208|"contains":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/MA.scala#L350|
+|∧|2227|"AND":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/BooleanW.scala#L21|
+|∨|2228|"OR":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/BooleanW.scala#L34|
+|⊽|22BD|"NOR":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/BooleanW.scala#L47|
+|⊼|22BC|"NAND":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/BooleanW.scala#L60|
+|→|2192|"Conditional":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/BooleanW.scala#L73|
+|⇐|21D0|"Inverse Conditional":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/BooleanW.scala#L86|
+|⇏|21CF|"Negational of Conditional":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/BooleanW.scala#L99|
+|⇍|21CD|"Negation of Inverse Conditional":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/BooleanW.scala#L112|
 {background:#ddd}.|\3=.Scala|
 |⇒|21D2|=>|
 |←|2190|<-|
