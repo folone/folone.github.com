@@ -17,7 +17,7 @@ table{border:1px solid black}.
 |η|951|"pure":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/Identity.scala#L186|@1.η[List]@|
 |μ|03BC|"join":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/MA.scala#L341|@List(List(1,2,3), nil, List(5,6,7)) μ@|
 |∅|2205|"zero":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/Zero.scala#L29|@∅[Int]@|
-|<∅>||"empty":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/Empty.scala#L10|
+|<∅>||"empty":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/Empty.scala#L10|@<∅>[Option, Int]@|
 |∘|2218|"map":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/MA.scala#L323|@(((_:Int) + 6) ∘ (_:Int).toString ∘ (_:String).length)(5)@|
 |∙|2219|"contramap":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/MA.scala#L360|@((_:String).length ∙ (_:Int).toString ∙ ((_:Int) + 6))(5)@|
 |∘∘||"map2":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/MA.scala#L326|@(List(Some(7), None, Some(8)) ∘∘ (1 + (_: Int)))@|
