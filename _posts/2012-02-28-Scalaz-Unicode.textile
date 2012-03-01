@@ -54,3 +54,5 @@ table{border:1px solid black}.
 |⇒|21D2|=>|@.map { case(x,y) ⇒ x * y }@|
 |←|2190|<-|@for { x ← res2 } yield (x*x)@|
 |→|2192|-&gt;|@List(1 → 2, 2 → 3, 3 → 4)@|
+
+Полезный пример от самих авторов -- "тут":https://github.com/scalaz/scalaz/blob/master/example/src/main/scala/scalaz/example/ExampleAscii.scala.
