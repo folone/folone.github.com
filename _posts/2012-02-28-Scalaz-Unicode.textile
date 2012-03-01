@@ -23,12 +23,11 @@ table{border:1px solid black}.
 |∘∘||"map2":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/MA.scala#L326|@(List(Some(7), None, Some(8)) ∘∘ (1 + (_: Int)))@|
 |☆|2606|"kleisli":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/Kleisli.scala#L38|@val k = ☆((n: List[Int]) => if(n.isEmpty) None else Some(n ∘ (_.shows.reverse)))@|
 |★|2605|"cokleisli":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/Cokleisli.scala#L20|@val sum = ★((m: NonEmptyList[Int]) => m.sum)@|
-|σ|963|"dual":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/Identity.scala#L189|
+|σ|963|"dual":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/Identity.scala#L189|@"1".σ ⊹ "2".σ@|
 |⊛|229B|"&#124;@&#124;":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/MA.scala#L335|@(List(1,2) ⊛ List(3,4)){_ + _}@|
 |∃|2203|"any":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/MA.scala#L344|@List(1,2,3) ∃ (_ < 2)@|
 |∀|2200|"all":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/MA.scala#L347|@List(1,2,3) ∀ (_ > 0)@|
-|↦|21A6|"traverse":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/MA.scala#L338|
-|↣|21A3|traversemonoid|
+|↦|21A6|"traverse":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/MA.scala#L338|@List(1,2,3) ↦ (_.some)@|
 |ʐ|0290|"zip":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/StreamW.scala#L6|@Stream(1,2,3).ʐ@|
 |⋙|22D9|"&gt;&gt;&gt;":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/MAB.scala#L15|@(((_:Int) + 5) &&& ((_:Int) * 2)) ⋙ { case(x,y) => x + y }@|
 |⋘|22D8|"&lt;&lt;&lt;":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/MAB.scala#L19|@((_:String).toInt) ⋘ ((_:Int).toString)@|
