@@ -12,29 +12,47 @@ categories:
 Собрал небольшую табличку юникод-алиасов из scalaz. В нижней части -- алиасы из самой скалы:
 
 table{border:1px solid black}.
-{background:#ddd}.|\3=.Scalaz|
-|_.Символ|_.Код|_.Ascii эквивалент|
-|η|951|"pure":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/Identity.scala#L186|
-|μ|03BC|"join":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/MA.scala#L341|
-|∘|2218|"map":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/MA.scala#L323|
-|∙|2219|"contramap":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/MA.scala#L360|
-|∘∘||"map2":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/MA.scala#L326|
-|☆|2606|"kleisli":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/Kleisli.scala#L38|
-|★|2605|"cokleisli":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/Cokleisli.scala#L20|
-|σ|963|"dual":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/Identity.scala#L189|
-|⊛|229B|"&#124;@&#124;":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/MA.scala#L335|
-|∃|2203|"any":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/MA.scala#L344|
-|∀|2200|"all":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/MA.scala#L347|
-|↦|21A6|"traverse":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/MA.scala#L338|
-|⊥|22A5|"undefined":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/Scalaz.scala#L70|
-|∗|2217|"flatMap":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/MA.scala#L329|
-|"π":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/Scalaz.scala#L80|03C0||
+{background:#ddd}.|\4=.Scalaz|
+|_.Символ|_.Код|_.Ascii эквивалент|_.Пример|
+|η|951|"pure":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/Identity.scala#L186|@1.η[List]@|
+|μ|03BC|"join":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/MA.scala#L341|@List(List(1,2,3), nil, List(5,6,7)) μ@|
+|∅|/2. 2205|"zero":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/Zero.scala#L29|@∅[Int]@|
+|<∅>|"empty":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/Empty.scala#L10|@<∅>[Option, Int]@|
+|∙|2219|"contramap":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/MA.scala#L360|@((_:String).length ∙ (_:Int).toString ∙ ((_:Int) + 6))(5)@|
+|∘|/2. 2218|"map":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/MA.scala#L323|@(((_:Int) + 6) ∘ (_:Int).toString ∘ (_:String).length)(5)@|
+|∘∘|"map2":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/MA.scala#L326|@(List(Some(7), None, Some(8)) ∘∘ (1 + (_: Int)))@|
+|☆|2606|"kleisli":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/Kleisli.scala#L38|@val k = ☆((n: List[Int]) => if(n.isEmpty) None else Some(n ∘ (_.shows.reverse)))@|
+|★|2605|"cokleisli":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/Cokleisli.scala#L20|@val sum = ★((m: NonEmptyList[Int]) => m.sum)@|
+|σ|963|"dual":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/Identity.scala#L189|@"1".σ ⊹ "2".σ@|
+|⊛|229B|"&#124;@&#124;":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/MA.scala#L335|@(List(1,2) ⊛ List(3,4)){_ + _}@|
+|∃|2203|"any":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/MA.scala#L344|@List(1,2,3) ∃ (_ < 2)@|
+|∀|2200|"all":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/MA.scala#L347|@List(1,2,3) ∀ (_ > 0)@|
+|↦|21A6|"traverse":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/MA.scala#L338|@List(1,2,3) ↦ (_.some)@|
+|ʐ|0290|"zip":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/StreamW.scala#L6|@Stream(1,2,3).ʐ@|
+|⋙|22D9|"&gt;&gt;&gt;":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/MAB.scala#L15|@(((_:Int) + 5) &&& ((_:Int) * 2)) ⋙ { case(x,y) => x + y }@|
+|⋘|22D8|"&lt;&lt;&lt;":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/MAB.scala#L19|@((_:String).toInt) ⋘ ((_:Int).toString)@|
+|⊥|22A5|"undefined":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/Scalaz.scala#L70|@lazy val error = ⊥@|
+|∗|2217|"flatMap":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/MA.scala#L329|@some(6) ∗ {case x => some(x+1)}@|
+|"π":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/Scalaz.scala#L80|/2. 03C0||/2. @val radians = ((_:Int) * π / 180, (_:Int) * 360 / π2)@|
 |"π2":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/Scalaz.scala#L82|||
-|"×":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/Scalaz.scala#L88|00D7||
-|⊹|8889|"‌&#124;+‌&#124;":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/Identity.scala#L192|
-|≟|8799|"===":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/Identity.scala#L195|
-|≠|8800|"/==":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/Identity.scala#L198|
-{background:#ddd}.|\3=.Scala|
-|⇒|21D2|=>|
-|←|2190|<-|
-|→|2192|-&gt;|
+|"×":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/Scalaz.scala#L88|00D7||@×[Int,Int](5)@|
+|⊹|8889|"‌&#124;+‌&#124;":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/Identity.scala#L192|@some(1) ⊹ none@|
+|∏|220f|"multiplication":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/IntW.scala#L6|@(7 ∏) ⊹ (8 ∏)@|
+|≟|8799|"===":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/Identity.scala#L195|@"" ≟ 5@|
+|≠|8800|"/==":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/Identity.scala#L198|@"" ≠ 5@|
+|∋|220B|"contains":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/MA.scala#L353|@List(1,2,3) ∋ 3@|
+|∈|2208|"contains":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/MA.scala#L350|@50 ∈: Stream.range(0, 100)@|
+|∧|2227|"AND":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/BooleanW.scala#L21|@true ∧ false@|
+|∨|2228|"OR":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/BooleanW.scala#L34|@true ∨ true@|
+|⊽|22BD|"NOR":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/BooleanW.scala#L47|@false ⊽ true@|
+|⊼|22BC|"NAND":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/BooleanW.scala#L60|@false ⊼ false@|
+|→|2192|"Conditional":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/BooleanW.scala#L73|@true → true@|
+|⇐|21D0|"Inverse Conditional":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/BooleanW.scala#L86|@false ⇐ true@|
+|⇏|21CF|"Negational of Conditional":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/BooleanW.scala#L99|@false ⇏ true@|
+|⇍|21CD|"Negation of Inverse Conditional":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/BooleanW.scala#L112|@false ⇍ true@|
+{background:#ddd}.|\4=.Scala|
+|⇒|21D2|=>|@.map { case(x,y) ⇒ x * y }@|
+|←|2190|<-|@for { x ← res2 } yield (x*x)@|
+|→|2192|-&gt;|@List(1 → 2, 2 → 3, 3 → 4)@|
+
+Полезный пример от самих авторов -- "тут":https://github.com/scalaz/scalaz/blob/master/example/src/main/scala/scalaz/example/ExampleAscii.scala.

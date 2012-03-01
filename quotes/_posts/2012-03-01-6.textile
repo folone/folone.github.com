@@ -1,0 +1,8 @@
+---
+layout: quote
+author: folone
+source: http://contemplatecode.blogspot.com/2012/02/haskell-weekly-news-issue-217.html
+is: quote
+---
+
+Philippa: The only data type is Nat! (Which succs).

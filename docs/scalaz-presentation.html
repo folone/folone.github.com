@@ -50,6 +50,7 @@
           <li>Monads</li>
           <li>Validation (demo)</li>
           <li>How to find stuff</li>
+          <li>How to introduce</li>
         </ul>
       </article>
 
@@ -73,7 +74,7 @@ res71: Boolean = false</pre>
       </article>
 
       <article class="smaller">
-        <h5>Прочие штуки</h5>
+        <h5>Условные конструкции</h5>
         <div class="build">
           <pre>scala> some(5) getOrElse 0
 res77: Int = 5
@@ -86,7 +87,6 @@ true</pre>
 
           <pre>scala> ~some(5) // Zeros
 res74: Int = 5
-
 scala> ~none[Int]
 res76: Int = 0
 
@@ -100,6 +100,27 @@ res85: Int = 0
 scala> false !? 5
 res86: Int = 5</pre>
         </div>
+      </article>
+
+      <article>
+        <h3>Чейнинг</h3>
+        <pre>scala> val a = (_:Int) + 6
+a: Int => Int = &lt;function1&gt;
+
+scala> val b = (_:Int).toString
+b: Int => java.lang.String = &lt;function1&gt;
+
+scala> val c = (_:String).length
+c: String => Int = &lt;function1&gt;
+
+scala> 5 |> a |> b |> c
+res6: Int = 2
+
+scala> 5 |> (c ∙ b ∙ a) // contramap
+res42: Int = 2
+
+scala> 5 |> (a ∘ b ∘ c) // map
+res47: Int = 2</pre>
       </article>
 
       <article>
@@ -120,9 +141,9 @@ res10: Boolean = true</pre>
       <article>
         <h1>Kinds</h1>
         <ul class="build">
-          <li><pre>A ~> Identity[A]</pre></li>
-          <li><pre>M[A] ~> MA[M, A]</pre></li>
-          <li><pre>M[A, B] ~> MAB[M, A, B]</pre></li>
+          <li><pre title="Identity.scala">A ~> Identity[A]</pre></li>
+          <li><pre title="MA.scala">M[A] ~> MA[M, A]</pre></li>
+          <li><pre title="MAB.scala">M[A, B] ~> MAB[M, A, B]</pre></li>
       </article>
 
       <article class="smaller">
@@ -222,6 +243,16 @@ res67: Option[Option[(Int, java.lang.String, Int => Int)]] = Some(Some((5,okko,<
           <li><a href="http://hacking-scala.posterous.com/scalaz-resources-for-beginners">http://hacking-scala.posterous.com/scalaz-resources-for-beginners</a></li>
           <li><a href="http://www.haskell.org/haskellwiki/Typeclassopedia">Типоклассопедия</a></li>
           <li><a href="http://www.infoq.com/presentations/Scalaz-Functional-Programming-in-Scala">Презентация одного из коммитеров scalaz (Rúnar Bjarnason) на конференции Strange loop.</a></li>
+        </ul>
+      </article>
+
+      <article>
+        <h3>Как заинтродьюсить</h3>
+        Далеко не все скаладевелоперы согласятся использовать.
+        <ul class="build">
+          <li>Помогать решать ежедневные проблемы сотрудникам</li>
+          <li>Объяснять то, что используете в своём коде</li>
+          <li>Ввести практику небольших презентаций</li>
         </ul>
       </article>
 

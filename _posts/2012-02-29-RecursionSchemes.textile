@@ -35,7 +35,7 @@ table{border:1px solid black}.
 |синхрономорфизм|"Synchro":http://comonad.com/haskell/category-extras/src/Control/Morphism/Synchro.hs|высокоуровневое преобразование между двумя структурами, которое использует третью структуру для получения промежуточных данных <span style="color:red;">(?)</span>||
 |экзоморфизм|"Exo":http://comonad.com/haskell/category-extras/src/Control/Morphism/Exo.hs|высокоуровневое преобразование между структурами из триалгебры в биалгебру <span style="color:red;">(?)</span>||
 |метаморфизм|"Erwig":http://comonad.com/haskell/category-extras/src/Control/Morphism/Meta/Erwig.hs|хиломорфизм, выраженный в терминах биалгебры <span style="color:red;">(?)</span>||
-|метаморфизм|"Gibbons":http://comonad.com/haskell/category-extras/src/Control/Morphism/Meta/Gibbons.hs|изменение репрезентации <span style="color:red;">(?)</span>||
+|"метаморфизм":http://en.wikipedia.org/wiki/Metamorphism_(computer_science)|"Gibbons":http://comonad.com/haskell/category-extras/src/Control/Morphism/Meta/Gibbons.hs|обратный хиломорфизм: катаморфизм + анаморфизм; изменение репрезентации||
 |динаморфизм|"Dyna":http://comonad.com/haskell/category-extras/src/Control/Morphism/Dyna.hs|анаморфизм + хистоморфизм <span style="color:red;">(?)</span>||
 |"Elgot алгебра":http://arxiv.org/abs/cs/0609040|"Elgot":https://github.com/ekmett/recursion-schemes/blob/master/Data/Functor/Foldable.hs#L423|во время fold'а может остановиться <span style="color:red;">(?)</span>||
 |"Elgot коалгебра":http://comonad.com/reader/2008/elgot-coalgebras/|"CoElgot":hhttps://github.com/ekmett/recursion-schemes/blob/master/Data/Functor/Foldable.hs#L427|во время unfold'а может остановиться <span style="color:red;">(?)</span>||
