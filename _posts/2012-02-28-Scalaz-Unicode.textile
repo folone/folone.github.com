@@ -25,24 +25,24 @@ table{border:1px solid black}.
 |★|2605|"cokleisli":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/Cokleisli.scala#L20|@val sum = ★((m: NonEmptyList[Int]) => m.sum)@|
 |σ|963|"dual":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/Identity.scala#L189|
 |⊛|229B|"&#124;@&#124;":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/MA.scala#L335|@(List(1,2) ⊛ List(3,4)){_ + _}@|
-|∃|2203|"any":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/MA.scala#L344|
-|∀|2200|"all":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/MA.scala#L347|
+|∃|2203|"any":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/MA.scala#L344|@List(1,2,3) ∃ (_ < 2)@|
+|∀|2200|"all":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/MA.scala#L347|@List(1,2,3) ∀ (_ > 0)@|
 |↦|21A6|"traverse":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/MA.scala#L338|
 |↣|21A3|traversemonoid|
 |ʐ|0290|"zip":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/StreamW.scala#L6|@Stream(1,2,3).ʐ@|
 |⋙|22D9|"&gt;&gt;&gt;":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/MAB.scala#L15|@(((_:Int) + 5) &&& ((_:Int) * 2)) ⋙ { case(x,y) => x + y }@|
 |⋘|22D8|"&lt;&lt;&lt;":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/MAB.scala#L19|@((_:String).toInt) ⋘ ((_:Int).toString)@|
 |⊥|22A5|"undefined":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/Scalaz.scala#L70|@lazy val error = ⊥@|
-|∗|2217|"flatMap":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/MA.scala#L329|@some(6) ∗ {case 6 => some(3); case _ => none}@|
+|∗|2217|"flatMap":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/MA.scala#L329|@some(6) ∗ {case x => some(x+1)}@|
 |"π":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/Scalaz.scala#L80|03C0||
 |"π2":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/Scalaz.scala#L82|||
-|"×":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/Scalaz.scala#L88|00D7||
+|"×":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/Scalaz.scala#L88|00D7||@×[Int,Int](5)@|
 |⊹|8889|"‌&#124;+‌&#124;":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/Identity.scala#L192|@some(1) ⊹ none@|
 |∏|220f|"multiplication":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/IntW.scala#L6|@(7 ∏) ⊹ (8 ∏)@|
 |≟|8799|"===":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/Identity.scala#L195|@"" ≟ 5@|
 |≠|8800|"/==":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/Identity.scala#L198|@"" ≠ 5@|
 |∋|220B|"contains":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/MA.scala#L353|@List(1,2,3) ∋ 3@|
-|∈|2208|"contains":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/MA.scala#L350|
+|∈|2208|"contains":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/MA.scala#L350|@50 ∈: Stream.range(0, 100)@|
 |∧|2227|"AND":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/BooleanW.scala#L21|@true ∧ false@|
 |∨|2228|"OR":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/BooleanW.scala#L34|@true ∨ true@|
 |⊽|22BD|"NOR":https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/BooleanW.scala#L47|@false ⊽ true@|
