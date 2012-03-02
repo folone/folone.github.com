@@ -1,0 +1,56 @@
+---
+layout: post
+title: Линкдамп №2
+comments: true
+is: post
+categories: 
+- fp
+- haskell
+- links
+---
+
+Ещё немного всячины из загашников (первая серия "тут":/2012/01/12/Linkdump/):
+
+Ниже следуют "советы":http://stackoverflow.com/questions/6398996/good-haskell-source-to-read-and-learn-from/6399082#6399082 Дона Стюарта о том, какие сорцы стоит почитать на хаскелле, в ответ на один из вопросов на SO.
+
+<hr />
+
+Код аспирантов из разных университетов:
+* "Оксфордский":http://hackage.haskell.org/package/hinze-streams стиль
+* "Стиль Гласгоу":http://hackage.haskell.org/package/monad-par (или "тут":http://hackage.haskell.org/package/hpc)
+* "Chalmers-стайл":http://hackage.haskell.org/package/pretty-1.0.1.2 (или "тут":http://hackage.haskell.org/package/chalmers-lava2000)
+* "Йорк-стайл":http://hackage.haskell.org/package/smallcheck
+* "Портленд-стайл":http://hackage.haskell.org/package/extcore-1.0.1 или "OGI-стайл":http://hackage.haskell.org/package/orc (или "тут":http://hackage.haskell.org/package/mtl-1.0)
+* "Utrecht-стайл":http://hackage.haskell.org/package/uu-parsinglib
+* "Йельский стиль":http://hackage.haskell.org/package/haskore-vintage-0.1
+* Особый случай: "CMU/Elliott":http://hackage.haskell.org/package/unamb
+
+Читать код древних мастеров некоторых людей (список не полный):
+
+* "Саймон Марлоу":http://research.microsoft.com/en-us/people/simonmar/, "Росс Пэтерсон":http://www.soi.city.ac.uk/~ross/, "Саймон Пейтон Джонс":http://research.microsoft.com/en-us/people/simonpj/, "Энди Гилл":http://www.ittc.ku.edu/csdl/fpg/Users/AndyGill, "Джон Лончбери":http://corp.galois.com/john-launchbury/, "Джон Хьюз":http://www.chalmers.se/cse/EN/people/hughes-john, "Филипп Вадлер":http://homepages.inf.ed.ac.uk/wadler/, "Ричард Бёрд":http://www.cs.ox.ac.uk/people/richard.bird/, "Koen Claessen":http://www.cse.chalmers.se/~koen/, "Марк Джоунс":http://web.cecs.pdx.edu/~mpj/, "Эндрю Толмак":http://web.cecs.pdx.edu/~apt/, "Тим Шерд":http://web.cecs.pdx.edu/~sheard/, "S.D. Swierstra":http://www.cs.uu.nl/staff/doaitse.html, "Augustsson":http://augustss.blogspot.com/, "Runciman":http://www-users.cs.york.ac.uk/~colin/, "Малкольм Воллес":http://www.haskellers.com/user/malcolm, "Саймон Томпсон":http://www.cs.kent.ac.uk/people/staff/sjt/, "Ralf Hinze":http://www.cs.ox.ac.uk/ralf.hinze/, "Джереми Гиббонс":http://www.cs.ox.ac.uk/jeremy.gibbons/, "Daan Leijen":http://research.microsoft.com/en-us/um/people/daan/, "Пол Худак":http://www.cs.yale.edu/people/hudak.html, "Конал Эллиотт":http://conal.net/, "Finne":http://haskell.forkio.com/, "Manuel M T Chakravarty":http://www.cse.unsw.edu.au/~chak/ и
+* Любой, кто написал "functional pearl":http://www.haskell.org/haskellwiki/Research_papers/Functional_pearls.
+
+Люди вроде меня (Дона Стюарта), Coutts, Mitchell, Брайана О'Салливана, Lynagh, и прочих. учились хаскеллю у этих людей.
+
+Код некоторых приложений:
+* код "базовой библиотеки GHC":http://hackage.haskell.org/package/base
+* "сорцы xmonad'а":http://hackage.haskell.org/package/xmonad
+
+<hr />
+
+Также, оказывается, вокруг стандартной библиотеки хаскелля -- множество наработок: альтернативные прелюдии и кастомные утилитарные библиотеки. Например:
+
+* "Numeric Prelude":http://hackage.haskell.org/package/numeric-prelude -- та самая прелюдия, в которой монады наследуются от функторов и добавлены прочие тайпклассы из теории категорий и абстрактной алгебры, также навешена их семантика.
+* "The Other Prelude":http://www.haskell.org/haskellwiki/The_Other_Prelude -- прелюдия со своими конвенциями и убеждениями, кардинально отличающимися от стандартной прелюдии, о которых можно почитать по "ссылке":http://www.haskell.org/haskellwiki/Talk:The_Other_Prelude.
+* "Foundation":https://github.com/snoyberg/foundation -- альтернативная прелюдия от небезызвестного Миши Сноймана, автора веб-фреймворка "yesod":http://www.yesodweb.com/ (с иврита переводится как "основа") и абстракции "conduit":http://www.yesodweb.com/blog/2011/12/conduits.
+* "Category Extras":http://hackage.haskell.org/cgi-bin/hackage-scripts/package/category-extras -- упоминал в прошлом посте, и в этом упомяну. Ох, чего там только нету. И осиливать это -- не переосиливать.
+* "MissingH":http://hackage.haskell.org/package/MissingH -- библиотека с утилитами от небезызвестного "John Goerzen":http://www.complete.org/JohnGoerzen. Заявляется, что библиотека для тех, кто хочет делать практические штуки быстро (в отличие от предыдущей библиотеки, где упор сделан на теорию). Проект на "гитхабе":https://github.com/jgoerzen/missingh/wiki.
+* "Overture":https://github.com/isomorphism/Overture и "Air":https://github.com/nfjinjing/air -- ещё две библиотеки. Ссылки нашёл на "реддите":http://www.reddit.com/r/haskell/comments/ppwst/the_other_prelude_any_activity_here_it_seems_like/c3rapog.
+
+<hr />
+
+Из обсуждаемого в последнее время -- "вывод ошибок системы типов в виде ворнингов":http://brianmckenna.org/blog/type_errors_as_warnings с поммощью некоей опции компилятора. В этом контексте так же интересен ввод некоего "магического" значения, которое всегда не тайпчекается, вместо @undefined@.
+
+Интересная штука, о которой мне рассказал сотрудник -- "обсуждение":http://www.mail-archive.com/glasgow-haskell-users@haskell.org/msg21143.html возможности добавления "holes" из Агды в хаскелль. Вкратце, когда среда редактирования (ghci, или емакс мод) встречает такие вот "дырки" (обозначенные, например, так: @__@), она подсказывает тип того, что там должно быть, а также показывает список того, что есть в скоупе такого, что подошло бы вместо "дырки".
+
+!http://www.lambdacat.org/escape.png!
