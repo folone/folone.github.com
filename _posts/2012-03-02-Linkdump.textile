@@ -25,7 +25,7 @@ categories:
 * "Йельский стиль":http://hackage.haskell.org/package/haskore-vintage-0.1
 * Особый случай: "CMU/Elliott":http://hackage.haskell.org/package/unamb
 
-Читать код древних мастеров некоторых людей (список не полный):
+Читать код -древних мастеров- некоторых людей (список не полный):
 
 * "Саймон Марлоу":http://research.microsoft.com/en-us/people/simonmar/, "Росс Пэтерсон":http://www.soi.city.ac.uk/~ross/, "Саймон Пейтон Джонс":http://research.microsoft.com/en-us/people/simonpj/, "Энди Гилл":http://www.ittc.ku.edu/csdl/fpg/Users/AndyGill, "Джон Лончбери":http://corp.galois.com/john-launchbury/, "Джон Хьюз":http://www.chalmers.se/cse/EN/people/hughes-john, "Филипп Вадлер":http://homepages.inf.ed.ac.uk/wadler/, "Ричард Бёрд":http://www.cs.ox.ac.uk/people/richard.bird/, "Koen Claessen":http://www.cse.chalmers.se/~koen/, "Марк Джоунс":http://web.cecs.pdx.edu/~mpj/, "Эндрю Толмак":http://web.cecs.pdx.edu/~apt/, "Тим Шерд":http://web.cecs.pdx.edu/~sheard/, "S.D. Swierstra":http://www.cs.uu.nl/staff/doaitse.html, "Augustsson":http://augustss.blogspot.com/, "Runciman":http://www-users.cs.york.ac.uk/~colin/, "Малкольм Воллес":http://www.haskellers.com/user/malcolm, "Саймон Томпсон":http://www.cs.kent.ac.uk/people/staff/sjt/, "Ralf Hinze":http://www.cs.ox.ac.uk/ralf.hinze/, "Джереми Гиббонс":http://www.cs.ox.ac.uk/jeremy.gibbons/, "Daan Leijen":http://research.microsoft.com/en-us/um/people/daan/, "Пол Худак":http://www.cs.yale.edu/people/hudak.html, "Конал Эллиотт":http://conal.net/, "Finne":http://haskell.forkio.com/, "Manuel M T Chakravarty":http://www.cse.unsw.edu.au/~chak/ и
 * Любой, кто написал "functional pearl":http://www.haskell.org/haskellwiki/Research_papers/Functional_pearls.
