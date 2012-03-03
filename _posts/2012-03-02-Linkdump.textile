@@ -15,7 +15,7 @@ categories:
 
 <hr />
 
-Код аспирантов из разных университетов:
+Код аспирантов, профессоров и постдоков из разных университетов:
 * "Оксфордский":http://hackage.haskell.org/package/hinze-streams стиль
 * "Стиль Гласгоу":http://hackage.haskell.org/package/monad-par (или "тут":http://hackage.haskell.org/package/hpc)
 * "Chalmers-стайл":http://hackage.haskell.org/package/pretty-1.0.1.2 (или "тут":http://hackage.haskell.org/package/chalmers-lava2000)
