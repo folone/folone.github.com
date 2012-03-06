@@ -57,15 +57,16 @@ table{border:1px solid black}.
 
 Полезный пример от самих авторов -- "тут":https://github.com/scalaz/scalaz/blob/master/example/src/main/scala/scalaz/example/ExampleAscii.scala.
 
-*P.S.* В конфиг емакса добавил следующую утилитарную функцию:
+*P.S.* В конфиг емакса "добавил":https://github.com/folone/.emacs/blob/master/overconfig.el#L266 следующую утилитарную функцию:
 
 {% highlight scheme %}
 ;; This function does some scala code prettifying.
 (defun prettify-scala-code ()
   "Replace ascii with it's unicode counterparts."
   (interactive)
-  (beginning-of-buffer)
-  (let ((replace-table (make-hash-table :test 'equal))
+  (save-excursion
+    (beginning-of-buffer)
+    (let ((replace-table (make-hash-table :test 'equal))
           replaces)
       (puthash "=>" "⇒" replace-table)
       (puthash "<-" "←" replace-table)
@@ -73,6 +74,6 @@ table{border:1px solid black}.
       (maphash (lambda (toreplace withreplace)
                  (replace-string toreplace withreplace))
                replace-table)
-      replaces))
+      replaces)))
 (global-set-key (kbd "C-c p") 'prettify-scala-code)
 {% endhighlight %}
