@@ -27,16 +27,17 @@
  
     <section class='slides layout-regular'> 
       <article> 
-        <h1> 
+        <h1>
           <span class='red'>Scalaz</span>,
           <br> 
-          введение
-        </h1> 
+          с котиками
+        </h1>
         <p> 
           Леонтьев Георгий (<a href="http://juick.com/folone">@folone</a>)
           <br> 
-          04.03.2012
-        </p> 
+          24.03.2012
+        </p>
+        <img src="http://spl.smugmug.com/Humor/Lambdacats/polymorphic-cat-haz-class/960526371_LLEFX-O-1.jpg" height="200"/>
       </article>
 
       <article>
@@ -56,6 +57,7 @@
 
       <article>
         <h5>Типобезопасное сравнение</h5>
+        <img src="http://spl.smugmug.com/Humor/Lambdacats/static-cat-is-checked-at/960526380_aoVQM-O-1.jpg" align="left" height="300"/>
         <pre>scala> "" == "ok"
 res69: Boolean = false</pre>
 
@@ -168,8 +170,9 @@ res10: Boolean = true</pre>
       </article>
 
       <article>
-        <h1>Типоклассопедия!</h1>
+        <h3>Типоклассопедия!</h3>
         <a href="http://www.haskell.org/haskellwiki/Typeclassopedia">http://www.haskell.org/haskellwiki/Typeclassopedia</a>
+        <img src="http://byorgey.files.wordpress.com/2011/05/monad_tutorial.jpg" />
       </article>
 
       <article class="smaller">
@@ -208,6 +211,7 @@ res67: Option[Option[(Int, java.lang.String, Int => Int)]] = Some(Some((5,okko,<
 
       <article class="smaller">
         <h5>Функторы → Монады</h5>
+        <img src="http://dl.dropbox.com/u/4274210/lols/fmapfmapfmap.png" align="left"/>
         <div class="build">
              <pre>trait Functor[F[_]] {
   def fmap[A, B](f: A => B): F[A] => F[B]
@@ -243,6 +247,7 @@ res67: Option[Option[(Int, java.lang.String, Int => Int)]] = Some(Some((5,okko,<
           <li><a href="http://hacking-scala.posterous.com/scalaz-resources-for-beginners">http://hacking-scala.posterous.com/scalaz-resources-for-beginners</a></li>
           <li><a href="http://www.haskell.org/haskellwiki/Typeclassopedia">Типоклассопедия</a></li>
           <li><a href="http://www.infoq.com/presentations/Scalaz-Functional-Programming-in-Scala">Презентация одного из коммитеров scalaz (Rúnar Bjarnason) на конференции Strange loop.</a></li>
+          <li><a href="http://spl.smugmug.com/gallery/13227630_j2MHcg/">Lambdacats</a></li>
         </ul>
       </article>
 
@@ -253,14 +258,16 @@ res67: Option[Option[(Int, java.lang.String, Int => Int)]] = Some(Some((5,okko,<
           <li>Помогать решать ежедневные проблемы сотрудникам</li>
           <li>Объяснять то, что используете в своём коде</li>
           <li>Ввести практику небольших презентаций</li>
+          <li>Код ревью -- ваш друг</li>
         </ul>
       </article>
 
       <article> 
-        <h1>Спасибо!</h1> 
+        <h1>Спасибо!</h1>
         <p>Вопросы?</p>
 		<p>Эта презентация доступна по адресу: <a href="http://www.folone.info/docs/scalaz-presentation.html">http://www.folone.info/docs/scalaz-presentation.html</a></p>
-      </article> 
+                <img src="http://spl.smugmug.com/Humor/Lambdacats/escape/1246985268_LzMLb-O.png" />
+      </article>
  
     </section> 
  
