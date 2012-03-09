@@ -40,3 +40,9 @@ mycalculate xs  = (fst (commonInt xs)) * (snd (commonInt xs))
 
 commonInt = last . mergesort . mycount
 mycount   = map swap . M.toList . M.fromListWith (+) . map (, 1)
+
+myeven 0 = True
+myeven n = myodd (n-1)
+
+myodd 0 = False
+myodd n = myeven (n-1)
