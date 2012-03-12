@@ -218,7 +218,8 @@ res65: Option[Int] = Some(6)</pre>
           <pre>scala> some(1) |+| none
 res66: Option[Int] = Some(1)</pre>
           <pre>scala> some(some((1, "ok", 1 + (_:Int)))) |+| some(some((4, "ko", 2 * (_:Int))))
-res67: Option[Option[(Int, java.lang.String, Int ⇒ Int)]] = Some(Some((5,okko,<function1>)))
+res67: Option[Option[(Int, java.lang.String, Int ⇒ Int)]] =
+Some(Some((5,okko,&lt;function1&gt;)))
           </pre>
         </div>
       </article>
@@ -244,6 +245,7 @@ res67: Option[Option[(Int, java.lang.String, Int ⇒ Int)]] = Some(Some((5,okko,
 
       <article>
         <h1>Валидаторы (demo)</h1>
+        <p>Here be the demonstration with presenting how Validation is a functor (map), pointed (pure), applicative(|@|) and monad(sequence).</p>
       </article>
 
       <article>
