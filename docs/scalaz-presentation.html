@@ -141,11 +141,24 @@ res10: Boolean = true</pre>
       </article>
 
       <article>
-        <h1>Kinds</h1>
-        <ul class="build">
+        <h1>Но как?</h1>
+        <img src="http://www.harrykey.com/blogs/wp-content/uploads/2010/10/Confused-Cat.gif" />
+      </article>
+
+      <article>
+        <h5>Kinds</h5>
+        <ul>
           <li><pre title="Identity.scala">A ~> Identity[A] // <a href="https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/Identity.scala">*</a></pre></li>
           <li><pre title="MA.scala">M[A] ~> MA[M, A] // <a href="https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/MA.scala">* → *</a></pre></li>
           <li><pre title="MAB.scala">M[A, B] ~> MAB[M, A, B] // <a href="https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/MAB.scala">* → * → *</a></pre></li>
+        </ul>
+        <a href="http://lambdy.ru/post/11576724386/type-kinds">Ссылка</a>
+        <pre>({type λ[α] = Either[α, A]})#λ</pre>
+      </article>
+
+      <article>
+        <h1>Wrappers</h1>
+        <pre>BooleanW, ListW, OptionW, Function[n]W</pre>
       </article>
 
       <article class="smaller">
@@ -195,7 +208,7 @@ res10: Boolean = true</pre>
       </article>
 
       <article class="smaller">
-        <h2>Моноиды</h2>
+        <h2>Моноиды (Semigroup + Zero)</h2>
         <div class="build">
           <pre>scala> 1 |+| 5
 res64: Int = 6</pre>
@@ -207,6 +220,11 @@ res66: Option[Int] = Some(1)</pre>
 res67: Option[Option[(Int, java.lang.String, Int ⇒ Int)]] = Some(Some((5,okko,<function1>)))
           </pre>
         </div>
+      </article>
+
+      <article>
+        <h1>Wrappers</h1>
+        Условные конструкции, тернарные операторы, етс.
       </article>
 
       <article class="smaller">
@@ -266,7 +284,9 @@ res67: Option[Option[(Int, java.lang.String, Int ⇒ Int)]] = Some(Some((5,okko,
         <h1>Спасибо!</h1>
         <p>Вопросы?</p>
 		<p>Эта презентация доступна по адресу: <a href="http://www.folone.info/docs/scalaz-presentation.html">http://www.folone.info/docs/scalaz-presentation.html</a></p>
-                <img src="http://spl.smugmug.com/Humor/Lambdacats/escape/1246985268_LzMLb-O.png" />
+                <p><strong>P.S.</strong> We're Hiring!</p>
+                <img src="http://spl.smugmug.com/Humor/Lambdacats/escape/1246985268_LzMLb-O.png" height="150"/>
+                
       </article>
  
     </section> 
