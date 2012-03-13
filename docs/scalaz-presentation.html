@@ -141,7 +141,7 @@ res10: Boolean = true</pre>
       </article>
 
       <article>
-        <h1>Но как?</h1>
+        <h1>Откуда?</h1>
         <img src="http://www.harrykey.com/blogs/wp-content/uploads/2010/10/Confused-Cat.gif" />
       </article>
 
@@ -215,6 +215,7 @@ res10: Boolean = true</pre>
 ∀ a,b,c ∈ S: (a ⊗ b) ⊗ c = a ⊗ (b ⊗ c)
 ∀ a ∈ S:      1 ⊗ a = a ⊗ 1 = a
         </pre>
+        <small><blockquote>Some people see a problem and think "I know, I'll use Haskell!" Now they have a monoid in the category of problems.</blockquote></small>
       </article>
 
       <article class="smaller">
@@ -222,10 +223,10 @@ res10: Boolean = true</pre>
         <div class="build">
           <pre>scala> 1 |+| 5
 res64: Int = 6</pre>
+          <pre>scala> (7 ∏) ⊹ (8 ∏)
+res0: scalaz.IntMultiplication = 56</pre>
           <pre>scala> some(1) |+| some(5)
 res65: Option[Int] = Some(6)</pre>
-          <pre>scala> some(1) |+| none
-res66: Option[Int] = Some(1)</pre>
           <pre>scala> some(some((1, "ok", 1 + (_:Int)))) |+| some(some((4, "ko", 2 * (_:Int))))
 res67: Option[Option[(Int, java.lang.String, Int ⇒ Int)]] =
 Some(Some((5,okko,&lt;function1&gt;)))
