@@ -76,7 +76,7 @@ res71: Boolean = false</pre>
       </article>
 
       <article class="smaller">
-        <h5>Условные конструкции</h5>
+        <h5>Options</h5>
         <div class="build">
           <pre>scala> some(5) getOrElse 0
 res77: Int = 5
@@ -84,15 +84,39 @@ res77: Int = 5
 scala> some(5) | 0
 res78: Int = 5 // <a href="https://gist.github.com/1167211">BoxW</a> (то же для Lift'овского Box'а)</pre>
 
-          <pre>scala> true ? println("true") | println("false")
-true</pre>
+        <pre>scala> some(1) getOrElse "ok"
+res1: Any = 1
+
+scala> some(1) | "ok"
+&lt;console>:14: error: type mismatch;
+ found   : java.lang.String("ok")
+ required: Int
+              some(1) | "ok"
+                        ^</pre>
+
 
           <pre>scala> ~some(5) // Zeros
 res74: Int = 5
 scala> ~none[Int]
 res76: Int = 0
 
-scala> true ?? 5
+</pre>
+        </div>
+      </article>
+
+      <article class="smaller">
+        <h5>Условные конструкции</h5>
+        <pre>scala> true ? println("true") | println("false")
+true</pre>
+
+<pre>scala> :t true ? 5 | "ok"
+&lt;console>:14: error: type mismatch;
+ found   : java.lang.String("ok")
+ required: Int
+       true ? 5 | "ok"
+                  ^</pre>
+
+        <pre>scala> true ?? 5
 res83: Int = 5
 scala> false ?? 5
 res84: Int = 0
@@ -101,7 +125,21 @@ scala> true !? 5
 res85: Int = 0
 scala> false !? 5
 res86: Int = 5</pre>
-        </div>
+      </article>
+
+      <article>
+        <h5>Операции на булеанах</h5>
+        <pre>
+val a: Boolean = ...
+val b: Boolean = ...
+a ∧ b // and
+a ∨ b // or
+a ⊽ b // nor
+a ⊼ b // nand
+a → b // conditional
+a ⇐ b // inverse conditional
+a ⇏ b // negated conditional
+a ⇍ b // inverse negated conditional</pre>
       </article>
 
       <article>
@@ -226,11 +264,14 @@ res64: Int = 6</pre>
           <pre>scala> (7 ∏) ⊹ (8 ∏)
 res0: scalaz.IntMultiplication = 56</pre>
           <pre>scala> some(1) |+| some(5)
-res65: Option[Int] = Some(6)</pre>
+res65: Option[Int] = Some(6)
+
+scala> (some(1) |+| ∅[Option[Int]]) === (some(1) |+| none)
+res22: Boolean = true</pre>
           <pre>scala> some(some((1, "ok", 1 + (_:Int)))) |+| some(some((4, "ko", 2 * (_:Int))))
 res67: Option[Option[(Int, java.lang.String, Int ⇒ Int)]] =
-Some(Some((5,okko,&lt;function1&gt;)))
-          </pre>
+Some(Some((5,okko,&lt;function1&gt;)))          
+</pre>
         </div>
       </article>
 
