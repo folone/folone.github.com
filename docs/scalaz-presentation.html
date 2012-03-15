@@ -300,6 +300,55 @@ Some(Some((5,okko,&lt;function1&gt;)))
       </article>
 
       <article>
+        <h1>Functor</h1>
+        <pre>scala> a map { _ + 5 }
+res27: scalaz.Validation[Int,Int] = Success(6)</pre>
+      </article>
+
+      <article class="smaller">
+        <h5>Applicative</h5>
+        <pre>scala> :paste
+// Entering paste mode (ctrl-D to finish)
+
+val a: Validation[Int,Int] = 1.success
+val b: Validation[Int, Int] = 2.success
+val c: Validation[Int, Int] = 4.fail
+val d: Validation[Int, Int] = 10.fail
+
+val successSum = (a |@| b) { _ + _ }
+val allSum     = (a |@| b |@| c |@| d) { _ + _ + _ + _ }
+
+// Exiting paste mode, now interpreting.
+
+a: scalaz.Validation[Int,Int] = Success(1)
+b: scalaz.Validation[Int,Int] = Success(2)
+c: scalaz.Validation[Int,Int] = Failure(4)
+d: scalaz.Validation[Int,Int] = Failure(10)
+successSum: scalaz.Validation[Int,Int] = Success(3)
+allSum: scalaz.Validation[Int,Int] = Failure(14)</pre>
+      </article>
+
+      <article>
+        <h5>Monad</h5>
+        <pre>scala> List(a,b,c,d).map {_.liftFailNel}
+res39: List[scalaz.Validation[scalaz.NonEmptyList[Int],Int]] =
+List(Success(1), Success(2), Failure(NonEmptyList(4)),
+Failure(NonEmptyList(10)))
+
+scala> .sequence[({type λ[α] = ValidationNEL[Int, α]})#λ, Int]
+res40: scalaz.Validation[scalaz.NonEmptyList[Int],List[Int]] =
+Failure(NonEmptyList(4, 10)</pre>
+        <pre>scala> List(a,b).map {_.liftFailNel}
+res41: List[scalaz.Validation[scalaz.NonEmptyList[Int],Int]] =
+List(Success(1), Success(2))
+
+scala> .sequence[({type λ[α] = ValidationNEL[Int, α]})#λ, Int]
+res42: scalaz.Validation[scalaz.NonEmptyList[Int],List[Int]] =
+Success(List(1, 2))</pre>
+        TODO: example with bind.
+      </article>
+
+      <article>
         <h5>Прочее</h5>
         <ul>
           <li><a href="https://github.com/scalaz/scalaz/blob/master/core/src/main/scala/scalaz/Iteratee.scala">Iteratees</a>, идёт работа над <a href="https://github.com/arjanblokzijl/scala-conduits">Conduits</a></li>
