@@ -291,6 +291,7 @@ Some(Some((5,okko,&lt;function1&gt;)))
              <pre>trait Monad[M[_]] extends Applicative[M]{
   def >>=[A,B](ma:M[A])(f:A⇒M[B]):M[B]
 }</pre>
+             <a href="http://typeclassopedia.bitbucket.org/">http://typeclassopedia.bitbucket.org/</a>
         </div>
       </article>
 
@@ -310,13 +311,15 @@ res27: scalaz.Validation[Int,Int] = Success(6)</pre>
         <pre>scala> :paste
 // Entering paste mode (ctrl-D to finish)
 
-val a: Validation[Int,Int] = 1.success
+val a: Validation[Int,Int]  = 1.success
 val b: Validation[Int, Int] = 2.success
 val c: Validation[Int, Int] = 4.fail
 val d: Validation[Int, Int] = 10.fail
 
-val successSum = (a |@| b) { _ + _ }
-val allSum     = (a |@| b |@| c |@| d) { _ + _ + _ + _ }
+val successSum = (a |@| b) { _ + _ } // (+) <$> a <*> b
+// (+) <$> a <*> b <*> c <*> d
+val allSum = (a |@| b |@| c |@| d) { _ + _ + _ + _ }
+successSum === a <*> (b map { x => (y:Int) => x + y })
 
 // Exiting paste mode, now interpreting.
 
@@ -325,7 +328,8 @@ b: scalaz.Validation[Int,Int] = Success(2)
 c: scalaz.Validation[Int,Int] = Failure(4)
 d: scalaz.Validation[Int,Int] = Failure(10)
 successSum: scalaz.Validation[Int,Int] = Success(3)
-allSum: scalaz.Validation[Int,Int] = Failure(14)</pre>
+allSum: scalaz.Validation[Int,Int] = Failure(4)
+res17: Boolean = true</pre>
       </article>
 
       <article>
@@ -338,14 +342,31 @@ Failure(NonEmptyList(10)))
 scala> .sequence[({type λ[α] = ValidationNEL[Int, α]})#λ, Int]
 res40: scalaz.Validation[scalaz.NonEmptyList[Int],List[Int]] =
 Failure(NonEmptyList(4, 10)</pre>
-        <pre>scala> List(a,b).map {_.liftFailNel}
+        <pre>scala> List(a,b) map {_.liftFailNel}
 res41: List[scalaz.Validation[scalaz.NonEmptyList[Int],Int]] =
 List(Success(1), Success(2))
 
 scala> .sequence[({type λ[α] = ValidationNEL[Int, α]})#λ, Int]
 res42: scalaz.Validation[scalaz.NonEmptyList[Int],List[Int]] =
 Success(List(1, 2))</pre>
-        TODO: example with bind.
+      </article>
+
+      <article>
+        <h2>Bind</h2>
+        <pre>scala> val f = (x:Int) => (x > 3) ? x.success[Int] | x.fail[Int]
+f: Int => scalaz.Validation[Int,Int] = <function1>
+
+scala> 4.success[Int] >>= f
+res5: scalaz.Validation[Int,Int] = Success(4)
+
+scala> 4.fail[Int] >>= f
+res6: scalaz.Validation[Int,Int] = Failure(4)
+
+scala> 1.fail[Int] >>= f
+res7: scalaz.Validation[Int,Int] = Failure(1)
+
+scala> 1.success[Int] >>= f
+res8: scalaz.Validation[Int,Int] = Failure(1)</pre>
       </article>
 
       <article>
