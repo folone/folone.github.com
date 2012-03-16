@@ -317,7 +317,7 @@ val d: Validation[Int, Int] = 10.fail
 val successSum = (a |@| b) { _ + _ } // (+) <$> a <*> b
 // (+) <$> a <*> b <*> c <*> d
 val allSum = (a |@| b |@| c |@| d) { _ + _ + _ + _ }
-successSum === a <*> (b map { x => (y:Int) => x + y })
+successSum === a <*> (b map { x ⇒ (y:Int) ⇒ x + y })
 
 // Exiting paste mode, now interpreting.
 
@@ -333,25 +333,25 @@ res17: Boolean = true</pre>
       <article>
         <h5>Monad</h5>
         <pre>scala> List(a,b,c,d) map {_.liftFailNel}
-res39: List[scalaz.Validation[scalaz.NonEmptyList[Int],Int]] =
+<small>res39: List[scalaz.Validation[scalaz.NonEmptyList[Int],Int]] =
 List(Success(1), Success(2), Failure(NonEmptyList(4)),
-Failure(NonEmptyList(10)))
+Failure(NonEmptyList(10)))</small>
 
 scala> .sequence[({type λ[α] = ValidationNEL[Int, α]})#λ, Int]
-res40: scalaz.Validation[scalaz.NonEmptyList[Int],List[Int]] =
-Failure(NonEmptyList(4, 10)</pre>
+<small>res40: scalaz.Validation[scalaz.NonEmptyList[Int],List[Int]] =
+Failure(NonEmptyList(4, 10)</small></pre>
         <pre>scala> List(a,b) map {_.liftFailNel}
-res41: List[scalaz.Validation[scalaz.NonEmptyList[Int],Int]] =
-List(Success(1), Success(2))
+<small>res41: List[scalaz.Validation[scalaz.NonEmptyList[Int],Int]] =
+List(Success(1), Success(2))</small>
 
 scala> .sequence[({type λ[α] = ValidationNEL[Int, α]})#λ, Int]
-res42: scalaz.Validation[scalaz.NonEmptyList[Int],List[Int]] =
-Success(List(1, 2))</pre>
+<small>res42: scalaz.Validation[scalaz.NonEmptyList[Int],List[Int]] =
+Success(List(1, 2))</small></pre>
       </article>
 
       <article class="smaller">
         <div class="build">
-          <pre>sequence :: Monad m => [m a] -> m [a]</pre>
+          <pre>sequence :: Monad m ⇒ [m a] → m [a]</pre>
           <pre>Either[A, B] // m a b</pre>
           <pre>trait Monad[M[_]] extends Applicative[M]</pre>
           <pre>instance Monad (Either e) -- haskell</pre>
@@ -365,9 +365,9 @@ Success(List(1, 2))</pre>
       </article>
 
       <article>
-        <pre>(>>=) :: Monad m => m a -> (a -> m b) -> m b // Строгий flatMap</pre>
-        <pre>scala> val f = (x:Int) => (x > 3) ? x.success[Int] | x.fail[Int]
-f: Int => scalaz.Validation[Int,Int] = <function1>
+        <pre>(>>=) :: Monad m ⇒ m a → (a → m b) → m b // Строгий flatMap</pre>
+        <pre>scala> val f = (x:Int) ⇒ (x > 3) ? x.success[Int] | x.fail[Int]
+f: Int ⇒ scalaz.Validation[Int,Int] = <function1>
 
 scala> 4.success[Int] >>= f
 res5: scalaz.Validation[Int,Int] = Success(4)
@@ -383,20 +383,20 @@ res8: scalaz.Validation[Int,Int] = Failure(1)</pre>
       </article>
 
       <article>
-        <pre>join :: Monad m => m (m a) -> m a // Строгий flatten</pre>
-        <pre>flatMap === map . flatten ?</pre>
+        <pre>join :: Monad m ⇒ m (m a) → m a // Строгий flatten</pre>
+        <pre>flatMap ≟ map . flatten</pre>
         <div class="build">
-          <pre>scala> some(5).flatMap { x => some(x + 1) } ===
-            some(5).map { x => some(x + 1) }.flatten
+          <pre>scala> some(5).flatMap { x ⇒ some(x + 1) } ===
+            some(5).map { x ⇒ some(x + 1) }.flatten
 &lt;console>:14: error: polymorphic expression cannot be instantiated to
 expected type;
  found   : [B]Iterable[B]
  required: Option[Int]
-              some(5).flatMap { x => some(x + 1) } === some(5)
-                     .map { x => some(x + 1) }.flatten
+              some(5).flatMap { x ⇒ some(x + 1) } === some(5)
+                     .map { x ⇒ some(x + 1) }.flatten
                                               ^</pre>
-          <pre>scala> some(5).flatMap { x => some(x + 1) } ===
-            some(5).map { x => some(x + 1) }.join
+          <pre>scala> some(5).flatMap { x ⇒ some(x + 1) } ===
+            some(5).map { x ⇒ some(x + 1) }.join
 res2: Boolean = true</pre>
           </div>
       </article>
