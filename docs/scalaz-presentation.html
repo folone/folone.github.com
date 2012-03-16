@@ -385,14 +385,21 @@ res8: scalaz.Validation[Int,Int] = Failure(1)</pre>
 
       <article>
         <pre>join :: Monad m => m (m a) -> m a // Строгий flatten</pre>
-        <pre>scala> some(5) flatMap { x => some(x + 1) }
-res1: Option[Int] = Some(6)
-
-scala> some(5) map { x => some(x + 1) } flatten
-res2: Iterable[Int] = List(6)
-
-scala> some(5) map { x => some(x + 1) } join
-res3: Option[Int] = Some(6)</pre>
+        <pre>flatMap === map . flatten ?</pre>
+        <div class="build">
+          <pre>scala> some(5).flatMap { x => some(x + 1) } ===
+            some(5).map { x => some(x + 1) }.flatten
+&lt;console>:14: error: polymorphic expression cannot be instantiated to
+expected type;
+ found   : [B]Iterable[B]
+ required: Option[Int]
+              some(5).flatMap { x => some(x + 1) } === some(5)
+                     .map { x => some(x + 1) }.flatten
+                                              ^</pre>
+          <pre>scala> some(5).flatMap { x => some(x + 1) } ===
+            some(5).map { x => some(x + 1) }.join
+res2: Boolean = true</pre>
+          </div>
       </article>
 
       <article>
