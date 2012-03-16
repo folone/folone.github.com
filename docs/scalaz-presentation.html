@@ -68,8 +68,9 @@
         </ul>
       </article>-->
 
-      <article>
+      <article class="smaller">
         <h5>Типобезопасное сравнение</h5>
+        <p>&lt;spoiler>∀ stuff ∈ Scalaz| stuff is typesafe OR stuff is strict&lt;/spoiler></p>
         <img src="http://spl.smugmug.com/Humor/Lambdacats/static-cat-is-checked-at/960526380_aoVQM-O-1.jpg" align="left" height="300"/>
         <pre>scala> "" == "ok"
 res69: Boolean = false</pre>
@@ -106,7 +107,6 @@ scala> some(1) | "ok"
  required: Int
               some(1) | "ok"
                         ^</pre>
-
 
           <pre>scala> ~some(5) // Zeros
 res74: Int = 5
@@ -145,14 +145,14 @@ res86: Int = 5</pre>
         <pre>
 val a: Boolean = ...
 val b: Boolean = ...
-a ∧ b // and
-a ∨ b // or
+a ∧ b // логическое "и"
+a ∨ b // логическое "или"
 a ⊽ b // nor
 a ⊼ b // nand
-a → b // conditional
-a ⇐ b // inverse conditional
-a ⇏ b // negated conditional
-a ⇍ b // inverse negated conditional</pre>
+a → b // импликация (⇒ занято)
+a ⇐ b // обратная импликация
+a ⇏ b // отрицание импликации
+a ⇍ b // обратное отрицание импликации</pre>
       </article>
 
       <article>
