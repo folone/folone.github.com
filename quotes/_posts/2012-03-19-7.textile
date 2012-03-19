@@ -1,0 +1,8 @@
+---
+layout: quote
+author: folone
+source: http://contemplatecode.blogspot.com/2012/03/haskell-weekly-news-issue-218.html
+is: quote
+---
+
+edwardk: i used to be a huge proponent of unicode syntax everywhere, then i used agda ;)

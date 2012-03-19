@@ -1,0 +1,8 @@
+---
+layout: quote
+author: folone
+source: http://juick.com/folone/1740396
+is: quote
+---
+
+I used to be a java programmer, just like you. But then I took a @Control.Arrow@ to a knee.
