@@ -319,11 +319,12 @@ Some(Some((5,okko,&lt;function1&gt;)))
       <article>
         <h1>Валидаторы (demo)</h1>
         <p>Here be the demonstration with presenting how Validation is a functor (map), pointed (pure), applicative(|@|) and monad(sequence).</p>
+        <a href="https://github.com/folone/lift-squeryl-scalaz-demo">https://github.com/folone/lift-squeryl-scalaz-demo</a>
       </article>
 
       <article>
         <h1>Functor</h1>
-        <pre>scala> a map { _ + 5 }
+        <pre>scala> 1.success map { _ + 5 }
 res27: scalaz.Validation[Int,Int] = Success(6)</pre>
       </article>
 
