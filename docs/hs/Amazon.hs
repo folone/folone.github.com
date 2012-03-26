@@ -34,6 +34,9 @@ mergesort xs   =  merge (mergesort left) (mergesort right) where
       | x <= y    = x : merge xs (y:ys)
       | otherwise = y : merge (x:xs) ys
 
+quicksort [] = []
+quicksort (x:xs) = (quicksort l) ++ [x] ++ (quicksort r) where (l,r) = partition (<x) xs
+
 mycalculate []  = 0
 mycalculate [x] = x
 mycalculate xs  = (fst (commonInt xs)) * (snd (commonInt xs))
