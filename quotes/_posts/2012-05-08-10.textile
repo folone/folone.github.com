@@ -1,0 +1,8 @@
+---
+layout: quote
+author: folone
+source: http://contemplatecode.blogspot.com/2012/04/haskell-weekly-news-issue-223.html
+is: quote
+---
+
+monochrom: @isTrue = (unsafeCoerce :: Either a b -> Bool) . (unsafeCoerce :: Maybe c -> Either a b) . (unsafeCoerce :: Bool -> Maybe c)@

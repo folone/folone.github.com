@@ -49,3 +49,6 @@ myeven n = myodd (n-1)
 
 myodd 0 = False
 myodd n = myeven (n-1)
+
+data Rec a = Rec { unRec :: Rec a -> a }
+f = \ (Rec x) -> x (Rec x)

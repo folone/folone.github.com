@@ -1,0 +1,8 @@
+---
+layout: quote
+author: folone
+source: http://contemplatecode.blogspot.com/2012/04/haskell-weekly-news-issue-223.html
+is: quote
+---
+
+acowley: Good haskell code is 20 LANGUAGE pragmas, 40 imports, then one line of perl.
