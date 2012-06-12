@@ -31,4 +31,4 @@ convert :: [String] -> [Int]
 convert = map read
  
 getLines :: String -> IO [String]
-getLines = (fmap lines) . readFile
+getLines = fmap lines . readFile
