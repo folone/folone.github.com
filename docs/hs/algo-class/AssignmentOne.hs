@@ -1,21 +1,19 @@
 import Control.Monad.State
 
 merge :: Ord a => [a] -> [a] -> State Int [a]
-merge [] xs = do
-              return xs
-merge xs [] = do
-              return xs
+merge [] xs = return xs
+merge xs [] = return xs
 merge (x:xs) (y:ys)
   | x <  y    = do
                 st <- get
                 let (lst, state) = runState (merge xs (y:ys)) st
-                put(state)
+                put state
                 return $ x : lst
   | otherwise = do
                 modify(+1)
                 st <- get
                 let (lst, state) = runState (merge (x:xs) ys) st
-                put(state + (length xs))
+                put $ state + length xs
                 return $ y : lst
 
 mergesort :: Ord a => [a] -> ([a], Int)
