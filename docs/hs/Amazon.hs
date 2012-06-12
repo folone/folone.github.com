@@ -35,11 +35,11 @@ mergesort xs   =  merge (mergesort left) (mergesort right) where
       | otherwise = y : merge (x:xs) ys
 
 quicksort [] = []
-quicksort (x:xs) = (quicksort l) ++ [x] ++ (quicksort r) where (l,r) = partition (<x) xs
+quicksort (x:xs) = quicksort l ++ [x] ++ quicksort r where (l,r) = partition (<x) xs
 
 mycalculate []  = 0
 mycalculate [x] = x
-mycalculate xs  = (fst (commonInt xs)) * (snd (commonInt xs))
+mycalculate xs  = uncurry (*) (commonInt xs)
 
 commonInt = last . mergesort . mycount
 mycount   = map swap . M.toList . M.fromListWith (+) . map (, 1)
@@ -51,4 +51,4 @@ myodd 0 = False
 myodd n = myeven (n-1)
 
 data Rec a = Rec { unRec :: Rec a -> a }
-f = \ (Rec x) -> x (Rec x)
+f (Rec x) = x (Rec x)
