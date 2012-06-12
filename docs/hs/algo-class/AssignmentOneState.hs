@@ -7,9 +7,8 @@ merge xs [] = return xs
 merge (x:xs) (y:ys)
     | x < y = (x :) <$> merge xs (y:ys)
     | otherwise = do
-        modify (+ 1)
         lst <- merge (x:xs) ys
-        modify (+ length xs)
+        modify (+ length (x:xs))
         return $ y : lst
 
 mergesort :: Ord a => [a] -> ([a], Int)
@@ -18,7 +17,7 @@ mergesort [x] = ([x], 0)
 mergesort xs = do
   let (lst1, i) = mergesort left
   let (lst2, k) = mergesort right
-  runState (merge lst1 lst2) (i+k) where
+  runState (merge lst1 lst2) (i + k) where
     (left, right) = splitAt (length xs `div` 2) xs
 
 inversions :: Ord a => [a] -> Int
