@@ -1,0 +1,8 @@
+---
+layout: quote
+author: folone
+source: http://www.reddit.com/r/programming/comments/8isiw/author_of_modern_c_design_stl_iterators_must_die/
+is: quote
+---
+
+"C++ is the steampunk of programming languages: modern ideas realized with victorian technology."
