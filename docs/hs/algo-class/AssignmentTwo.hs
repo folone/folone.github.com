@@ -3,11 +3,6 @@ import Data.Monoid
 import Data.List
 import Control.Monad.Writer
 import Control.Arrow
-import Control.Monad.ST
-import Data.Array.ST
-import Data.Array
-import Data.Foldable
-import Control.Monad
 
 firstPivot :: Ord a => [a] -> (a, [a])
 firstPivot = head &&& tail
