@@ -9,6 +9,8 @@ firstPivot = head &&& tail
 
 lastPivot :: Ord a => [a] -> (a, [a])
 lastPivot = last &&& init
+-- Moar laziness:
+-- lastPivot = (head &&& reverse . tail) . reverse
 
 medianOfThreePivot :: Ord a => [a] -> (a, [a])
 medianOfThreePivot [x] = (x, [])
