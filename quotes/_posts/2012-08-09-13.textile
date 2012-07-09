@@ -1,0 +1,8 @@
+---
+layout: quote
+author: folone
+source: http://contemplatecode.blogspot.com/2012/06/haskell-weekly-news-issue-233.html
+is: quote
+---
+
+xplat: when life gives you lemons, make lemonads
