@@ -1,0 +1,9 @@
+---
+layout: quote
+author: folone
+source: http://contemplatecode.blogspot.com/2011/10/haskell-weekly-news-issue-204.html
+is: quote
+---
+
+[djahandarie] Group projects are stupid
+[shachaf] Try a semigroup project sometime. You need to lose your identity.
