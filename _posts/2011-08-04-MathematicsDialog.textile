@@ -95,3 +95,7 @@ res22: Iterable[(Int, Int, Int)] = List((1,6,6))
 Правильный ответ -- <code>(1,6,6)</code>. Впрочем, если придираться, по чисто человеческим причинам второй ответ тоже проходит.
 
 Как-то так.
+
+**UPD:** год спустя я бы решал не намного иначе:
+
+<iframe border='0' height='502' id='shelr_record_500ba7679660806d7c000031' scrolling='no' src='http://shelr.tv/records/500ba7679660806d7c000031/embed' style='border: 0' width='794'></iframe>
