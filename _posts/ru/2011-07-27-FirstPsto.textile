@@ -4,7 +4,7 @@ title: Первопсто
 comments: true
 is: post
 categories: 
-- жж
+- lj
 - juick
 - first-post
 ---

@@ -5,7 +5,7 @@ comments: true
 is: post
 categories: 
 - scala
-- жж
+- lj
 - fp
 ---
 
