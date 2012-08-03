@@ -1,0 +1,9 @@
+<h3>Recent Posts <a href="http://feeds.feedburner.com/folone/site"><img class="rss" src="/resources/rss.png"/></a><a rel="author" href="https://plus.google.com/110441204120678028058">
+  <img src="https://www.google.com/images/icons/ui/gprofile_button-32.png" width="20" height="20">
+</a></h3>
+<ul class="post-list">
+  {% for post in site.posts limit:5 %}
+    <li><a href="{{ post.url }}">{{ post.title }}</a> <span class="date">( {{ post.date | date: "%b %Y" }} )</span></li>
+  {% endfor %}      
+</ul>
+
