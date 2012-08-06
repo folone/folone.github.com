@@ -19,7 +19,7 @@ My email: `(λx.folonexgmail.com)@`
 {{ first_post.content | truncatewords: 250 }}
 
 
-[Read More &raquo;]({{ first_post.url}})
+[Read More &raquo;]({{ first_post.url }})
 
 
 
