@@ -6,6 +6,7 @@
           <a class="brand" href="/">George Leontiev</a>
           <ul class="nav">
            <li><a href="/archive.html">Blog</a></li>
+           <li><a href="https://www.dropbox.com/sh/4y326mh6px0gv1q/a7ZCubRakW/Books/">Library</a></li>
            <li><a href="/contact.html">Contact</a></li>
           </ul>
         </div>
