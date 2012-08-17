@@ -1,5 +1,5 @@
 pygments: true
 name: folone.info
 description: George Leontiev's blog.
-url: http://jfolone.info/
+url: http://folone.info/
 markdown: rdiscount
