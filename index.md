@@ -16,7 +16,7 @@ My email: `(λx.folonexgmail.com)@`
 
 # Latest - {{ first_post.title }} #
 
-{{ first_post.content | truncatewords: 250 }}
+{{ first_post.content | truncatewords: 124 }}
 
 
 [Read More &raquo;]({{ first_post.url }})

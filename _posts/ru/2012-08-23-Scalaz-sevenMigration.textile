@@ -1,0 +1,125 @@
+---
+layout: post
+title: Миграция на scalaz-seven
+comments: rue
+is: post
+categories:
+- scala 
+- scalaz
+- fp
+---
+
+Вышел уже третий майлстоун "новой scalaz":scalazseven. Начиная с первого майлстоуна, я перевёл почти все наши проекты на него. Тем не менее, вчера выяснилось, что про пару проектов я забыл. Снова провёл миграцию. Пока впечатления свежие, решил записать.
+
+h2. Из core вынесено всё лишнее в отдельные модули.
+
+Например, если вы пользовались контролем эффектов, теперь нужно использовать артефакт scalaz-effect. Для iteratees -- scalaz-iteratee, для concurrent -- scalaz-concurrent. Http и geo были выброшены. Но появилась новая классная штука, scalaz-typelevel.
+
+h2. Функции тайпклассов перенесли в их инстансы.
+
+Благодаря этому пропали @Identity@, @MA@ и @MAB@. Также инстансы разных типов теперь определяются в самих типах (раньше -- в их тайпклассах). Синтаксис определения инстансов изменился: теперь несколько инстансов можно определить в одном @implicit val@'е. Например, вот как выглядит определение инстансов для @NodeSeq@'а:
+
+{% highlight scala %}
+implicit val nodeSeqInstance = new Monoid[NodeSeq] with Show[NodeSeq] with Equal[NodeSeq] {
+  override def zero = NodeSeq.Empty
+  override def append(f1: NodeSeq, f2: ⇒ NodeSeq) = f1 ++ f2
+  override def shows(as: NodeSeq) = new PrettyPrinter(80, 2) formatNodes as
+  override def equal(a1: NodeSeq, a2: NodeSeq): Boolean = a1 == a2
+}
+{% endhighlight %}
+
+h2. -Мух- Тайпклассы отделили от -котлет- их синтаксиса.
+
+Благодаря этому код, который работает с функциями, принимающими тайпклассы из scalaz может вообще не знать о функциях тайпклассов. Например, для того, чтобы использовать инстансы @Option@ 'а, достаточно @import scalaz.std.option._@. Теперь можно:
+
+{% highlight scala %}
+val monad = implicitly[Monad[Option]] // или просто Monad[Option]
+val option: Option[Int] = monad.point(1)
+{% endhighlight %}
+
+Работа с инстансами с синтаксисом и без выглядит как-то так:
+
+{% highlight scala %}
+val monad = Monad[Option]
+val optopt: Option[Option[Int]] = Some(Some(1))
+
+// Without syntax
+val opt = monad.join(optopt)
+
+// With syntax
+import syntax.monad._
+val opt = optopt.join
+{% endhighlight %}
+
+Также можно заимпортить только нужные синтаксисы и инстансы, что гораздо уменьшает размеры автодополнения в редакторах кода (и, как показывает опыт, время компиляции).
+
+Для обратной совместимости оставили импорт @Scalaz._@, который импортирует все инстансы и их синтаксисы.
+
+h2. Typelevel.
+
+scalaz-typelevel -- новый модуль с реализациями, описанными в серии статей Рунара "Type-Level Programming in Scala":typelevelscala.
+
+h2. Задепрекейчен ApplicativeBuilder.
+
+Из-за того, что каждый вызов к <code>|@|</code> создавал новую обёртку, этот DSL для построения @Applicative@ 'ов "задепрекейтили":apply. Вместо него добавили @^@. Там, где у вас было <code>opt1 |@| opt2 |@| opt3</code> теперь должно быть @^(opt1, opt2, opt3)@. Также, всё, что делается с @ApplicativeBuilder@ 'ами теперь можно сделать с помощью @KList@ из scalaz-typelevel на любом количестве аргументов (obviously).
+
+Пример из одного из недавних обсуждений:
+
+{% highlight scala %}
+case class Person(age: Int, name: String)
+def validAge(age: Int): ValidationNEL[String, Int] = ???
+def validName(name: String): ValidationNEL[String, String] = ???
+
+// Old, deprecated
+(validAge(age) |@| validName(name))(Person.apply)
+// New
+^(validAge(age), validName(name))(Person.apply)
+// Typelevel
+(validAge(age) :^: validName(name) :^: KNil).applyP(Person.apply.curried)
+{% endhighlight %}
+
+h2. Random tips. 
+
+* @.asMA.sum@ работать не будет, используйте @.suml@ или @.concatenate@ (Нужен инстанс моноида для того, что суммируется, инстанс и синтаксис foldable для того, в чём суммируется. Например, если нужно получить сумму из списка @Boolean@ 'ов, @import scalaz.std.boolean._, scalaz.std.list._, scalaz.syntax.foldable._@)
+* @value.fail[T]@ переименовано в @value.failure[T]@. Вообще, Тони Моррис полностью переделал то, как заимплеменчены Опшены, @Either@ 'ы и @Validaion@ 'ы.
+* Дефолтного инстанса моноида для @Boolean@ 'ов больше нет. Указывайте явно @value.disjunction@ или @value.conjunction@.
+* К слову, дизъюнкцию и конъюнкцию (а также несколько других штук) сделали с помощью интереснейшего трюка с тегированными типами, который придумал автор библиотеки "shapeless":shapeless. "Подробности":tagged.
+* Если вы исользуете функции @writer@ и @io@, поменяйте их на конструкторы @Writer@ и @IO@ соответственно. Я столкнулся конкретно с этими двумя функциями. Остальные (вроде @semigroup@, @validation@, etc.) должны работать так же.
+* @over@ во @Writer@ 'е переименован в @value@.
+* Проблемы с тем, что for-comprehension'ы не работали просто так (без бубна) в коде, использующем scalaquery и scalaz (из-за двух подходящих имплиситов в скоупе) решаются регулированием импортов инстансов монад.
+* Весь юникод, который я "использовал":unicodeemacs в своём коде со scalaz 6, "есть":unicodepull в новой версии. "Таблица":unicodetable.
+* В scalacheck-bindings появились "функции":laws, позволяющие в тестах проверять законы тайпклассов. Определил свой инстанс моноида для @MyCoolType@, добавил в тесты @checkAll(monoid.laws[MyCoolType])@ и спишь спокойно, что соответствующие законы соблюдены.
+* Как обычно, если не получается понять, как что-то работает, загляните в "examples":examples и "tests":tests.
+* Если ну никак не получается понять, откуда же берётся какой-нибудь оператор (например, @~@) и что же импортить (inb4 @Scalaz._@), @$ grep -r --include="*.scala" "def unary_~" .@
+
+h2. Новое, с чем пока не разбирался (TODO).
+
+* "Изоморфизмы":iso
+* Типы данных: "композиция":composition и "произведение":product
+* "Free":free
+* "RWS":rws
+* "Liskov":liskov
+
+!http://lolzombie.com/wp-content/uploads/2011/09/tumblr_lqk2n0MCXj1qh96peo1_500.jpeg!
+
+Вот, кажется, всё, с чем я столкнулся во время миграции. Больше подробностей -- в "README":readme и в "DeveloperGuide":devguide.
+
+[scalazseven]https://github.com/scalaz/scalaz/tree/scalaz-seven
+[typelevelscala]http://apocalisp.wordpress.com/2010/06/08/type-level-programming-in-scala/
+[apply]https://github.com/scalaz/scalaz/blob/scalaz-seven/core/src/main/scala/scalaz/syntax/ApplySyntax.scala
+[shapeless]https://github.com/milessabin/shapeless
+[tagged]http://etorreborre.blogspot.com/2011/11/pract:ical-uses-for-unboxed-tagged-types.html
+[unicodeemacs]https://github.com/folone/emacs-scalaz-unicode-input-method
+[unicodepull]https://github.com/scalaz/scalaz/pull/110
+[unicodetable]/scalaz/cheat%20sheet/fp/2012/02/28/Scalaz-Unicode.html
+[laws]https://github.com/scalaz/scalaz/blob/scalaz-seven/scalacheck-binding/src/main/scala/scalaz/scalacheck/ScalazProperties.scala
+[iso]https://github.com/scalaz/scalaz/blob/scalaz-seven/core/src/main/scala/scalaz/Isomorphism.scala
+[composition]https://github.com/scalaz/scalaz/blob/scalaz-seven/core/src/main/scala/scalaz/Composition.scala
+[product]https://github.com/scalaz/scalaz/blob/scalaz-seven/core/src/main/scala/scalaz/Product.scala
+[free]https://github.com/scalaz/scalaz/blob/scalaz-seven/core/src/main/scala/scalaz/Free.scala
+[rws]https://github.com/scalaz/scalaz/blob/scalaz-seven/core/src/main/scala/scalaz/ReaderWriterStateT.scala
+[liskov]https://github.com/scalaz/scalaz/blob/scalaz-seven/core/src/main/scala/scalaz/Liskov.scala
+[examples]https://github.com/scalaz/scalaz/tree/scalaz-seven/example/src/main/scala/scalaz/example
+[tests]https://github.com/scalaz/scalaz/tree/scalaz-seven/tests/src/test/scala/scalaz
+[readme]https://github.com/scalaz/scalaz/blob/scalaz-seven/README.md
+[devguide]https://github.com/scalaz/scalaz/blob/scalaz-seven/doc/DeveloperGuide.md
