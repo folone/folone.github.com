@@ -108,7 +108,7 @@ h2. Новое, с чем пока не разбирался (TODO).
 [typelevelscala]http://apocalisp.wordpress.com/2010/06/08/type-level-programming-in-scala/
 [apply]https://github.com/scalaz/scalaz/blob/scalaz-seven/core/src/main/scala/scalaz/syntax/ApplySyntax.scala
 [shapeless]https://github.com/milessabin/shapeless
-[tagged]http://etorreborre.blogspot.com/2011/11/pract:ical-uses-for-unboxed-tagged-types.html
+[tagged]http://etorreborre.blogspot.com/2011/11/practical-uses-for-unboxed-tagged-types.html
 [unicodeemacs]https://github.com/folone/emacs-scalaz-unicode-input-method
 [unicodepull]https://github.com/scalaz/scalaz/pull/110
 [unicodetable]/scalaz/cheat%20sheet/fp/2012/02/28/Scalaz-Unicode.html

@@ -1,0 +1,128 @@
+---
+layout: post
+title: My scalaz-seven migration
+comments: rue
+is: post
+categories:
+- scala 
+- scalaz
+- en
+---
+_This is an English translation of "this post":originalpost (in Russian)._
+
+The third milestone of the "new scalaz":scalazseven has already been released. Starting from the first milestone, I've managed to migrate most of our projects. Nevertheless, it turned out, several projects were left with the old, 6.0.4 version. So, I've migrated them too, and while I still have a fresh experience, I've decided to note it here.
+
+h2. All the unnecessary stuff was removed from core.
+
+For example, if you used effect controlling functionality, you will now need to use scalaz-effect build artifact. For iteratees -- scalaz-iteratee, for concurrency -- scalaz-concurrent. Http and geo were dropped. A new cool thing, scalaz-typelevel, appeared.
+
+h2. Typeclass-related functions are moved to their instances.
+
+This caused @Identity@, @MA@ and @MAB@ to disappear. Instances for different types are now declared in the types' companion objects (before that, typeclasses had all the instances for all the types declared inside of them). The syntax of instance definition has changed: now you can define several instances in one @implicit val@. Here's how @NodeSeq@ instances definition looks like:
+
+{% highlight scala %}
+implicit val nodeSeqInstance = new Monoid[NodeSeq] with Show[NodeSeq] with Equal[NodeSeq] {
+  override def zero = NodeSeq.Empty
+  override def append(f1: NodeSeq, f2: ⇒ NodeSeq) = f1 ++ f2
+  override def shows(as: NodeSeq) = new PrettyPrinter(80, 2) formatNodes as
+  override def equal(a1: NodeSeq, a2: NodeSeq): Boolean = a1 == a2
+}
+{% endhighlight %}
+
+
+h2. -Apples- Typeclasses are separated from -oranges- their syntax.
+
+Thanks to this, functions, accepting scalaz typeclasses may not know anything about typeclasses' functions. For example, to use @Option@ 's instances, you need to just @import scalaz.std.option._@. Now you can:
+
+{% highlight scala %}
+val monad = implicitly[Monad[Option]] // or just Monad[Option]
+val option: Option[Int] = monad.point(1)
+{% endhighlight %}
+
+Code without/with syntax would be:
+
+{% highlight scala %}
+val monad = Monad[Option]
+val optopt: Option[Option[Int]] = Some(Some(1))
+
+// Without syntax
+val opt = monad.join(optopt)
+
+// With syntax
+import syntax.monad._
+val opt = optopt.join
+{% endhighlight %}
+
+You can, of course, import only instances and syntaxes, that you need. This drammatically shortens the size of autocomplition box in you editor (and experience shows, time of compilations also gets reduced a bit).
+
+For backward comptability, @import Scalaz._@ is still posible. It will import all the instances with their syntaxes.
+
+h2. Typelevel.
+
+scalaz-typelevel is a new module with implementations, described in series of articles by Rúnar Bjarnason, "Type-Level Programming in Scala":typelevelscala.
+
+h2. ApplicativeBuilder is deprecated.
+
+Because every call to <code>|@|</code> creates a new wrapper, that DSL for building @Applicatives@ is "deprecated":apply. Instead, a new function was added, @^@. In place, where you used to have <code>opt1 |@| opt2 |@| opt3</code>, you'll now have @^(opt1, opt2, opt3)@. Also, everything, you do with @ApplicativeBuilders@, can now be accomplished with @KList@ from scalaz-typelevel on any number of arguments.
+
+Here's an example from one of the latest discussions:
+
+{% highlight scala %}
+case class Person(age: Int, name: String)
+def validAge(age: Int): ValidationNEL[String, Int]         = ???
+def validName(name: String): ValidationNEL[String, String] = ???
+
+// Old, deprecated
+(validAge(age) |@| validName(name))(Person.apply)
+// New
+^(validAge(age), validName(name))(Person.apply)
+// Typelevel
+(validAge(age) :^: validName(name) :^: KNil).applyP(Person.apply.curried)
+{% endhighlight %}
+
+h2. Random tips.
+
+* @.asMA.sum@ won't work, use @.suml@ or @.concatenate@. You'll need a monoid instance for whatever you're summing, foldable instance and syntax for whatever you're summing in. So, if you want to get a sum of a @List@ of @Booleans@, @import scalaz.std.boolean._, sclaz.std.list._, scalaz.syntax.foldable._@ and do a @list.suml@.
+* @value.fail[T]@ has been renamed to @value.failure[T]@. Also, Tony Morris has completely reimplemented @Options@, @Eithers@ and @Validations@. It's worth to have a look.
+* No more default monoid instance for @Boolean@. You'll need to manually specify either @value.disjunction@ or @value.conjuncion@.
+* By the way, disjuction and conjunction (and some other things) are implemented using a trick, "coined":tagged by Miles Sabin, "shapeless library":shapeless author.
+* If you're using @writer@ or @io@ functions, change that to @Writer@ or @IO@ apply's (should be the same for @semigroup@, @validation@, etc).
+* @Writer@ 's @over@ is renamed to @value@.
+* If you were having problems with using for-comprehensions in a code with scalaz and scalaquery, it will now be fixed. If not, try tuning monad instances imports.
+* All the unicode, I personally "have been using":unicodeemacs in my scalaz 6 code, "is still there":unicodepull. I've got a "table":unicodetable assembled, but it is: 1) in Russian, and 2) outdated.
+* There are "new cool functions":laws in scalacheck-bindings, that let you check typeclasses' laws. So, say, you've defined a monoid instance for @MyCoolType@. You should now @checkAll(monoid.laws[MyCoolType])@ in your tests, and you are guaranteed, the laws hold.
+* As usual, if you can't seem to understand, how to use specific thing from scalaz, "examples":examples and "tests":tests are there to help you.
+* If you don't remember, what instance does a specific function (say, @~@) belongs to, @$ grep -r --include="*.scala" "def unary_~" .@ on scalaz sources.
+
+h2. New stuff, I haven't used or understood yet (TODO).
+
+* "Isomorphisms":iso
+* "Composition":composition and "product":product datatypes
+* "Free":free
+* "RWS":rws
+* "Liskov":liskov
+
+!http://lolzombie.com/wp-content/uploads/2011/09/tumblr_lqk2n0MCXj1qh96peo1_500.jpeg!
+
+This seems to be all the stuff, I came across while migrating my projects. For more information, there's a "README":readme and a "DeveloperGuide":devguide
+
+[originalpost]/scala/scalaz/fp/2012/08/23/Scalaz-sevenMigration.html
+[scalazseven]https://github.com/scalaz/scalaz/tree/scalaz-seven
+[typelevelscala]http://apocalisp.wordpress.com/2010/06/08/type-level-programming-in-scala/
+[apply]https://github.com/scalaz/scalaz/blob/scalaz-seven/core/src/main/scala/scalaz/syntax/ApplySyntax.scala
+[shapeless]https://github.com/milessabin/shapeless
+[tagged]http://etorreborre.blogspot.com/2011/11/practical-uses-for-unboxed-tagged-types.html
+[unicodeemacs]https://github.com/folone/emacs-scalaz-unicode-input-method
+[unicodepull]https://github.com/scalaz/scalaz/pull/110
+[unicodetable]/scalaz/cheat%20sheet/fp/2012/02/28/Scalaz-Unicode.html
+[laws]https://github.com/scalaz/scalaz/blob/scalaz-seven/scalacheck-binding/src/main/scala/scalaz/scalacheck/ScalazProperties.scala
+[iso]https://github.com/scalaz/scalaz/blob/scalaz-seven/core/src/main/scala/scalaz/Isomorphism.scala
+[composition]https://github.com/scalaz/scalaz/blob/scalaz-seven/core/src/main/scala/scalaz/Composition.scala
+[product]https://github.com/scalaz/scalaz/blob/scalaz-seven/core/src/main/scala/scalaz/Product.scala
+[free]https://github.com/scalaz/scalaz/blob/scalaz-seven/core/src/main/scala/scalaz/Free.scala
+[rws]https://github.com/scalaz/scalaz/blob/scalaz-seven/core/src/main/scala/scalaz/ReaderWriterStateT.scala
+[liskov]https://github.com/scalaz/scalaz/blob/scalaz-seven/core/src/main/scala/scalaz/Liskov.scala
+[examples]https://github.com/scalaz/scalaz/tree/scalaz-seven/example/src/main/scala/scalaz/example
+[tests]https://github.com/scalaz/scalaz/tree/scalaz-seven/tests/src/test/scala/scalaz
+[readme]https://github.com/scalaz/scalaz/blob/scalaz-seven/README.md
+[devguide]https://github.com/scalaz/scalaz/blob/scalaz-seven/doc/DeveloperGuide.md
