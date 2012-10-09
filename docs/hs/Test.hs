@@ -3,6 +3,7 @@ import Control.Monad.State
 import Control.Monad.List
 import Control.Arrow
 import Data.List
+import Control.Applicative
 
 str = "abc"
 

@@ -63,7 +63,7 @@ h2. Задепрекейчен ApplicativeBuilder.
 
 Из-за того, что каждый вызов к <code>|@|</code> создавал новую обёртку, этот DSL для построения @Applicative@ 'ов "задепрекейтили":apply. Вместо него добавили @^@. Там, где у вас было <code>opt1 |@| opt2 |@| opt3</code> теперь должно быть @^(opt1, opt2, opt3)@. Также, всё, что делается с @ApplicativeBuilder@ 'ами теперь можно сделать с помощью @KList@ из scalaz-typelevel на любом количестве аргументов (obviously).
 
-Пример из одного из недавних обсуждений:
+Пример из одного из недавних "обсуждений":klistdiscussion :
 
 {% highlight scala %}
 case class Person(age: Int, name: String)
@@ -123,3 +123,4 @@ h2. Новое, с чем пока не разбирался (TODO).
 [tests]https://github.com/scalaz/scalaz/tree/scalaz-seven/tests/src/test/scala/scalaz
 [readme]https://github.com/scalaz/scalaz/blob/scalaz-seven/README.md
 [devguide]https://github.com/scalaz/scalaz/blob/scalaz-seven/doc/DeveloperGuide.md
+[klistdiscussion]https://github.com/scalaz/scalaz/pull/138

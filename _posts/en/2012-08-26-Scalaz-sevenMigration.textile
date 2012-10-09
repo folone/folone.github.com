@@ -8,6 +8,7 @@ categories:
 - scalaz
 - en
 ---
+
 _This is an English translation of "this post":originalpost (in Russian)._
 
 The third milestone of the "new scalaz":scalazseven has already been released. Starting from the first milestone, I've managed to migrate most of our projects. Nevertheless, it turned out, several projects were left with the old, 6.0.4 version. So, I've migrated them too, and while I still have a fresh experience, I've decided to note it here.
@@ -65,7 +66,7 @@ h2. ApplicativeBuilder is deprecated.
 
 Because every call to <code>|@|</code> creates a new wrapper, that DSL for building @Applicatives@ is "deprecated":apply. Instead, a new function was added, @^@. In place, where you used to have <code>opt1 |@| opt2 |@| opt3</code>, you'll now have @^(opt1, opt2, opt3)@. Also, everything, you do with @ApplicativeBuilders@, can now be accomplished with @KList@ from scalaz-typelevel on any number of arguments.
 
-Here's an example from one of the latest discussions:
+Here's an example from one of the latest "discussions":klistdiscussion :
 
 {% highlight scala %}
 case class Person(age: Int, name: String)
@@ -126,3 +127,4 @@ This seems to be all the stuff, I came across while migrating my projects. For m
 [tests]https://github.com/scalaz/scalaz/tree/scalaz-seven/tests/src/test/scala/scalaz
 [readme]https://github.com/scalaz/scalaz/blob/scalaz-seven/README.md
 [devguide]https://github.com/scalaz/scalaz/blob/scalaz-seven/doc/DeveloperGuide.md
+[klistdiscussion]https://github.com/scalaz/scalaz/pull/138

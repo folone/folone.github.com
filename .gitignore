@@ -7,3 +7,6 @@ _site
 # emacs stuff
 *~
 \#*
+
+target
+lib_managed
