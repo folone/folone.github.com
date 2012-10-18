@@ -1,7 +1,7 @@
 ---
 layout: post
 title: My scalaz-seven migration
-comments: rue
+comments: true
 is: post
 categories:
 - scala 
