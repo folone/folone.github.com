@@ -1,0 +1,20 @@
+---
+layout: post
+title: Exercises on implementing Reader, Writer and State monads in Scala
+comments: true
+is: post
+categories:
+- scala
+- scalaz
+- en
+---
+
+In spirit of Tony Morris' exercise on implementing "TReader":https://gist.github.com/3884189 (and some other exercises: "1":http://dibblego.wordpress.com/2008/09/10/20-intermediate-scala-exercises/, "2":http://blog.tmorris.net/revised-scala-exercises/ ) I've assembled three more exercises, that might help develop an understanding on how Reader, Writer and State monads work:
+# "Reader":https://gist.github.com/3911559/d36a6fee1430767cd1f3a1396523cc58a385d124
+# "Writer":https://gist.github.com/3911467/b551163e092ed274d9d441fe29d210d3605c3a14
+# "State":https://gist.github.com/3911448/725f43b2107e1faec90f665a43aa74ac3c4690d5
+
+Here's how you should go about those exercises:
+* don't look into the latest revisions of gists: they contain actual implementations
+* you may use "hoogle":http://www.haskell.org/hoogle/ (and even look up implementations there)
+* try to use @run@ as rarely as possible, ideally, only use it for @map@ and @flatMap@.

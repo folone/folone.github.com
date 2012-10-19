@@ -1,42 +1,24 @@
-{-# LANGUAGE ScopedTypeVariables #-}
-import Control.Monad.State
-import Control.Monad.List
-import Control.Arrow
-import Data.List
-import Control.Applicative
+{-# LANGUAGE NoMonomorphismRestriction #-}
+import Data.Functor.Fixedpoint
+import Prelude hiding (succ)
 
-str = "abc"
+type Nat = Fix Maybe
 
-res = do
-  s <- str
-  return $ print s
+succ = Fix . Just
+zero = Fix Nothing
 
-result = sequence res
+foldNat x y = cata $ maybe x y
 
-printChars :: String -> IO [()]
+toNum = foldNat 0 (+1)
 
-printChars = mapM print
+fromNum = ana $ makeMaybe (>0) (-1)
 
-changeStr :: String -> String
-changeStr = flip (>>=) (:"\n")
+makeMaybe :: (a -> Bool) -> (a -> a) -> a -> Maybe a
+makeMaybe cond f x 
+	| cond x = Just (f x)
+	| otherwise = Nothing
 
-fx1 f = let x = f x in f x
-fx2 f = let x = f x in x
--- uses recursion, not fair
-fx3 f = f $ fx3 f
+add a = foldNat a succ
+mul a = foldNat zero (add a)
 
-example :: [Int]
-example = reverse . fst . head $ lists
-
-φ :: [Int] -> Int -> [Int]
-φ = undefined
-
-phi :: ([Int], [Int]) -> [([Int], [Int])]
-phi (xs, ys) = map ((:xs) &&& φ ys) ys
-
-list1 = [0, 1]
-
-lst = iterate (concatMap phi) [([], list1)]
-
-lists :: [([Int], [Int])]
-lists = iterate (concatMap phi) [([], list1)] !! 5
+fact = toNum . fst . foldNat (succ zero,succ zero) (\(x, y) -> (mul x y, succ y)) . fromNum
