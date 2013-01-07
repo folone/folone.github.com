@@ -1,0 +1,112 @@
+---
+layout: post
+title: Best of the 2012
+comments: true
+is: post
+categories:
+- en
+- personal
+---
+
+2012 was a big year for me in all possible aspects:
+
+h2. Personal.
+
+The year began perfectly: I married the "best UI designer":my-wife, I ever met.
+
+!http://distilleryimage2.s3.amazonaws.com/5d29511c862511e1be6a12313820455d_7.jpg!
+
+It happened in April, and we then spent two great weeks in Paris as our honeymoon.
+
+!http://distilleryimage7.s3.amazonaws.com/0e04fe82830b11e1ab011231381052c0_7.jpg!
+
+The year ended in a pretty unexpected manner: in December we've moved to Berlin, Germany, home of some of the greatest mathematicians: I'm currently writing this lines from street, named after "Rieman":riemann, eating cookies, named after "Leibniz":leibniz.
+
+h2. Professional.
+
+The whole year I was working as a full-stack (with the emphasis on Scala) web developer for "The New Motion":thenewmotion. In a process of moving to Berlin, I had to find another job, preferably in Scala: I was obviously not going back to Java. After lurking for some time, I just posted a "question on quora":quora-question. Which resulted in my future employment as a developer at "deltamethod":deltamethod. I'm still in the process of obtaining work permit, but already looking forward to working with some great machine learning and natural language processing algos!
+
+h2. Education.
+
+Last year I attended "Stanford's Algorithms course":algo-one and a "course on Scala":scala-course, taught by Martin Odersky. This year I've already started the "second part":algo-two of the course on algorithms, a "course on calculus from Penn":calculus (at the university I always struggled with calculus, and decided to deal with this beast once and forever), and, on the advice of my future colleague, a "course on machine learning from Caltech":caltech-ml.
+
+h2. Books and papers.
+
+Some reads, that I enjoyed most in 2012 include (in no particular order, some with comments, some not):
+
+* "Real World Haskell":rwh -- a trully great book, which leads to lots of thinking.
+* "YAHT":yaht
+* "Typeclassopedia":typeclassopedia -- I've read it three times already. And each time I got to learn some cool new detail. When I was working for The New Motion, I had a ritual: each time, I'm flying to Amsterdam, I'm reading Typeclassopedia on the plane. After several flights this ritual changed to just preparing a good paper to read while traveling.
+* "The esence of the iterator pattern":eip -- a great paper, introducing Applicative Functor and its @traverse@ in depth. There's a great "post":etorreborre by Eric Torreborre, discussing this paper.
+* "A History of Haskell: being lazy with class":haskell-history -- a pretty cool document on how and why different design decisions popped up in the Haskell programming language, includes great technical discussion (which I would not expect from a document, named "History of someting").
+* "Species and Functors and Types, Oh My!":byorbey-species -- you've heard about the Algebraic Data Types, right? This paper explains in details, why they are called "algebraic". To the extent of defining differentiation for types. This year I'm planning to read another paper on this topic, "Clowns to the left of me, jokers to the right (Dissecting Data Structures)":clowns.
+* "Why functional programming matters":why-fp
+* "Functional Programming with Bananas, Lenses, Envelopes and Barbered Wire":lenses -- I'll definitely be revisiting this paper in 2013: when I was reading it, I was not able to fully understand it. Though, I did learn of recursion schemes, and even assembled a table, describing those I found at Edward Kmett's blog in an understandeble language. Unfortunately, currently it's in Russian only. I'll get back to it, finish it up and translate it when re-reading this paper.
+* "Tackling the Awkward Squad":awkward
+* "Iteratee: Teaching an Old Fold New Tricks":iteratee
+
+h3. Currently reading:
+
+* "Functional Programming in Scala":fp-scala -- an early-acces book on functional programming techniques in Scala. A trully great read with good examples from the authors of scalaz library. Contains lots of cool exercises that help develop one's understanding of various concepts. Here's a great "FP course":fp-course by "Tony Morris":tmorris, if you want more exercises like that.
+* "Gödel, Escher, Bach: An Eternal Golden Braid":geb
+* "Hadoop: the definitive guide":hadoop
+
+h3. Planning to read:
+
+Except for stuff, mentioned earlier, I'm also planning to read those:
+
+* "Category Theory for Computer Scientist":cattheor
+* "Types and Programming Languages":tapl
+* "The Haskell Road to Logic, Maths and Programming":haskroad
+
+h2. Misc.
+
+In 2012 I, beeing an emacs adept, finally decided to try vim. I liked some of its ideas, therefore "my emacs config":emacs-conf now uses evil-mode. I also learned to touch-type this year (Yes, I know, most of the people learn this at school or at the college. Unfortunately I did not, so I had to catch up).
+
+I also commited to several open-source projects last year: "scalaz":scalaz, "haskellers":haskellers, roy (created a "maven plugin":roy-maven and an "emacs mode":roy-mode for it). One of my small scala projects, "poi.scala":poi-scala even got mentioned in scala 2.10 "release notes":new-scala.
+
+I also gave a small talk on scalaz for a "local scala user group":scalaua.
+
+h2. Conclusions.
+
+2012 was a great year. Hopefully, 2013 will be even better. Happy New Year!
+
+[thenewmotion]http://thenewmotion.com
+[quora-question]http://www.quora.com/Startups-in-Berlin/Any-companies-using-Scala-in-Berlin
+[deltamethod]http://www.deltamethod.com
+[algo-one]https://www.coursera.org/course/algo
+[algo-two]https://www.coursera.org/course/algo2
+[scala-course]https://www.coursera.org/course/progfun
+[caltech-ml]http://work.caltech.edu/telecourse.html
+[calculus]https://www.coursera.org/course/calcsing
+[fp-scala]http://www.manning.com/bjarnason/
+[geb]http://en.wikipedia.org/wiki/G%C3%B6del,_Escher,_Bach
+[riemann]http://en.wikipedia.org/wiki/Bernhard_Riemann
+[leibniz]http://en.wikipedia.org/wiki/Gottfried_Wilhelm_Leibniz
+[hadoop]http://shop.oreilly.com/product/9780596521981.do
+[rwh]http://book.realworldhaskell.org/
+[yaht]http://en.wikibooks.org/wiki/Haskell/YAHT
+[typeclassopedia]http://www.haskell.org/haskellwiki/Typeclassopedia
+[eip]http://www.comlab.ox.ac.uk/jeremy.gibbons/publications/iterator.pdf
+[haskell-history]http://research.microsoft.com/en-us/um/people/simonpj/papers/history-of-haskell/index.htm
+[byorgey-species]http://www.cis.upenn.edu/~byorgey/papers/species-pearl.pdf
+[why-fp]http://www.cs.kent.ac.uk/people/staff/dat/miranda/whyfp90.pdf
+[lenses]http://eprints.eemcs.utwente.nl/7281/01/db-utwente-40501F46.pdf
+[awkward]http://research.microsoft.com/en-us/um/people/simonpj/papers/marktoberdorf/
+[iteratee]http://themonadreader.files.wordpress.com/2010/05/issue16.pdf
+[etorreborre]http://etorreborre.blogspot.de/2011/06/essence-of-iterator-pattern.html
+[clowns]http://personal.cis.strath.ac.uk/~conor/Dissect.pdf
+[emacs-conf]https://github.com/folone/.emacs
+[scalaua]http://scala-lang.org.ua/
+[scalaz]https://github.com/scalaz/scalaz/tree/scalaz-seven
+[haskellers]http://www.haskellers.com/
+[roy-mode]https://github.com/folone/roy-mode
+[roy-maven]https://github.com/folone/roy-maven-plugin
+[poi-scala]https://github.com/folone/poi.scala
+[new-scala]http://www.scala-lang.org/node/27499
+[my-wife]https://www.facebook.com/viktoriia.nikitina
+[fp-course]https://github.com/tonymorris/course
+[tmorris]http://blog.tmorris.net/
+[cattheor]http://www.amazon.com/Category-Computer-Scientists-Foundations-Computing/dp/0262660717/
+[tapl]http://www.amazon.com/Types-Programming-Languages-Benjamin-Pierce/dp/0262162091/
+[haskroad]http://www.amazon.com/Haskell-Logic-Maths-Programming-Computing/dp/0954300696/
