@@ -8,6 +8,7 @@ categories:
 - en
 - types
 - mutable state
+- fp
 ---
 
 I've recently read about the "Clean":clean programming language and got interested in it's "uniqueness typing system":uniqtyping. The main idea is that if at some point in the program we have a link to a mutable object, and we are sure, that at the same moment there is no other links to this object, we can safely mutate it, and this will still be a pure operation.
