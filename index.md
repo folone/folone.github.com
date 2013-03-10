@@ -14,7 +14,7 @@ My email: `(λx.folonexlambda-calcul.us)@`
 
 # Latest - {{ first_post.title }} #
 
-{{ first_post.content | truncatewords: 200 }}
+{{ first_post.content | truncatewords: 300 }}
 
 
 [Read More &raquo;]({{ first_post.url }})
