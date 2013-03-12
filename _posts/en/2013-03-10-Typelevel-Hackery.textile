@@ -19,7 +19,7 @@ table{border:1px solid black}.
 |_.Trick|_.Short description|
 |"Unboxed Tagged Types":taggedtypes|Something like Haskell's "newtype":newtype, but better.|
 |"Dependent types":deptypestaste|Have types depend on values|
-|"Unapply":unapplyscalaz|Reduce needed type annotations by guiding scala's type inference|
+|"Unapply":unapplyorigin|Reduce needed type annotations by guiding scala's type inference|
 |"Ambiguous implicits":ambigimplicitsml|A way to guarantee that a polymorphic function will not return some specific type|
 
 h2. Unboxed Tagged Types
@@ -165,6 +165,7 @@ I've recently answered one of the "SO questions":sounapply, using this technique
 [taggedtypes]http://etorreborre.blogspot.de/2011/11/practical-uses-for-unboxed-tagged-types.html
 [ambigimplicitsml]https://groups.google.com/forum/?fromgroups=#!topic/scala-language/4SQt-n1l9Zk
 [ambigImplicit]https://gist.github.com/milessabin/c9f8befa932d98dcc7a4
+[unapplyorigin]https://issues.scala-lang.org/browse/SI-2712?focusedCommentId=55239&page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-55239
 [unapplyscalaz]https://github.com/scalaz/scalaz/blob/scalaz-seven/core/src/main/scala/scalaz/Unapply.scala
 [deptypestaste]https://gist.github.com/folone/4945168
 [newtype]http://www.haskell.org/haskellwiki/Newtype
