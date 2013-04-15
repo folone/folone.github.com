@@ -17,3 +17,11 @@ comments: true
 * * *
 
 > A category is just a monoid in the monoidal category of endospans on the set of objects, what's the big deal?
+
+* * *
+
+> Lenses are just coalgebras for the costate comonad, what's the big deal?
+>
+> -- <cite>[source][1]</cite>
+
+[1]: http://patternsinfp.wordpress.com/2011/01/31/lenses-are-the-coalgebras-for-the-costate-comonad/
