@@ -32,8 +32,14 @@ comments: true
 >
 > -- <cite>[source][1]</cite>
 
+* * *
+> A comonad is just a coalgebra in the category of endofunctors, what's the big deal?
+>
+> -- <cite>[source][6]</cite>
+
 [1]: http://patternsinfp.wordpress.com/2011/01/31/lenses-are-the-coalgebras-for-the-costate-comonad/
 [2]: http://nlab.mathforge.org/nlab/show/category#EquivalenceDefinitions
 [3]: http://applicative-errors-scala.googlecode.com/svn/artifacts/0.6/chunk-xhtml/ar01s08.html
 [4]: http://www.haskell.org/pipermail/haskell-cafe/2011-February/089156.html
 [5]: http://james-iry.blogspot.de/2009/05/brief-incomplete-and-mostly-wrong.html
+[6]: http://stackoverflow.com/a/16022059/163423
