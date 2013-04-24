@@ -10,3 +10,7 @@ _site
 
 target
 lib_managed
+
+*.aux
+*.log
+*.out
