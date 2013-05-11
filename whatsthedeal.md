@@ -47,6 +47,11 @@ comments: true
 >
 > -- <cite>[source][8]</cite>
 
+* * *
+> An arrow is just a monoid in the category of profunctors, what's the big deal?
+>
+> -- <cite>[source][9]</cite>
+
 [1]: http://patternsinfp.wordpress.com/2011/01/31/lenses-are-the-coalgebras-for-the-costate-comonad/
 [2]: http://nlab.mathforge.org/nlab/show/category#EquivalenceDefinitions
 [3]: http://applicative-errors-scala.googlecode.com/svn/artifacts/0.6/chunk-xhtml/ar01s08.html
@@ -55,3 +60,4 @@ comments: true
 [6]: http://stackoverflow.com/a/16022059/163423
 [7]: http://blog.ezyang.com/2013/04/the-difference-between-recursion-induction/
 [8]: https://www.fpcomplete.com/user/liyang/profunctors
+[9]: http://blog.sigfpe.com/2011/07/profunctors-in-haskell.html
