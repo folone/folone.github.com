@@ -1,22 +1,37 @@
 \batchmode
-\documentclass[a4paper,11pt]{article}
+
+
+\documentclass[12pt,a4paper,sans]{moderncv}
 \RequirePackage{ifthen}
 
-
-\usepackage[usenames,dvipsnames]{color}
-\usepackage{hyperref}
-\hypersetup{
-    colorlinks=true,%
-    citecolor=black,%
-    filecolor=black,%
-    linkcolor=green,%
-    urlcolor=Green
-}
-\usepackage{amsmath}
-\usepackage[lmargin=3.0cm, rmargin=1.0cm,tmargin=2.50cm,bmargin=2.50cm]{geometry}
+        
 
 
+\moderncvstyle{classic}                             % style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvcolor{green}                               % color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
 
+
+\usepackage[utf8]{inputenc}                       
+
+
+\usepackage[scale=0.75]{geometry}
+
+
+\name{George}{Leontiev}
+\title{Functional junkie}
+\address{Berlin, Germany}
+\phone[mobile]{+49~151~517~33~860}
+\email{($\lambda$x.folonexlambda-calcul.us)@}
+\homepage{folone.info}
+\photo[64pt][0.4pt]{picture}
+\extrainfo{%
+  \includegraphics[height=12pt]{gh-mark.png}~\httplink{github.com/folone}\\%
+  \includegraphics[height=12pt]{twitter.png}~\httplink[@folone]{twitter.com/folone}}
+
+
+
+
+\usepackage[dvips]{color}
 
 
 \pagecolor[gray]{.7}
@@ -119,20 +134,6 @@
   \else\expandafter\vss\fi}%
 \providecommand{\selectlanguage}[1]{}%
 \makeatletter \tracingstats = 1 
-\providecommand{\Beta}{\textrm{B}}
-\providecommand{\Mu}{\textrm{M}}
-\providecommand{\Kappa}{\textrm{K}}
-\providecommand{\Rho}{\textrm{R}}
-\providecommand{\Epsilon}{\textrm{E}}
-\providecommand{\Chi}{\textrm{X}}
-\providecommand{\Iota}{\textrm{J}}
-\providecommand{\omicron}{\textrm{o}}
-\providecommand{\Zeta}{\textrm{Z}}
-\providecommand{\Eta}{\textrm{H}}
-\providecommand{\Omicron}{\textrm{O}}
-\providecommand{\Nu}{\textrm{N}}
-\providecommand{\Tau}{\textrm{T}}
-\providecommand{\Alpha}{\textrm{A}}
 
 
 \begin{document}
@@ -158,22 +159,31 @@
 % !!! IMAGES START HERE !!!
 
 {\newpage\clearpage
-\lthtmlinlinemathA{tex2html_wrap_inline168}%
-$ \lambda$%
+\lthtmlinlinemathA{tex2html_wrap_inline181}%
+$\lambda$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{section}
+\stepcounter{section}
+\stepcounter{section}
+\stepcounter{subsection}
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline183}%
+$\bullet$%
 \lthtmlinlinemathZ
 \lthtmlcheckvsize\clearpage}
 
 {\newpage\clearpage
-\lthtmlinlinemathA{tex2html_wrap_inline173}%
-$ \bullet$%
+\lthtmlinlinemathA{tex2html_wrap_inline185}%
+$\to$%
 \lthtmlinlinemathZ
 \lthtmlcheckvsize\clearpage}
 
-{\newpage\clearpage
-\lthtmlinlinemathA{tex2html_wrap_inline270}%
-$ \to$%
-\lthtmlinlinemathZ
-\lthtmlcheckvsize\clearpage}
-
+\stepcounter{subsection}
+\stepcounter{section}
+\stepcounter{section}
+\stepcounter{section}
+\stepcounter{section}
 
 \end{document}
