@@ -2,17 +2,17 @@
 # Associate images original text with physical files.
 
 
-$key = q/lambda;MSF=1.6;LFS=12;AAT/;
-$cached_env_img{$key} = q|<IMG
- WIDTH="15" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
- SRC="|."$dir".q|img1.png"
- ALT="$\lambda$">|; 
-
 $key = q/to;MSF=1.6;LFS=12;AAT/;
 $cached_env_img{$key} = q|<IMG
  WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
  SRC="|."$dir".q|img3.png"
  ALT="$\to$">|; 
+
+$key = q/lambda;MSF=1.6;LFS=12;AAT/;
+$cached_env_img{$key} = q|<IMG
+ WIDTH="15" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="|."$dir".q|img1.png"
+ ALT="$\lambda$">|; 
 
 $key = q/bullet;MSF=1.6;LFS=12;AAT/;
 $cached_env_img{$key} = q|<IMG
