@@ -346,7 +346,7 @@ T[A] = A+T[A]<sup>2</sup>
 We might wish to work with binary trees that are just trees i.e. don't contain any data in their leaf nodes.
 These are objects of type <tt>T=T[1]</tt> where <tt>T=1+T<sup>2</sup></tt>.
 <p>
-There is a remarkable identity we can prove about such binary trees <a href="http://web.archive.org/web/20100630195449/http://homepage.mac.com/sigfpe/Computing/diff.html#1">[1]</a>:
+There is a remarkable identity we can prove about such binary trees <a href="#1">[1]</a>:
 
 </p><blockquote>
 <table width="75%">
@@ -372,7 +372,7 @@ In other words the type of binary trees is isomorphic to the type of arrays of 7
 <p>
 Notice that we can also compose datatypes. So using the above notation <tt>L[T[X]]</tt> is the type of lists of trees of <tt>X</tt>'s.
 
-</p><h3>The Calculus of Datatypes <a href="http://web.archive.org/web/20100630195449/http://homepage.mac.com/sigfpe/Computing/diff.html#2">[2]</a></h3>
+</p><h3>The Calculus of Datatypes <a href="#2">[2]</a></h3>
 Many computer languages define the notion of a pointer. For example given a doubly linked list we can obtain a pointer to the first element and then walk back and forth through the list by following the pointers associated with each element.
 <p>
 In some programming languages, however, in particular the pure functional languages such as Haskell, there is no such thing as a pointer. Often this doesn't matter as algorithms that operate on lists have no need for anything like a pointer. They can be written recursively in terms of two functions: <tt>head(.)</tt> which returns the first element of the list and <tt>tail(.)</tt> which returns the list with the first element removed. Unfortunately there come times when it is more efficient to be able to specify a position in the list and walk backwards and forwards through it. We need to find a way to express a pair consisting of a list and a position in the list in a way that doesn't use pointers. An obvious choice is to represent the position simply as an integer representing a position in the list. To walk left and right we decrement and increment it. But to actually find the value at the nth position entails computing the tail of the list n-1 times.
