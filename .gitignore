@@ -14,3 +14,5 @@ lib_managed
 *.aux
 *.log
 *.out
+*.haux
+*.htoc
