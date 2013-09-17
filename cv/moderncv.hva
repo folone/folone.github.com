@@ -160,7 +160,7 @@
 
 % lengths
 \newlength{\quotewidth}
-\renewcommand{\@footer}{}
+\renewcommand{\@footer}{Full \href{http://folone.info/cv/my-cv.pdf}{PDF} version}
 
 % CSS styles
 \newstyle{:root}{width:75\%;margin:auto;font-size:12pt;font-family:sans-serif;}
