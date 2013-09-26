@@ -52,6 +52,11 @@ comments: true
 >
 > -- <cite>[source][9]</cite>
 
+* * *
+>  A monad is exactly the same thing as a monoidal monoid in the monoidal category C^C with composition as the monoidal product, what's the big deal?
+>
+> -- <cite>[source][10]</cite>
+
 [1]: http://patternsinfp.wordpress.com/2011/01/31/lenses-are-the-coalgebras-for-the-costate-comonad/
 [2]: http://nlab.mathforge.org/nlab/show/category#EquivalenceDefinitions
 [3]: http://applicative-errors-scala.googlecode.com/svn/artifacts/0.6/chunk-xhtml/ar01s08.html
@@ -61,3 +66,4 @@ comments: true
 [7]: http://blog.ezyang.com/2013/04/the-difference-between-recursion-induction/
 [8]: https://www.fpcomplete.com/user/liyang/profunctors
 [9]: http://blog.sigfpe.com/2011/07/profunctors-in-haskell.html
+[10]: https://twitter.com/MattRussellUK/status/383142688242929664
