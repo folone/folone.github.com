@@ -1,31 +1,15 @@
-%% start of file `template.tex'.
-%% Copyright 2006-2013 Xavier Danaux (xdanaux@gmail.com).
-%
-% This work may be distributed and/or modified under the
-% conditions of the LaTeX Project Public License version 1.3c,
-% available at http://www.latex-project.org/lppl/.
+\documentclass[12pt,a4paper,sans]{moderncv}
 
-\documentclass[12pt,a4paper,sans]{moderncv}        % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
-
-% moderncv themes
 \moderncvstyle{classic}                             % style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
-\moderncvcolor{green}                               % color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
-%\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
-%\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
+\moderncvcolor{grey}                               % color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+\usepackage[utf8]{inputenc}
 
-% character encoding
-\usepackage[utf8]{inputenc}                       % if you are not using xelatex ou lualatex, replace by the encoding you are using
-
-% adjust the page margins
 \usepackage[scale=0.75]{geometry}
-%\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
-%\setlength{\makecvtitlenamewidth}{10cm}           % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
 
-% personal data
 \name{George}{Leontiev}
-\title{intern @Mathematics Inc.}
+\title{engineer @SoundCloud Ltd.}
 \address{Berlin, Germany}
-\phone[mobile]{+49~151~517~33~860}
+\phone[mobile]{+49~1515~234~75~86}
 \homepage{folone.info}
 \photo[64pt][0.4pt]{picture}
 \extrainfo{%
@@ -35,20 +19,8 @@
   \emailsymbol\emaillink{($\lambda$x.folonexlambda-calcul.us)@}
 }
 
-% to show numerical labels in the bibliography (default is to show no labels); only useful if you make citations in your resume
-%\makeatletter
-%\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
-%\makeatother
-%\renewcommand*{\bibliographyitemlabel}{[\arabic{enumiv}]}% CONSIDER REPLACING THE ABOVE BY THIS
-
-% bibliography with mutiple entries
-%\usepackage{multibib}
-%\newcites{book,misc}{{Books},{Others}}
-%----------------------------------------------------------------------------------
-%            content
-%----------------------------------------------------------------------------------
 \begin{document}
-%-----       resume       ---------------------------------------------------------
+
 \makecvtitle
 
 \section{Education}
@@ -61,7 +33,8 @@
 
 \section{Experience}
 \subsection{Vocational}
-\cventry{02.2014--present}{Backend Developer}{\href{http://soundcloud.com}{SoundCloud Inc.}}{Berlin}{}{}%
+\cventry{12.2015--present}{Engineer, Activities and Stream}{\href{http://soundcloud.com}{SoundCloud Ltd.}}{Berlin}{}{Working on scaling the highest-throughput systems in the company: systems that power user's stream and activities.}%
+\cventry{02.2014--12.2015}{Engineer, Creators}{\href{http://soundcloud.com}{SoundCloud Ltd.}}{Berlin}{}{Worked on creators-focused features of the platform: services for creator stats, in-app messages, coordinating track creation, rss-feeds, transcoding flow, etc. Bootstrapped services stations and bulk content ingestion by partners}%
 \cventry{01.2013--01.2014}{Quantitative Developer}{\href{http://deltamethod.com}{deltamentod GmbH}}{Berlin}{}{Working on the backend for recommendation service.\newline{}%
   Developing a recommendation system for improving online ads/ad compaigns, predicting their sucess, suggesting possible improvements. Using machine learning algorithms in scala/python. Producing functional code that scales to big amounts of data.\newline
   Tech: scala (saddle, scalaz, spire, scala-notebook, algebird, opennlp, corenlp), python (numpy, pandas, scikit-learn, pylab, ipython notebook)
@@ -112,66 +85,21 @@ Projects:\newline
           Tech: robotium solo, android platform frameworks, android apps; lucene, spring, hibernate, wordnet.}
 
 \subsection{Opensource contributions (\href{http://osrc.dfm.io/folone}{summary})}
-\cventry{}{\href{https://github.com/scala/scala}{scala}}{\href{https://github.com/scala/scala/commits?author=folone}{List of contributions}}{}{Scala compiler and standard library}{Mostly minor fixes and improvements. Made a small contribution to the repl :kind feature of scala 2.11.}
+\cventry{}{\href{https://github.com/scala/scala}{typesafe and typelevel scala}}{\href{https://github.com/scala/scala/commits?author=folone}{List of contributions}}{}{Scala compiler and standard library}{Bufgixes and improvements. Worked on SIP-23, which is a proposal to add support for literal-based singleton types to the language. Also worked on adding the :kind feature to repl.}
+\cventry{}{\href{https://github.com/twitter/util}{twitter util and finagle}}{\href{https://github.com/twitter/util/commits?author=folone}{List of contributions}}{}{Twitter libraries that we use at SoundCloud}{Worked on various parts of projects to improve and speed up mission-critical components of systems at SoundCloud.}
 \cventry{}{\href{https://github.com/scalaz/scalaz}{scalaz}}{\href{https://github.com/scalaz/scalaz/commits?author=folone}{List of contributions}}{}{An extension to the core Scala library for functional programming}{Contributed in various areas, including fixing FingerTree implementation, providing examples of using Isomorphisms, Writer monad, ST}
 \cventry{}{\href{https://github.com/typelevel/scalaz-contrib}{scalaz-contrib}}{}{}{Interoperability libraries and additional data structures and instances for Scalaz}{Contriburing scalaz instances for 3rd-party projects}
 \cventry{}{\href{https://github.com/saddle/saddle}{saddle}}{\href{https://github.com/saddle/saddle/commits?author=folone}{List of contributions}}{}{Scala data library in spirit of python's pandas and numpy}{Some contributions to enable the hdf5 support.}
 \cventry{}{\href{https://github.com/mesos/spark}{spark}}{}{}{Scala framework for iterative and interactive cluster computing}{Helped migrate the project to scala 2.10}
 \cventry{}{\href{https://github.com/folone/poi.scala}{poi.scala}}{}{}{Apache poi dsl for scala}{Creator and maintainer of the project}
 \cventry{}{\href{https://github.com/folone/roy-mode}{roy-mode}}{}{}{\href{http://roy.brianmckenna.org/}{Roy} mode for emacs}{Creator and maintainer of the project}
-\cventry{}{\href{https://github.com/folone/typelevel-activator}{typelevel-activator}}{}{}{A project to get started and get comfortable with \href{http://typelevel.org/}{typelevel.scala} stack}{Creator and maintainer of the project}
 \cventry{}{\href{https://github.com/folone}{Others}}{}{}{}{I regularly contribute to other opensource projects. The latest activity is on my github profile.}
-
-\section{Tech skills}
-\cvitemwithcomment{}{Scala}{
-  \begin{list}{$\bullet$}{}
-  \item Web framewors: Lift, play2!, spray
-  \item Akka (1.x, 2.x)
-  \item scalaz (6.x, 7.x), shapeless
-  \item numeric libs/frameworks: spark, saddle, scala notebook, algebird
-  \item testing: specs2, scalacheck
-  \item building: sbt, maven
-  \end{list}}
-\cvitemwithcomment{}{JS}{
-  \begin{list}{$\bullet$}{}
-  \item jquery
-  \item backbone.js
-  \item roy, contributed to the project's ecosystem (maven plugin, emacs mode)
-  \item have interest in ray, as well as idris and agda js backends
-  \end{list}}
-\cvitemwithcomment{}{Haskell}{}
-\cvitemwithcomment{}{Python}{}
-\cvitemwithcomment{}{Java}{}
-
-\section{Tools}
-\cvdoubleitem{system}{Arch linux + xmonad}{}{}
-\cvdoubleitem{coding}{emacs} {setup}{mainly consists of: evil-mode, scala2-mode
-  ensime (with scala-mode), haskell-mode, nXML-mode, js2-mode,
-  python-mode (with pep8 and pylint), org-mode, \LaTeX-mode, jabber.el and some self-made stuff for convenience}
-\cvdoubleitem{version controll}{git, mercurial}{}{}
-
-\section{Public speaking}
-\cvitemwithcomment{\href{https://speakerdeck.com/folone/theres-a-prolog-in-your-scala}{There's a Prolog in your Scala!}}{Scala eXchange conference}{Scala is known to be a nice blend of object-oriented and functional paradigms. A lesser known fact is that it's also a logic programming language...in type system! This talk aims to shed some light on how Scala's type-level programming is essentially logic programming, and give reasoning for code, comprising 8+ implicit parameters with funny names (FnHipsterAux). After all, it's not the syntax, but rather the semantics we're after right?
-Functional in the small, OO in the large, logic in the type system!}
-\cvitemwithcomment{\href{https://speakerdeck.com/folone/scalaz-talk}{Scalaz:
-Learn You Yet Another Real World Gentle Haskell}}{Scala User Group
-  Berlin-Brandenburg}{An introductory talk about the high-level
-  abstractions provided by scalaz. Demo: the IO monad.}
-\cvitemwithcomment{\href{https://speakerdeck.com/folone/scala-solution-for-the-funclub-berlin-meeting}{funclub
-meetup solution in scala}}{Funclub Berlin}{A solution for the programming assignment,
-  done in scala, with effect-controlling via scalaz}
-\cvitemwithcomment{\href{http://www.folone.info/docs/scalaz-presentation.html}{Scalaz 6.0.4 talk} (in Russian)}{Scala User Group Ukraine}{An
-  introductory talk about utilising abstractions from scalaz, version 6.0.4}
 
 \section{Interests}
 \cvitem{Math}{I am fascinated by different branches, but recently extremely interested in the category theory.}
+\cvitem{Public speaking}{I'm ocasionally speaking at tech conferences. Take a look at my lanyrd profile for more details: http://lanyrd.com/profile/folone/}
 \cvitem{Haskell}{Initially started to ponder around it to become a better scala developer. As a result fell in love with its ideas and semantics.}
 \cvitem{Prolog}{Started to ponder around to get a hold of typelevel programming in both scala and haskell. Still pondering around.}
 \cvitem{Drums, bass guitar}{Just learning}
-
-\section{Things I do every day}
-\cvlistitem{state and prove theorems of formal constructivist logic (\href{http://en.wikibooks.org/wiki/Haskell/The_Curry-Howard_isomorphism}{proof})}
-\cvlistitem{learn cool new things}
-\cvlistitem{do stuff for the Mathematics Inc.}
 
 \end{document}
