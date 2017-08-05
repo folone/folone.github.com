@@ -1401,7 +1401,11 @@ p.social a.strava {
   background-color: #FC4C02;
   border-color: #FC4C02;
 }
-p.social a.strava svg {
+p.social a.speakerdeck {
+  background-color: #1C8058;
+  border-color: #1C8058;
+}
+p.social a svg {
     fill: #FFFFFF;
 }
 p.social a.twitter {
@@ -1430,6 +1434,10 @@ p.social.social--outline a.github {
 p.social.social--outline a.strava {
   color: #FC4C02;
   border-color: #FC4C02;
+}
+p.social.social--outline a.speakerdeck {
+  color: #1C8058;
+  border-color: #1C8058;
 }
 p.social.social--outline a.twitter {
   color: #3cf;
