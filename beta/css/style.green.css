@@ -1400,7 +1400,6 @@ p.social a.github {
 p.social a.strava {
   background-color: #FC4C02;
   border-color: #FC4C02;
-  background-image: url("../img/strava.svg");
 }
 p.social a.strava svg {
     fill: #FFFFFF;
