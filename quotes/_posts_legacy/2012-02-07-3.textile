@@ -1,8 +1,0 @@
----
-layout: quote
-author: folone
-source: https://twitter.com/#!/j3h/status/166746963990163456
-is: quote
----
-
-Some people see a problem and think "I know, I'll use Haskell!" Now they have a monoid in the category of problems.

@@ -34,6 +34,60 @@ function map() {
 
     if ($('#map').length > 0) {
 
+        function getQuote() {
+             var quoteArray = [
+                '<blockquote class="blockquote blockquote-reverse">' +
+                    '<p class="mb-0">A monad is just a monoid in the category of endofunctors, whats the big deal?</p>' +
+                '<footer class="blockquote-footer"><a href="http://james-iry.blogspot.de/2009/05/brief-incomplete-and-mostly-wrong.html">Source</a></footer>' +
+                    '</blockquote>',
+                '<blockquote class="blockquote blockquote-reverse">' +
+                    '<p class="mb-0">A lens is just a monoid natural transformation from the coalgebra functiors from haskell functors to haskell types, whats the big deal?</p>' +
+                    '<footer class="blockquote-footer"><a href="http://www.haskell.org/pipermail/haskell-cafe/2011-February/089156.html">Source</a></footer>' +
+                    '</blockquote>',
+                '<blockquote class="blockquote blockquote-reverse">' +
+                    '<p class="mb-0">Non-breaking error handling is just an applicative functor on a partially applied disjoint union type constructor with semigroup error elements so whats the big deal?</p>' +
+                    '<footer class="blockquote-footer"><a href="https://github.com/tonymorris/applicative-errors-scala/blob/e88c836bb967e34eec4439e095865cdeabb3d432/src/docbook/Conclusion.xml#L9-L10">Source</a></footer>' +
+                    '</blockquote>',
+                '<blockquote class="blockquote blockquote-reverse">' +
+                    '<p class="mb-0">A category is just a monoid in the monoidal category of endospans on the set of objects, whats the big deal?</p>' +
+                    '<footer class="blockquote-footer"><a href="http://nlab.mathforge.org/nlab/show/category#EquivalenceDefinitions">Source</a></footer>' +
+                    '</blockquote>',
+                '<blockquote class="blockquote blockquote-reverse">' +
+                    '<p class="mb-0">Lenses are just coalgebras for the costate comonad, whats the big deal?</p>' +
+                    '<footer class="blockquote-footer"><a href="http://patternsinfp.wordpress.com/2011/01/31/lenses-are-the-coalgebras-for-the-costate-comonad/">Source</a></footer>' +
+                    '</blockquote>',
+                '<blockquote class="blockquote blockquote-reverse">' +
+                    '<p class="mb-0">A comonad is just a coalgebra in the category of endofunctors, whats the big deal?</p>' +
+                    '<footer class="blockquote-footer"><a href="http://stackoverflow.com/a/16022059/163423">Source</a></footer>' +
+                    '</blockquote>',
+                '<blockquote class="blockquote blockquote-reverse">' +
+                    '<p class="mb-0">Induction is just the unique homomorphism induced by an initial algebra over indexed propositions, what’s the big deal?</p>' +
+                    '<footer class="blockquote-footer"><a href="http://blog.ezyang.com/2013/04/the-difference-between-recursion-induction/">Source</a></footer>' +
+                    '</blockquote>',
+                '<blockquote class="blockquote blockquote-reverse">' +
+                    '<p class="mb-0">A Profunctor is just a bifunctor that is contravariant in the first argument and covariant in the second, whats the big deal?</p>' +
+                    '<footer class="blockquote-footer"><a href="https://www.fpcomplete.com/user/liyang/profunctors">Source</a></footer>' +
+                    '</blockquote>',
+                '<blockquote class="blockquote blockquote-reverse">' +
+                    '<p class="mb-0">An arrow is just a monoid in the category of profunctors, whats the big deal?</p>' +
+                    '<footer class="blockquote-footer"><a href="http://blog.sigfpe.com/2011/07/profunctors-in-haskell.html">Source</a></footer>' +
+                    '</blockquote>',
+                '<blockquote class="blockquote blockquote-reverse">' +
+                    '<p class="mb-0">A monad is exactly the same thing as a monoidal monoid in the monoidal category C^C with composition as the monoidal product, whats the big deal?</p>' +
+                    '<footer class="blockquote-footer"><a href="https://twitter.com/MattRussellUK/status/383142688242929664">Source</a></footer>' +
+                    '</blockquote>',
+
+            ];
+            var randomNumber = Math.floor(Math.random()*quoteArray.length);
+
+            return '<div class="info-window">' +
+                    "<h3>You win a funny quote!</h3>" +
+                    '<div class="info-content">' +
+                    quoteArray[randomNumber] +
+                    '</div>' +
+                    '</div>';
+
+        }
 
         function initMap() {
 
@@ -56,12 +110,7 @@ function map() {
                 icon: markerImage
             });
 
-            var contentString = '<div class="info-window">' +
-                    "<h3>Here's folone</h3>" +
-                    '<div class="info-content">' +
-                    '<p>I live in Mitte, Berlin, Germany.</p>' +
-                    '</div>' +
-                    '</div>';
+            var contentString = getQuote();
 
             var infowindow = new google.maps.InfoWindow({
                 content: contentString,
@@ -69,6 +118,7 @@ function map() {
             });
 
             marker.addListener('click', function () {
+                infowindow.setContent(getQuote());
                 infowindow.open(map, marker);
             });
 

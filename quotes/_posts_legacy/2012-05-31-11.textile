@@ -1,8 +1,0 @@
----
-layout: quote
-author: folone
-source: http://contemplatecode.blogspot.com/2012/05/haskell-weekly-news-issue-229.html
-is: quote
----
-
-sipa: can we write a @TutorialMonad t@ ? which is used to build and combine monad tutorials?

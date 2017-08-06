@@ -1,8 +1,0 @@
----
-layout: quote
-author: folone
-source: http://contemplatecode.blogspot.com/2012/01/haskell-weekly-news-issue-212.html
-is: quote
----
-
-roconnor: a lens is a monoidal natural transformation between higher-order coalgebra functors, what's the problem?
