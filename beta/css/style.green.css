@@ -1405,6 +1405,18 @@ p.social a.speakerdeck {
   background-color: #1C8058;
   border-color: #1C8058;
 }
+p.social a.goodreads {
+  background-color: #663300;
+  border-color: #663300;
+}
+p.social a.stack-overflow {
+  background-color: #FE7A16;
+  border-color: #FE7A16;
+}
+p.social a.lanyrd {
+  background-color: #3C80CA;
+  border-color: #3C80CA;
+}
 p.social a svg {
     fill: #FFFFFF;
 }
@@ -1438,6 +1450,18 @@ p.social.social--outline a.strava {
 p.social.social--outline a.speakerdeck {
   color: #1C8058;
   border-color: #1C8058;
+}
+p.social.social--outline a.goodreads {
+  color: #663300;
+  border-color: #663300;
+}
+p.social.social--outline a.stack-overflow {
+  color: #FE7A16;
+  border-color: #FE7A16;
+}
+p.social.social--outline a.lanyrd {
+  color: #3C80CA;
+  border-color: #3C80CA;
 }
 p.social.social--outline a.twitter {
   color: #3cf;
