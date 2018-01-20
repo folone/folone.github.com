@@ -91,7 +91,7 @@ function map() {
 
         function initMap() {
 
-            var location = new google.maps.LatLng(52.53507225730483, 13.390188217163086);
+            var location = new google.maps.LatLng(51.5105576,-0.1387299);
 
             var mapCanvas = document.getElementById('map');
             var mapOptions = {
