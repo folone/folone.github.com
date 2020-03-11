@@ -1,0 +1,177 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Developer CV
+% LaTeX Template
+% Version 1.0 (28/1/19)
+%
+% This template originates from:
+% http://www.LaTeXTemplates.com
+%
+% Authors:
+% Jan Vorisek (jan@vorisek.me)
+% Based on a template by Jan Küster (info@jankuester.com)
+% Modified for LaTeX Templates by Vel (vel@LaTeXTemplates.com)
+%
+% License:
+% The MIT License (see included LICENSE file)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[9pt]{developercv} % Default font size, values from 8-12pt are recommended
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	TITLE AND CONTACT INFORMATION
+%----------------------------------------------------------------------------------------
+
+\begin{minipage}[t]{0.45\textwidth} % 45% of the page width for name
+	\vspace{-\baselineskip} % Required for vertically aligning minipages
+	
+	% If your name is very short, use just one of the lines below
+	% If your name is very long, reduce the font size or make the minipage wider and reduce the others proportionately
+	\colorbox{black}{{\HUGE\textcolor{white}{\textbf{\MakeUppercase{George}}}}} % First name
+	
+	\colorbox{black}{{\HUGE\textcolor{white}{\textbf{\MakeUppercase{Leontiev}}}}} % Last name
+	
+	\vspace{6pt}
+	
+	{\huge Engineering @ Twitter\\{Core Services}} % Career or current job title
+\end{minipage}
+\begin{minipage}[t]{0.275\textwidth} % 27.5% of the page width for the first row of icons
+	\vspace{-\baselineskip} % Required for vertically aligning minipages
+	
+	% The first parameter is the FontAwesome icon name, the second is the box size and the third is the text
+	% Other icons can be found by referring to fontawesome.pdf (supplied with the template) and using the word after \fa in the command for the icon you want
+	\icon{MapMarker}{12}{London, United Kingdom}\\
+	\icon{Phone}{12}{+44 7402 439 109}\\
+	\icon{At}{12}{\href{mailto:folone@gmail.com}{folone@gmail.com}}\\	
+\end{minipage}
+\begin{minipage}[t]{0.275\textwidth} % 27.5% of the page width for the second row of icons
+	\vspace{-\baselineskip} % Required for vertically aligning minipages
+	
+	% The first parameter is the FontAwesome icon name, the second is the box size and the third is the text
+	% Other icons can be found by referring to fontawesome.pdf (supplied with the template) and using the word after \fa in the command for the icon you want
+	\icon{Globe}{12}{\href{https://folone.info}{folone.info}}\\
+	\icon{Github}{12}{\href{https://github.com/folone}{github.com/folone}}\\
+	\icon{Twitter}{12}{\href{https://twitter.com/@yukifartlek}{@yukifartlek}}\\
+\end{minipage}
+
+\vspace{0.5cm}
+
+%----------------------------------------------------------------------------------------
+%	INTRODUCTION, SKILLS AND TECHNOLOGIES
+%----------------------------------------------------------------------------------------
+
+\cvsect{Who Am I?}
+
+\begin{minipage}[t]{0.4\textwidth} % 40% of the page width for the introduction text
+	\vspace{-\baselineskip} % Required for vertically aligning minipages
+	
+	10+ years of experience in building and scaling highly-performant distributed systems that power critical parts of the infrastructure at the largest tech companies.
+\end{minipage}
+\hfill % Whitespace between
+\begin{minipage}[t]{0.5\textwidth} % 50% of the page for the skills bar chart
+	\vspace{-\baselineskip} % Required for vertically aligning minipages
+	\begin{barchart}{5.5}
+		\baritem{Distributed Systems}{100}
+		\baritem{Functional Programming}{80}
+		\baritem{Compilers}{50}
+		\baritem{Algorithms}{70}
+		\baritem{Finance}{20}
+		\baritem{Machine Learning}{30}
+	\end{barchart}
+\end{minipage}
+
+%----------------------------------------------------------------------------------------
+%	EXPERIENCE
+%----------------------------------------------------------------------------------------
+
+\cvsect{Experience}
+
+\begin{entrylist}
+	\entry
+		{2017 -- present\\\footnotesize{London}}
+		{Twitter}
+		{Engineer}
+		{I'm a part of the Core Services team at Twitter, working on rearchitecting internal API and the way production features are built at Twitter using GraphQL as the enabling technology.\\ \texttt{Scala}\slashsep\texttt{GraphQL}\slashsep\texttt{Distributed Systems}\slashsep\texttt{Compilers}}
+	\entry
+		{2014 -- 2017\\\footnotesize{Berlin}}
+		{SoundCloud}
+		{Engineer}
+		{I have worked in several teams at SoundCloud. In my last job there, I was a part of the activities team where my work consised of scaling and implementing the highest throughput systems at SoundCloud, i.e. systems that power the front page, notifications and social graph features.\newline\newline Before that I was a part of the creators team where I focused on features that help creators reach a wider audience, such as, services for creator stats, in-app messages, coordinating track creation, rss-feeds and the transcoding flow. Additionally, I bootstrapped services for serving content to stations and services for the bulk content ingestion pipeline for partners.\newline\newline Finally, when I joined SoundCloud I was a part of the core services team. There I took care of services used by all teams such as geo, authorizations and rollout services. Additionally, I took care of libraries built on top of Finagle to provide developers with tools to bootstrap and evolve their services quickly and intuitively.\newline\newline As part of my 20\% time, I've built and maintained an ops tool for managing service deploys across the company. Even though the tool was not part of the official tooling, it was eventually adopted by most of the teams at the company.\\ \texttt{Scala}\slashsep\texttt{Microservices}\slashsep\texttt{Distributed Systems}\slashsep\texttt{Kubernetes}\slashsep\texttt{Haskell}}
+	\entry
+		{2013 -- 2014\\\footnotesize{Berlin}}
+		{deltamethod}
+		{Quantitative Developer}
+		{I worked on the development of a recommendation system for improving online ads and ad campaigns that predicts their success and suggests possible improvements. I implemented various machine learning algorithms in Scala/Python and produced functional code that scales to big amounts of data.\\ \texttt{Python}\slashsep\texttt{Machine Learning}\slashsep\texttt{Scala}}
+	\entry
+		{2011 -- 2013\\\footnotesize{Amsterdam}}
+		{The New Motion}
+		{Scala Developer}
+		{I was the second person joining the client's remote dev team (9 people at the time of me leaving). Had a chance to work on / initiate / lead all the projects the company worked on.\\ \texttt{Scala}\slashsep\texttt{Java}\slashsep\texttt{Distributed Systems}\slashsep\texttt{Internal tools}}
+	\entry
+		{2010 -- present}
+		{Open-source}
+		{Engineer}
+		{I've worked with several opensource communities. Some examples are -- the Lightbend and Typelevel Scala compilers, where I worked on bringing SIP-23 to life: \href{https://docs.scala-lang.org/sips/42.type.html}{https://docs.scala-lang.org/sips/42.type.html}. Other notable projects include the twitter libraries stack -- utils, finagle, finatra.\\ \texttt{Functional Programming}\slashsep\texttt{Distributed Systems}\slashsep\texttt{Compilers}}
+\end{entrylist}
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION
+%----------------------------------------------------------------------------------------
+
+\cvsect{Education}
+
+\begin{entrylist}
+	\entry
+		{2008 -- 2010}
+		{Master's Degree}
+		{National University “Kyiv-Mohyla Academy”}
+		{Computer Science}
+	\entry
+		{2004 -- 2008}
+		{Bachelor's Degree}
+		{National Taras Shevchenko University}
+		{Computer Science}
+\end{entrylist}
+
+%----------------------------------------------------------------------------------------
+%	ADDITIONAL INFORMATION
+%----------------------------------------------------------------------------------------
+
+\begin{minipage}[t]{0.3\textwidth}
+	\vspace{-\baselineskip} % Required for vertically aligning minipages
+
+	\cvsect{Languages}
+	
+	\textbf{English} - fluent\\
+	\textbf{Ukrainian, Russian} - native\\
+	\textbf{German, French, Icelandic} - rudimentary
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.3\textwidth}
+	\vspace{-\baselineskip} % Required for vertically aligning minipages
+
+	\cvsect{Public Speaking}
+
+	I've done quite a few talks over the years (although I haven't been as active recently). My main topics usually include things like working on compilers, distributed systems, weird parts of type systems, etc. You can see some of my slides here: \href{https://www.strava.com/athletes/7428515}{https://speakerdeck.com/folone}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.3\textwidth}
+	\vspace{-\baselineskip} % Required for vertically aligning minipages
+	
+	\cvsect{Hobbies}
+
+	\textbf{Distance Running:} I ofthen race one or two (up to three!) marathons a year. So far I've done 7, my best time is 3:17:50, and I'm working towards a sub-3h time. Here's my strava profile: \href{https://www.strava.com/athletes/yukifartlek}{https://www.strava.com/athletes/yukifartlek}
+\end{minipage}
+
+
+%----------------------------------------------------------------------------------------
+
+\end{document}
