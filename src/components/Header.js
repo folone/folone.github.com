@@ -1,7 +1,8 @@
 import React from 'react';
 
 import config from '../../config';
-export default function Footer() {
+
+export default function Header() {
   const cities = combine(config.cities);
   const jobs = combine(config.work);
   return (
