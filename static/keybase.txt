@@ -1,0 +1,64 @@
+==================================================================
+https://keybase.io/folone
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://folone.info
+  * I am folone (https://keybase.io/folone) on keybase.
+  * I have a public key with fingerprint 3A57 D1D4 67F6 0189 3CB7  03D8 FA5C 9955 37B3 71EF
+
+To claim this, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "fingerprint": "3a57d1d467f601893cb703d8fa5c995537b371ef",
+            "host": "keybase.io",
+            "key_id": "fa5c995537b371ef",
+            "uid": "93704a124b05c2820ae9c7a2692e9f00",
+            "username": "folone"
+        },
+        "service": {
+            "hostname": "folone.info",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1408025187,
+    "expire_in": 157680000,
+    "prev": "078662b3b4dc5d3bae846b1e698095c8ba40fe9942086efeadb5e342b0167e94",
+    "seqno": 3,
+    "tag": "signature"
+}
+
+with the aforementioned key, yielding the PGP signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v0.3.1
+Comment: https://keybase.io/crypto
+
+yMHaAnicbVFdSBRRGN211Uj6e2ijsNZlQFZF7M7/zL4YWQkKKplaIU3zc2e95M6s
+M7Pr2q4btQ8aQgUZhaSkBSlIkFL6UCSiEGqQ4UPWUgq+JRlC9iLUjNRD0H35uOc7
+3znf4Zves8OV605eLS/rX+F/uOcmv0VddWtTcgKTdKUdCyawy3C7qEgLQSNiIM3C
+ghgp0qyCKxTDqgzAOZ6UJRaQCqeKtMzzNE2yEsniUMVKsGbddCZsGUk0YSnSbcz+
+CEix0f/wo9sNnmQBJeIEJQFaJjgCiJCXWZFgeALyKgAO0YSGJoahI6O36BrEOkow
+G4shGTobO8b/9EuRpjruEUO3dFlvsRvNlhUJOnNWe8QhtkFJ+CMhSEhT7ND2QAwa
+JtI1LIjbTNlCjiZOAQ4QNM6xJRiMR5ABBeQwaJbhgP0cGxizJQHLMQwhkRKlyLRC
+SiLkKEbCIcNzgKdlThIpoEKepwjAMVCFoiLRkKQICeAMC3kKc0K1ajoWJO01xZAt
+aaKQJlpRw048NdnkcblzXTnZWc7ZXLm79v89ZkPVzl+nw+pyhetMQ7rJ25EZm0Bv
+/UMbDy5VRKcnlzR262kmPVuLZl4N3nr2ZPxFwpNfluotOkcFYo8WRw7uPX/Uk/Rf
+9/mLB30Pkx0nxxYWvfI6ld0/W24GzHve5s3Vw/JgXcHHavnK0JuimvhAZ1VNtU9I
+afWhdOvP48O+xue91W1eD9P5qWs4vKYNcwNrILO7J3AxPv954HHO+D5mrut2IUgV
+by0hobiyMTGaNxK+03Lk2Ov99d2lBzL0QnoR5dPxQEVeH+a+X164capyXrhLHbph
+TcAvK92bL79/NbF3NwtO+Gqz3pujM2c/9HHX+meF1HryQk/f5rJ/9Tdgxgy8
+=fIXQ
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/folone
+
+==================================================================
