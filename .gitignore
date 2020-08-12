@@ -1,18 +1,11 @@
-# mac stuff
+# Project dependencies
+.cache
+node_modules
+yarn-error.log
+package-lock.json
+yarn.lock
+
+# Build directory
+/public
 .DS_Store
-
-#jekyll stuff
-_site
-
-# emacs stuff
-*~
-\#*
-
-target
-lib_managed
-
-*.aux
-*.log
-*.out
-*.haux
-*.htoc
+deploy.js
