@@ -11,6 +11,7 @@
     "email": "folone@gmail.com"
   },
   "dependencies": {
+    "@loadable/component": "^5.13.1",
     "ftp-deploy": "^2.3.3",
     "gatsby": "^2.13.3",
     "gatsby-plugin-manifest": "^2.2.1",
