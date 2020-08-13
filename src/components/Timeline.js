@@ -20,7 +20,7 @@ const CONTENT = [
   },
   {
     date: '2020/06/07 – 2020/08/23',
-    content: <div><p>I've just fled to Reykjavik <span role='img'>🇮🇸</span> for the summer to escape COVID-19.</p></div>
+    content: <div><p>I've just fled to Reykjavik <span role='img'>🇮🇸</span> for the summer to escape COVID-19.</p><p>I <a href="https://www.linkedin.com/in/yukifartlek">work</a> for Twitter, and I'm into <a href="https://www.strava.com/athletes/yukifartlek">running</a> and <a href="https://www.goodreads.com/user/show/6328696-george-leontiev">reading</a>.</p></div>
   },
   {
     date: '2020/08/23',
