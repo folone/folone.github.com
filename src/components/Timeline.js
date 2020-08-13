@@ -48,7 +48,7 @@ export default class Timeline extends React.Component {
           itemsToShow={1}
           itemsToScroll={1}
           forwardBtnProps={{
-            children: ">",
+            children: '➡',
             style: {
               width: 60,
               height: 60,
@@ -60,7 +60,7 @@ export default class Timeline extends React.Component {
             }
           }}
           backwardBtnProps={{
-            children: "<",
+            children: '⬅',
             style: {
               width: 60,
               height: 60,
