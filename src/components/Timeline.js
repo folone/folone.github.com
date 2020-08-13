@@ -20,7 +20,7 @@ const CONTENT = [
   },
   {
     date: '2020/06/07 – 2020/08/23',
-    content: <div><p>I've fled to Reykjavik <span role='img'>🇮🇸</span> for the summer to escape COVID-19.</p><p>I <a href="https://www.linkedin.com/in/yukifartlek">work</a> for Twitter, and I'm into <a href="https://www.strava.com/athletes/yukifartlek">running</a> and <a href="https://www.goodreads.com/user/show/6328696-george-leontiev">reading</a>.</p></div>
+    content: <div><p>I've fled to Reykjavik <span role='img'>🇮🇸</span> for the summer to escape COVID-19.</p><p>While here, I've <a href="https://twitter.com/yukifartlek/status/1281563610758742017">cycled around Iceland</a> and <a href="https://twitter.com/yukifartlek/status/1284361299728764929">ran my first ultramarathon</a>.</p><p>Speaking of crazy things to do in Iceland, last year I became the fastest non-Icelander (and the first Ukrainian) <a href="https://twitter.com/yukifartlek/status/1126594523256090624">Landvættur</a>.</p><p>I <a href="https://www.linkedin.com/in/yukifartlek">work</a> for Twitter, and I'm into adventures – happening <a href="https://www.strava.com/athletes/yukifartlek">in the outside world</a> as well as <a href="https://www.goodreads.com/user/show/6328696-george-leontiev">in my head</a>.</p></div>
   },
   {
     date: '2020/08/23',
