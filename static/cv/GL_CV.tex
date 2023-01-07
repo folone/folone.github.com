@@ -50,16 +50,16 @@
 	% Other icons can be found by referring to fontawesome.pdf (supplied with the template) and using the word after \fa in the command for the icon you want
 	\icon{MapMarker}{12}{London, United Kingdom}\\
 	\icon{Phone}{12}{+44 7402 439 109}\\
-	\icon{At}{12}{\href{mailto:folone@gmail.com}{folone@gmail.com}}\\	
+	\icon{At}{12}{\href{mailto:job-for-george@pm.me}{job-for-george@pm.me}}\\	
 \end{minipage}
 \begin{minipage}[t]{0.275\textwidth} % 27.5% of the page width for the second row of icons
 	\vspace{-\baselineskip} % Required for vertically aligning minipages
 	
 	% The first parameter is the FontAwesome icon name, the second is the box size and the third is the text
 	% Other icons can be found by referring to fontawesome.pdf (supplied with the template) and using the word after \fa in the command for the icon you want
-	\icon{Globe}{12}{\href{https://folone.info}{folone.info}}\\
+	\icon{Globe}{12}{\href{https://amateur.omg.lol}{amateur.omg.lol}}\\
 	\icon{Github}{12}{\href{https://github.com/folone}{github.com/folone}}\\
-	\icon{Twitter}{12}{\href{https://twitter.com/@yukifartlek}{@yukifartlek}}\\
+	\icon{Twitter}{12}{\href{https://twitter.com/@ActualAmateur}{@ActualAmateur}}\\
 \end{minipage}
 
 \vspace{0.5cm}
@@ -73,13 +73,14 @@
 \begin{minipage}[t]{0.4\textwidth} % 40% of the page width for the introduction text
 	\vspace{-\baselineskip} % Required for vertically aligning minipages
 	
-	10+ years of experience in building and scaling highly-performant distributed systems that power critical parts of the infrastructure at the largest tech companies.
+	10+ years of experience in designing, building, and scaling highly-performant distributed systems that power critical parts of the infrastructure at the largest tech companies.
 \end{minipage}
 \hfill % Whitespace between
 \begin{minipage}[t]{0.5\textwidth} % 50% of the page for the skills bar chart
 	\vspace{-\baselineskip} % Required for vertically aligning minipages
 	\begin{barchart}{5.5}
 		\baritem{Distributed Systems}{100}
+		\baritem{Technical Leadership}{70}
 		\baritem{Functional Programming}{80}
 		\baritem{Compilers}{50}
 		\baritem{Algorithms}{70}
@@ -96,30 +97,58 @@
 
 \begin{entrylist}
 	\entry
-		{2017 -- present\\\footnotesize{London}}
+		{2017 -- 2023\\\footnotesize{London \newline Edinburgh \newline Remote}}
 		{Twitter}
-		{Engineer}
-		{I'm a part of the Core Services team at Twitter, working on rearchitecting internal API and the way production features are built at Twitter using GraphQL as the enabling technology.\newline\newline Some of the projects I'm most involved in include: working on a compiler for a query language to a distributed virtual database (that uses various datastores and services as underlying columns), working on transpiling GraphQL queries to the aforementioned query language, implementing and scaling GraphQL subscriptions via a realtime streaming system.\\ \texttt{Scala}\slashsep\texttt{GraphQL}\slashsep\texttt{Distributed Systems}\slashsep\texttt{Compilers}}
+		{Software Engineer $\rightarrow$ Senior Software Engineer $\rightarrow$ Staff Software Engineer}
+		{
+			I'm a part of the Core API team at Twitter, working on a platform for rapid delivery of production features, using GraphQL as the enabling technology. We operate services with 12B daily requests, with peaks of 658K RPS, with 1.5B fields returned per second. Our compiler and schema generator process over 2.5K fields, with thousands of schema modifications by hundreds of engineers that get deployed to production hourly.\newline\newline
+			Highlighted contributions:\newline\newline
+			\begin{itemize}
+				\item Implemented Data-Returning Mutations, which expanded the capabilities of our platform and enabled new initiatives such as Communities, Audiospaces, Tweet Edit, and Birdwatch community notes.
+				\item Designed and built Field Lifecycles management system for GraphQL schema, allowing customers to evolve their APIs without breaking older clients.
+				\item Led a cross-organizational initiative to develop an Operational Ownership management system based on the GraphQL schema.
+				\item Built an implementation of Internal GraphQL, and supported customers in onboarding onto it.
+				\item Designed and built an Automated Root Cause Analysis system to improve the oncall load for teams on the critical path.
+				\item Enabled work on customizeable GraphQL Scalar annotations in Thrift by adding support for arbitrary level application of thrift annotations in thrift-scrooge compiler. As part of that, rebuilt the input/output type generation engine, to speed up the old implementation.
+				\item Extended support for end-to-end tracing requests throughout the system, to allow self-serve debugging capabilities for customers.
+				\item Built a slack bot to automate customer ticket tracking, extended it to be team-agnostic. Bot was eventually used across various organizations at the company, across hundreds of channels, 70+ JIRA projects, tens of thousands of tickets.
+			\end{itemize}
+			\texttt{Technical Leadership}\slashsep\texttt{Distributed Systems}\slashsep\texttt{Scala}\slashsep\texttt{GraphQL}\slashsep\texttt{Compilers}
+		}
 	\entry
 		{2014 -- 2017\\\footnotesize{Berlin}}
 		{SoundCloud}
 		{Engineer}
-		{I have worked in several teams at SoundCloud. In my last job there, I was a part of the activities team where my work consised of scaling and implementing the highest throughput systems at SoundCloud, i.e. systems that power the front page, notifications and social graph features.\newline\newline Before that I was a part of the creators team where I focused on features that help creators reach a wider audience, such as, services for creator stats, in-app messages, coordinating track creation, rss-feeds and the transcoding flow. Additionally, I bootstrapped services for serving content to stations and services for the bulk content ingestion pipeline for partners.\newline\newline Finally, when I joined SoundCloud I was a part of the core services team. There I took care of services used by all teams such as geo, authorizations and rollout services. Additionally, I took care of libraries built on top of Finagle to provide developers with tools to bootstrap and evolve their services quickly and intuitively.\newline\newline As part of my 20\% time, I've built and maintained an ops tool for managing service deploys across the company. Even though the tool was not part of the official tooling, it was eventually adopted by most of the teams at the company.\\ \texttt{Scala}\slashsep\texttt{Microservices}\slashsep\texttt{Distributed Systems}\slashsep\texttt{Kubernetes}\slashsep\texttt{Haskell}}
+		{
+			I have worked in several teams at SoundCloud. In my last job there, I was a part of the activities team where my work consised of scaling and implementing the highest throughput systems at SoundCloud, i.e. systems that power the front page, notifications and social graph features.\newline\newline
+			Before that I was a part of the creators team where I focused on features that help creators reach a wider audience, such as, services for creator stats, in-app messages, coordinating track creation, rss-feeds and the transcoding flow. Additionally, I bootstrapped services for serving content to stations and services for the bulk content ingestion pipeline for partners.\newline\newline
+			Finally, when I joined SoundCloud I was a part of the core services team. There I took care of services used by all teams such as geo, authorizations and rollout services. Additionally, I took care of libraries built on top of Finagle to provide developers with tools to bootstrap and evolve their services quickly and intuitively.\newline\newline
+			As part of my 20\% time, I've built and maintained an ops tool for managing service deploys across the company. Even though the tool was not part of the official tooling, it was eventually adopted by most of the teams at the company.\\
+			\texttt{Scala}\slashsep\texttt{Microservices}\slashsep\texttt{Distributed Systems}\slashsep\texttt{Kubernetes}\slashsep\texttt{Haskell}}
 	\entry
 		{2013 -- 2014\\\footnotesize{Berlin}}
 		{deltamethod}
 		{Quantitative Developer}
-		{I worked on the development of a recommendation system for improving online ads and ad campaigns that predicts their success and suggests possible improvements. I implemented various machine learning algorithms in Scala/Python and produced functional code that scales to big amounts of data.\\ \texttt{Python}\slashsep\texttt{Machine Learning}\slashsep\texttt{Scala}}
+		{
+			I worked on the development of a recommendation system for improving online ads and ad campaigns that predicts their success and suggests possible improvements. I implemented various machine learning algorithms in Scala/Python and produced functional code that scales to big amounts of data.
+			\\ \texttt{Python}\slashsep\texttt{Machine Learning}\slashsep\texttt{Scala}
+		}
 	\entry
-		{2011 -- 2013\\\footnotesize{Amsterdam}}
+		{2011 -- 2013\\\footnotesize{Kyiv \newline Amsterdam}}
 		{The New Motion}
 		{Scala Developer}
-		{I was the second person joining the client's remote dev team (9 people at the time of me leaving). Had a chance to work on / initiate / lead all the projects the company worked on.\\ \texttt{Scala}\slashsep\texttt{Java}\slashsep\texttt{Distributed Systems}\slashsep\texttt{Internal tools}}
+		{
+			I was the second person joining the client's remote dev team (9 people at the time of me leaving). Had a chance to work on / initiate / lead all the projects the company worked on.
+			\\ \texttt{Scala}\slashsep\texttt{Java}\slashsep\texttt{Distributed Systems}\slashsep\texttt{Internal tools}
+		}
 	\entry
 		{2010 -- present}
 		{Open-source}
 		{Engineer}
-		{I've worked with several opensource communities. Some examples are -- the Lightbend and Typelevel Scala compilers, where I worked on bringing SIP-23 to life: \href{https://docs.scala-lang.org/sips/42.type.html}{https://docs.scala-lang.org/sips/42.type.html}. Other notable projects include the twitter libraries stack -- utils, finagle, finatra.\\ \texttt{Functional Programming}\slashsep\texttt{Distributed Systems}\slashsep\texttt{Compilers}}
+		{
+			I've worked with several opensource communities. Some examples are -- the Lightbend and Typelevel Scala compilers, where I worked on bringing SIP-23 to life: \href{https://docs.scala-lang.org/sips/42.type.html}{https://docs.scala-lang.org/sips/42.type.html}. Other notable projects include the twitter libraries stack -- utils, finagle, finatra.\\
+			\texttt{Functional Programming}\slashsep\texttt{Distributed Systems}\slashsep\texttt{Compilers}
+		}
 \end{entrylist}
 
 %----------------------------------------------------------------------------------------
@@ -132,45 +161,44 @@
 	\entry
 		{2008 -- 2010}
 		{Master's Degree}
-		{National University “Kyiv-Mohyla Academy”}
 		{Computer Science}
+		{National University “Kyiv-Mohyla Academy”}
 	\entry
 		{2004 -- 2008}
 		{Bachelor's Degree}
+		{Applied Mathematics}
 		{National Taras Shevchenko University}
-		{Computer Science}
+	\entry
+		{2019 -- 2023}
+		{Self-directed study}
+		{Philosophy of Mind, Ethics, Machine Learning, Artificial Intelligence}
+		{University of Oxford, University of Edinburgh, Coursera}
 \end{entrylist}
 
-%----------------------------------------------------------------------------------------
-%	ADDITIONAL INFORMATION
-%----------------------------------------------------------------------------------------
+\cvsect{Patents}
 
-\begin{minipage}[t]{0.3\textwidth}
-	\vspace{-\baselineskip} % Required for vertically aligning minipages
-
-	\cvsect{Languages}
-	
-	\textbf{English} - fluent\\
-	\textbf{Ukrainian, Russian} - native\\
-	\textbf{German, French, Icelandic} - rudimentary
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.3\textwidth}
-	\vspace{-\baselineskip} % Required for vertically aligning minipages
-
-	\cvsect{Public Speaking}
-
-	I've done quite a few talks over the years (although I haven't been as active recently). My main topics usually include things like working on compilers, distributed systems, weird parts of type systems, etc. You can see some of my slides here: \href{https://www.strava.com/athletes/7428515}{https://speakerdeck.com/folone}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.3\textwidth}
-	\vspace{-\baselineskip} % Required for vertically aligning minipages
-	
-	\cvsect{Hobbies}
-
-	\textbf{Distance Running:} I ofthen race one or two (up to three!) marathons a year. So far I've done 7, my best time is 3:17:50, and I'm working towards a sub-3h time. Here's my strava profile: \href{https://www.strava.com/athletes/yukifartlek}{https://www.strava.com/athletes/yukifartlek}
-\end{minipage}
-
+\begin{entrylist}
+	\entry
+		{US20210042364A1}
+		{Managing query subscription renewals in a messaging platform}
+		{}
+		{Issued August 30, 2022}
+	\entry
+		{WO2021026553A1}
+		{Messaging platform for delivering real-time messages}
+		{}
+		{Issued February 11, 2021}
+	\entry
+		{US20210044549A1}
+		{Event producer system of a messaging platform for delivering real-time messages}
+		{}
+		{Issued February 11, 2021}
+	\entry
+		{PCTUS2022032243}
+		{Messaging system with capability to edit sent messages}
+		{}
+		{Filed November 10, 2022}
+\end{entrylist}
 
 %----------------------------------------------------------------------------------------
 
