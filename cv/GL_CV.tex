@@ -104,12 +104,13 @@
 			I'm a part of the Core API team at Twitter, working on a platform for rapid delivery of production features, using GraphQL as the enabling technology. We operate services with 12B daily requests, with peaks of 658K RPS, with 1.5B fields returned per second. Our compiler and schema generator process over 2.5K fields, with thousands of schema modifications by hundreds of engineers that get deployed to production hourly.\newline\newline
 			Highlighted contributions:\newline\newline
 			\begin{itemize}
-				\item Implemented Data-Returning Mutations, which expanded the capabilities of our platform and enabled new initiatives such as Communities, Audiospaces, Tweet Edit, and Birdwatch community notes.
-				\item Designed and built Field Lifecycles management system for GraphQL schema, allowing customers to evolve their APIs without breaking older clients.
 				\item Led a cross-organizational initiative to develop an Operational Ownership management system based on the GraphQL schema.
+				\item Implemented Data-Returning Mutations, which expanded the capabilities of our platform and enabled new initiatives such as Communities, Audiospaces, Tweet Edit, and Birdwatch community notes.
 				\item Built an implementation of Internal GraphQL, and supported customers in onboarding onto it.
 				\item Designed and built an Automated Root Cause Analysis system to improve the oncall load for teams on the critical path.
 				\item Enabled work on customizeable GraphQL Scalar annotations in Thrift by adding support for arbitrary level application of thrift annotations in thrift-scrooge compiler. As part of that, rebuilt the input/output type generation engine, to speed up the old implementation.
+				\item Designed and built Field Lifecycles management system for GraphQL schema, allowing customers to evolve their APIs without breaking older clients.
+				\item Migrated team's CLI tooling to the cloud, dropping P99 execution times from tens of minutes to under 15 seconds.
 				\item Extended support for end-to-end tracing requests throughout the system, to allow self-serve debugging capabilities for customers.
 				\item Built a slack bot to automate customer ticket tracking, extended it to be team-agnostic. Bot was eventually used across various organizations at the company, across hundreds of channels, 70+ JIRA projects, tens of thousands of tickets.
 			\end{itemize}

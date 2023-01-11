@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.7)  7 JAN 2023 21:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.7)  11 JAN 2023 21:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -961,56 +961,56 @@ Underfull \hbox (badness 10000) in paragraph at lines 96--97
  []
 
 LaTeX Font Info:    Font shape `T1/Raleway-TLF/m/n' will be
-(Font)              scaled to size 7.0pt on input line 117.
+(Font)              scaled to size 7.0pt on input line 118.
 LaTeX Font Info:    Font shape `T1/Raleway-TLF/b/n' will be
-(Font)              scaled to size 7.0pt on input line 117.
+(Font)              scaled to size 7.0pt on input line 118.
 LaTeX Font Info:    External font `cmex7' loaded for size
-(Font)              <7> on input line 117.
+(Font)              <7> on input line 118.
 
-Underfull \hbox (badness 10000) in paragraph at lines 117--117
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 117--117
+Underfull \hbox (badness 10000) in paragraph at lines 118--118
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 117--117
+Underfull \hbox (badness 10000) in paragraph at lines 118--118
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 118--118
 
  []
 
 LaTeX Font Info:    Trying to load font information for TS1+Raleway-TLF on inpu
-t line 117.
+t line 118.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/raleway/TS1Raleway-TLF.fd
 File: TS1Raleway-TLF.fd 2014/07/28 (autoinst) Font definitions for TS1/Raleway-
 TLF.
 )
 LaTeX Font Info:    Font shape `TS1/Raleway-TLF/m/n' will be
-(Font)              scaled to size 9.0pt on input line 117.
+(Font)              scaled to size 9.0pt on input line 118.
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1
-17.
+18.
 
 (/usr/local/texlive/2022/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-Underfull \hbox (badness 10000) in paragraph at lines 127--127
+Underfull \hbox (badness 10000) in paragraph at lines 128--128
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 127--127
+Underfull \hbox (badness 10000) in paragraph at lines 128--128
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 127--127
+Underfull \hbox (badness 10000) in paragraph at lines 128--128
 
  []
 
 
-Underfull \hbox (badness 1454) in paragraph at lines 151--151
+Underfull \hbox (badness 1454) in paragraph at lines 152--152
 \T1/Raleway-TLF/m/n/9 I've worked with sev-eral open-source com-mu-ni-ties. Som
 e ex-am-ples are -- the Light-bend
  []
@@ -1018,12 +1018,12 @@ e ex-am-ples are -- the Light-bend
 [1
 
 {/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 158--159
+Underfull \hbox (badness 10000) in paragraph at lines 159--160
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 178--179
+Underfull \hbox (badness 10000) in paragraph at lines 179--180
 
  []
 
@@ -1034,7 +1034,7 @@ Package rerunfilecheck Info: File `GL_CV.out' has not changed.
 Here is how much of TeX's memory you used:
  23897 strings out of 478268
  468258 string characters out of 5846348
- 768730 words of memory out of 5000000
+ 769730 words of memory out of 5000000
  41676 multiletter control sequences out of 15000+600000
  582200 words of font info for 57 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1051,7 +1051,7 @@ e.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/impallari/raleway/Raleway
 eway-Regular.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfont
 s/cm/cmsy7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/
 sftt0900.pfb>
-Output written on GL_CV.pdf (2 pages, 113465 bytes).
+Output written on GL_CV.pdf (2 pages, 113568 bytes).
 PDF statistics:
  69 PDF objects out of 1000 (max. 8388607)
  51 compressed objects within 1 object stream
