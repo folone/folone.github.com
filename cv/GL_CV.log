@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.7)  11 JAN 2023 21:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.7)  9 FEB 2023 21:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1034,7 +1034,7 @@ Package rerunfilecheck Info: File `GL_CV.out' has not changed.
 Here is how much of TeX's memory you used:
  23897 strings out of 478268
  468258 string characters out of 5846348
- 769730 words of memory out of 5000000
+ 769704 words of memory out of 5000000
  41676 multiletter control sequences out of 15000+600000
  582200 words of font info for 57 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1051,7 +1051,7 @@ e.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/impallari/raleway/Raleway
 eway-Regular.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfont
 s/cm/cmsy7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/
 sftt0900.pfb>
-Output written on GL_CV.pdf (2 pages, 113568 bytes).
+Output written on GL_CV.pdf (2 pages, 113639 bytes).
 PDF statistics:
  69 PDF objects out of 1000 (max. 8388607)
  51 compressed objects within 1 object stream
