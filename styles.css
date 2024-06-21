@@ -1,0 +1,87 @@
+body {
+    font-family: "Courier New", Courier, monospace;
+    background-color: #fff;
+    color: #000;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.container {
+    width: 60%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header, section, footer {
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+p {
+    font-size: 1.2rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    margin: 0.5rem 0;
+}
+
+ul li a {
+    color: #00f;
+    text-decoration: none;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+ul li a i {
+    margin-right: 8px;
+}
+
+ul li a:hover {
+    text-decoration: underline;
+}
+
+.crossed-out {
+    text-decoration: line-through;
+}
+
+footer {
+    font-size: 0.8rem;
+}
+
+.icon-links {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Center items horizontally */
+}
+
+.icon-links li {
+    margin: 0 10px; /* Adjust the spacing between icons */
+}
+
+.icon-links a {
+    color: #000;
+    text-decoration: none; /* Remove underline */
+    font-size: 2rem; /* Adjust the icon size as needed */
+}
+
+.icon-links a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
